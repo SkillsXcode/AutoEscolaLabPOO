@@ -58,6 +58,14 @@
     <Compile Include="FormularioGerenciamentoServicos.Designer.cs">
       <DependentUpon>FormularioGerenciamentoServicos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\FormaPagamento.cs" />
+    <Compile Include="Models\ItemServico.cs" />
+    <Compile Include="Models\Pagamento.cs" />
+    <Compile Include="Models\PagamentoaVista.cs" />
+    <Compile Include="Models\PagamentoCarne.cs" />
+    <Compile Include="Models\Servico.cs" />
+    <Compile Include="Models\Venda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormularioGerenciamentoGeral.resx">
@@ -88,5 +96,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
