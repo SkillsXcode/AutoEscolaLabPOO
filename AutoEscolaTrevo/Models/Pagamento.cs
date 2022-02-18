@@ -6,13 +6,23 @@ namespace AutoEscolaTrevo.Models
 {
     public class Pagamento
     {
-        public DateTime dataPagamento { get;}
-        public bool status { get;}
+        private DateTime dataPagamento;
+        private bool status;
 
         public Pagamento(DateTime dataPagamento, bool status)
         {
             this.dataPagamento = dataPagamento;
             this.status = status;
+        }
+
+        public DateTime getDataPagamento()
+        {
+            return dataPagamento;
+        }
+
+        public bool getStatus()
+        {
+            return status;
         }
     }
 }
