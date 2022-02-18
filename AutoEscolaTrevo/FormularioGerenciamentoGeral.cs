@@ -16,5 +16,22 @@ namespace AutoEscolaTrevo
         {
             InitializeComponent();
         }
+
+        private void btnGerenciarServicos_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioGerenciarServicos();
+        }
+
+        private void frmGerenciamentoGeral_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private frmGerenciamentoServicos ExibirNovoFormularioGerenciarServicos()
+        {
+            frmGerenciamentoServicos frmServicos = new frmGerenciamentoServicos();
+            frmServicos.ShowDialog();
+            return frmServicos;
+        }
     }
 }

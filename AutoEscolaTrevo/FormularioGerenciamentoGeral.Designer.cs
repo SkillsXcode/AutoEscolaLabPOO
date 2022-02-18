@@ -56,6 +56,7 @@
             this.btnGerenciarServicos.TabIndex = 1;
             this.btnGerenciarServicos.Text = "Gerenciar Serviços";
             this.btnGerenciarServicos.UseVisualStyleBackColor = false;
+            this.btnGerenciarServicos.Click += new System.EventHandler(this.btnGerenciarServicos_Click);
             // 
             // frmGerenciamentoGeral
             // 
@@ -67,6 +68,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmGerenciamentoGeral";
             this.Text = "Gerenciamento Geral";
+            this.Load += new System.EventHandler(this.frmGerenciamentoGeral_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

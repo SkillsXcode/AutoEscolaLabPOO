@@ -3,9 +3,10 @@ C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\bin\Debug\AutoEscola
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\bin\Debug\AutoEscolaTrevo.pdb
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.csproj.AssemblyReference.cache
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.csproj.SuggestedBindingRedirects.cache
-C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.Form1.resources
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.Properties.Resources.resources
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.csproj.GenerateResource.cache
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.csproj.CoreCompileInputs.cache
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.exe
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.pdb
+C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmGerenciamentoGeral.resources
+C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmGerenciamentoServicos.resources
