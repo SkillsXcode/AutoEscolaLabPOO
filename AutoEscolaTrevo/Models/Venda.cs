@@ -2,6 +2,7 @@ using System;
 using System.Globalization;
 using System.Threading;
 
+
 namespace AutoEscolaTrevo.Models
 {
     public class Venda
@@ -13,7 +14,7 @@ namespace AutoEscolaTrevo.Models
         public double valorEntrada { get;}
         public DateTime dataVenda { get;}
         public FormaPagamento formaPagamento { get;}
-        public ItemServico List<Itens> itens = new List<Itens>();
+        //public ItemServico List<Itens> itens = new List<Itens>();
         public Cliente cliente { get;}
         public Pagamento pagamento { get;}
         
@@ -26,7 +27,7 @@ namespace AutoEscolaTrevo.Models
             this.valorVenda = valorVenda;
             this.valorEntrada = valorEntrada;
             this.dataVenda = dataVenda;
-            this.List.Add(itens);
+            //this.List.Add(itens);
             this.cliente = cliente;
             this.pagamento = pagamento;
         }

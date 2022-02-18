@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace AutoEscolaTrevo.Models
 {
-    public enum FormaPagamento
+    public enum TiposPagamentos
     {
         CARNE,
         CARTAO,
@@ -12,8 +12,8 @@ namespace AutoEscolaTrevo.Models
     }
     public class FormaPagamento
     {
-        FormaPagamento _carne = FormaPagamento.Carne;
-        FormaPagamento _cartao = FormaPagamento.Cartao;
-        FormaPagamento _avista = FormaPagamento.Avista;
+        TiposPagamentos _carne = TiposPagamentos.CARNE;
+        TiposPagamentos _cartao = TiposPagamentos.CARTAO;
+        TiposPagamentos _avista = TiposPagamentos.AVISTA;
     }
 }

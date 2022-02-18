@@ -9,10 +9,12 @@ namespace AutoEscolaTrevo.Models
         public double valorPago {get;}
         public double valorDesconto {get;}
 
-        public PagamentoaVista(double valorPago, double valorDesconto)
+        public PagamentoaVista(double valorPago, double valorDesconto, DateTime dataPagamento, bool status) : base(dataPagamento, status)
         {
             this.valorPago = valorPago;
             this.valorDesconto = valorDesconto;
         }
+
     }
+
 }
