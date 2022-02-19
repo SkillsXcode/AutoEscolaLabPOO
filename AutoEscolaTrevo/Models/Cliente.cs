@@ -21,7 +21,7 @@ namespace AutoEscolaTrevo.Models
             this.dataNascimento = dataNascimento;
         }
 
-        public string getStatus()
+        public bool getStatus()
         {
             return status;
         }
