@@ -31,13 +31,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblRegistrarVenda = new System.Windows.Forms.Label();
             this.dataGridViewListagemClientes = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewListagemServicos = new System.Windows.Forms.DataGridView();
             this.btnRegistrarVenda = new System.Windows.Forms.Button();
             this.lblListagemClientes = new System.Windows.Forms.Label();
             this.lblListagemServicos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListagemClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListagemServicos)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -66,13 +66,13 @@
             this.dataGridViewListagemClientes.Size = new System.Drawing.Size(318, 225);
             this.dataGridViewListagemClientes.TabIndex = 2;
             // 
-            // dataGridView2
+            // dataGridViewListagemServicos
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(396, 231);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(318, 225);
-            this.dataGridView2.TabIndex = 3;
+            this.dataGridViewListagemServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewListagemServicos.Location = new System.Drawing.Point(396, 231);
+            this.dataGridViewListagemServicos.Name = "dataGridViewListagemServicos";
+            this.dataGridViewListagemServicos.Size = new System.Drawing.Size(318, 225);
+            this.dataGridViewListagemServicos.TabIndex = 3;
             // 
             // btnRegistrarVenda
             // 
@@ -118,7 +118,7 @@
             this.Controls.Add(this.lblListagemServicos);
             this.Controls.Add(this.lblListagemClientes);
             this.Controls.Add(this.btnRegistrarVenda);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridViewListagemServicos);
             this.Controls.Add(this.dataGridViewListagemClientes);
             this.Controls.Add(this.lblRegistrarVenda);
             this.Controls.Add(this.pictureBox1);
@@ -126,7 +126,7 @@
             this.Text = "FormularioRegistrarVenda";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListagemClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListagemServicos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,7 +137,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblRegistrarVenda;
         private System.Windows.Forms.DataGridView dataGridViewListagemClientes;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewListagemServicos;
         private System.Windows.Forms.Button btnRegistrarVenda;
         private System.Windows.Forms.Label lblListagemClientes;
         private System.Windows.Forms.Label lblListagemServicos;
