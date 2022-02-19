@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormularioCadastrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioCadastrarCliente.Designer.cs">
+      <DependentUpon>FormularioCadastrarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioGerenciamentoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="Models\Venda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormularioCadastrarCliente.resx">
+      <DependentUpon>FormularioCadastrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioGerenciamentoCliente.resx">
       <DependentUpon>FormularioGerenciamentoCliente.cs</DependentUpon>
     </EmbeddedResource>
