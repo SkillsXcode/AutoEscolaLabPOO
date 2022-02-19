@@ -157,5 +157,11 @@
   <ItemGroup>
     <None Include="imgFront\payment.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="imgFront\client-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="imgFront\client.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
