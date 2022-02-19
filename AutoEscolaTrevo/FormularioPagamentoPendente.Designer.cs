@@ -50,6 +50,7 @@
             // 
             // pcbPagamentoPendente
             // 
+            this.pcbPagamentoPendente.Image = global::AutoEscolaTrevo.Properties.Resources.payment;
             this.pcbPagamentoPendente.Location = new System.Drawing.Point(33, 28);
             this.pcbPagamentoPendente.Margin = new System.Windows.Forms.Padding(2);
             this.pcbPagamentoPendente.Name = "pcbPagamentoPendente";

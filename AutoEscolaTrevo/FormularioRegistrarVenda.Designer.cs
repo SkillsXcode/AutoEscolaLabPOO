@@ -28,25 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioRegistrarVenda));
+            this.pcbRegistrarVenda = new System.Windows.Forms.PictureBox();
             this.lblRegistrarVenda = new System.Windows.Forms.Label();
             this.dataGridViewListagemClientes = new System.Windows.Forms.DataGridView();
             this.dataGridViewListagemServicos = new System.Windows.Forms.DataGridView();
             this.btnRegistrarVenda = new System.Windows.Forms.Button();
             this.lblListagemClientes = new System.Windows.Forms.Label();
             this.lblListagemServicos = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbRegistrarVenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListagemClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListagemServicos)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pcbRegistrarVenda
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(33, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 124);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pcbRegistrarVenda.Image = global::AutoEscolaTrevo.Properties.Resources.shopping_cart;
+            this.pcbRegistrarVenda.InitialImage = ((System.Drawing.Image)(resources.GetObject("pcbRegistrarVenda.InitialImage")));
+            this.pcbRegistrarVenda.Location = new System.Drawing.Point(33, 28);
+            this.pcbRegistrarVenda.Name = "pcbRegistrarVenda";
+            this.pcbRegistrarVenda.Size = new System.Drawing.Size(126, 124);
+            this.pcbRegistrarVenda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbRegistrarVenda.TabIndex = 0;
+            this.pcbRegistrarVenda.TabStop = false;
             // 
             // lblRegistrarVenda
             // 
@@ -121,10 +125,10 @@
             this.Controls.Add(this.dataGridViewListagemServicos);
             this.Controls.Add(this.dataGridViewListagemClientes);
             this.Controls.Add(this.lblRegistrarVenda);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pcbRegistrarVenda);
             this.Name = "FormularioRegistrarVenda";
             this.Text = "FormularioRegistrarVenda";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbRegistrarVenda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListagemClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListagemServicos)).EndInit();
             this.ResumeLayout(false);
@@ -134,7 +138,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcbRegistrarVenda;
         private System.Windows.Forms.Label lblRegistrarVenda;
         private System.Windows.Forms.DataGridView dataGridViewListagemClientes;
         private System.Windows.Forms.DataGridView dataGridViewListagemServicos;
