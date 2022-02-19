@@ -38,3 +38,5 @@ C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscol
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\bin\Debug\AutoEscolaTrevo.exe.config
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\bin\Debug\AutoEscolaTrevo.exe
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\bin\Debug\AutoEscolaTrevo.pdb
+C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.FormularioInserirPagamento.resources
+C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmPagamentoPendente.resources
