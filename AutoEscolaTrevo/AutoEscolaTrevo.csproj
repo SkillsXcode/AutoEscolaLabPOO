@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormularioGerenciamentoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioGerenciamentoCliente.Designer.cs">
+      <DependentUpon>FormularioGerenciamentoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioGerenciamentoGeral.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Models\Venda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormularioGerenciamentoCliente.resx">
+      <DependentUpon>FormularioGerenciamentoCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioGerenciamentoGeral.resx">
       <DependentUpon>FormularioGerenciamentoGeral.cs</DependentUpon>
     </EmbeddedResource>
