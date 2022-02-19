@@ -33,5 +33,17 @@ namespace AutoEscolaTrevo
             frmServicos.Show();
             return frmServicos;
         }
+
+        private frmGerenciamentoCliente ExibirNovoFormularioGerenciarClientes()
+        {
+            frmGerenciamentoCliente frmClientes = new frmGerenciamentoCliente();
+            frmClientes.Show();
+            return frmClientes;
+        }
+
+        private void btnGerenciarCliente_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioGerenciarClientes();
+        }
     }
 }

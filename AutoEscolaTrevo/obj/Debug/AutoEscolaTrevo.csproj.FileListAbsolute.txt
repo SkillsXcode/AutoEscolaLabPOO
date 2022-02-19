@@ -40,3 +40,9 @@ C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\bin\Debug\AutoEscol
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\bin\Debug\AutoEscolaTrevo.pdb
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.FormularioInserirPagamento.resources
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmPagamentoPendente.resources
+C:\Users\Admin\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmCadastrarCliente.resources
+C:\Users\Admin\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.FormularioCriarRelatorio.resources
+C:\Users\Admin\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmGerenciamentoCliente.resources
+C:\Users\Admin\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.FormularioInserirPagamento.resources
+C:\Users\Admin\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmPagamentoPendente.resources
+C:\Users\Admin\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.FormularioRegistrarVenda.resources
