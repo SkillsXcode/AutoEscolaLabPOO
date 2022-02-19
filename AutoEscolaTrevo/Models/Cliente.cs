@@ -7,17 +7,19 @@ namespace AutoEscolaTrevo.Models
     public class Cliente
     {
         private bool status;
+        private string nomeCliente;
         private string cpf;
         private string numeroIdentidade;
-        private string nomeCliente;
-        private string dataNascimento;
+        private DateTime dataExpedicaoIdentidade;        
+        private DateTime dataNascimento;
 
-        public Cliente(bool status, string cpf, string numeroIdentidade, string nomeCliente, string dataNascimento)
+        public Cliente(bool status, string nomeCliente, string cpf, string numeroIdentidade, DateTime dataExpedicaoIdentidade, DateTime dataNascimento)
         {
             this.status = status;
+            this.nomeCliente = nomeCliente;
             this.cpf = cpf;
             this.numeroIdentidade = numeroIdentidade;
-            this.nomeCliente = nomeCliente;
+            this.dataExpedicaoIdentidade = dataExpedicaoIdentidade;
             this.dataNascimento = dataNascimento;
         }
 
@@ -41,9 +43,14 @@ namespace AutoEscolaTrevo.Models
             return nomeCliente;
         }
 
-        public string getDataNascimento()
+        public DateTime getDataNascimento()
         {
             return dataNascimento;
+        }
+
+        public DateTime getDataExpedicaoIdentidade()
+        {
+            return dataExpedicaoIdentidade;
         }
     }
 }

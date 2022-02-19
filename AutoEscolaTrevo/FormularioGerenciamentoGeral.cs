@@ -30,7 +30,7 @@ namespace AutoEscolaTrevo
         private frmGerenciamentoServicos ExibirNovoFormularioGerenciarServicos()
         {
             frmGerenciamentoServicos frmServicos = new frmGerenciamentoServicos();
-            frmServicos.ShowDialog();
+            frmServicos.Show();
             return frmServicos;
         }
     }
