@@ -37,6 +37,7 @@
             this.btnCadastrarServico = new System.Windows.Forms.Button();
             this.btnEditarServico = new System.Windows.Forms.Button();
             this.btnExcluirServico = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +45,7 @@
             // pcbServico
             // 
             this.pcbServico.Image = ((System.Drawing.Image)(resources.GetObject("pcbServico.Image")));
-            this.pcbServico.Location = new System.Drawing.Point(32, 24);
+            this.pcbServico.Location = new System.Drawing.Point(40, 24);
             this.pcbServico.Name = "pcbServico";
             this.pcbServico.Size = new System.Drawing.Size(136, 104);
             this.pcbServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -55,7 +56,7 @@
             // 
             this.lblGerenciarServicos.AutoSize = true;
             this.lblGerenciarServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGerenciarServicos.Location = new System.Drawing.Point(323, 32);
+            this.lblGerenciarServicos.Location = new System.Drawing.Point(324, 24);
             this.lblGerenciarServicos.Name = "lblGerenciarServicos";
             this.lblGerenciarServicos.Size = new System.Drawing.Size(360, 46);
             this.lblGerenciarServicos.TabIndex = 1;
@@ -135,12 +136,27 @@
             this.btnExcluirServico.UseVisualStyleBackColor = false;
             this.btnExcluirServico.Click += new System.EventHandler(this.button4_Click);
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Black;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnVoltar.ForeColor = System.Drawing.Color.White;
+            this.btnVoltar.Location = new System.Drawing.Point(862, 24);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(122, 39);
+            this.btnVoltar.TabIndex = 13;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            // 
             // frmGerenciamentoServicos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnExcluirServico);
             this.Controls.Add(this.btnEditarServico);
             this.Controls.Add(this.btnCadastrarServico);
@@ -149,6 +165,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblGerenciarServicos);
             this.Controls.Add(this.pcbServico);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmGerenciamentoServicos";
             this.Text = "FormularioGerenciamentoServicos";
             this.Load += new System.EventHandler(this.FormularioGerenciamentoServicos_Load);
@@ -169,5 +186,6 @@
         private System.Windows.Forms.Button btnCadastrarServico;
         private System.Windows.Forms.Button btnEditarServico;
         private System.Windows.Forms.Button btnExcluirServico;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

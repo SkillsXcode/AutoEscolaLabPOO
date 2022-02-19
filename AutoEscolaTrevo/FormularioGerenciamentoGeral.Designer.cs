@@ -66,6 +66,7 @@
             this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.btnGerenciarServicos);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmGerenciamentoGeral";
             this.Text = "Gerenciamento Geral";
             this.Load += new System.EventHandler(this.frmGerenciamentoGeral_Load);

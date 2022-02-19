@@ -8,12 +8,12 @@ namespace AutoEscolaTrevo.Models
     public class Venda
     {
         private double valorVenda;
+        private DateTime dataVenda;
+        private FormaPagamento formaPagamento;
         private DateTime dataVencimento;
         private int numeroParcelas;
         private double valorParcela;
         private double valorEntrada;
-        private DateTime dataVenda;
-        private FormaPagamento formaPagamento;
         //private ItemServico List<Itens> itens = new List<Itens>();
         private Cliente cliente;
         private Pagamento pagamento;
@@ -30,6 +30,7 @@ namespace AutoEscolaTrevo.Models
             //this.List.Add(itens);
             this.cliente = cliente;
             this.pagamento = pagamento;
+            this.numeroParcelas = numeroParcelas;
         }
 
         public double getValorVenda()
