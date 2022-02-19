@@ -52,6 +52,12 @@
     <Compile Include="FormularioCadastrarCliente.Designer.cs">
       <DependentUpon>FormularioCadastrarCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioCriarRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioCriarRelatorio.Designer.cs">
+      <DependentUpon>FormularioCriarRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioGerenciamentoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormularioCadastrarCliente.resx">
       <DependentUpon>FormularioCadastrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioCriarRelatorio.resx">
+      <DependentUpon>FormularioCriarRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioGerenciamentoCliente.resx">
       <DependentUpon>FormularioGerenciamentoCliente.cs</DependentUpon>
