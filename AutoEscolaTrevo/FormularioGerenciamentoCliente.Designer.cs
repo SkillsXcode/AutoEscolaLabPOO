@@ -45,7 +45,7 @@
             // 
             this.pcbCliente.Image = global::AutoEscolaTrevo.Properties.Resources.client;
             this.pcbCliente.Location = new System.Drawing.Point(24, 20);
-            this.pcbCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pcbCliente.Margin = new System.Windows.Forms.Padding(2);
             this.pcbCliente.Name = "pcbCliente";
             this.pcbCliente.Size = new System.Drawing.Size(102, 84);
             this.pcbCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -70,18 +70,19 @@
             this.btnCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnCadastrarCliente.ForeColor = System.Drawing.Color.White;
             this.btnCadastrarCliente.Location = new System.Drawing.Point(30, 169);
-            this.btnCadastrarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCadastrarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
             this.btnCadastrarCliente.Size = new System.Drawing.Size(150, 32);
             this.btnCadastrarCliente.TabIndex = 2;
             this.btnCadastrarCliente.Text = "+    Cadastrar";
             this.btnCadastrarCliente.UseVisualStyleBackColor = false;
+            this.btnCadastrarCliente.Click += new System.EventHandler(this.btnCadastrarCliente_Click);
             // 
             // dataViewCliente
             // 
             this.dataViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewCliente.Location = new System.Drawing.Point(30, 306);
-            this.dataViewCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataViewCliente.Margin = new System.Windows.Forms.Padding(2);
             this.dataViewCliente.Name = "dataViewCliente";
             this.dataViewCliente.RowHeadersWidth = 51;
             this.dataViewCliente.Size = new System.Drawing.Size(540, 266);
@@ -91,7 +92,7 @@
             // 
             this.txtBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtBuscarCliente.Location = new System.Drawing.Point(30, 251);
-            this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscarCliente.Name = "txtBuscarCliente";
             this.txtBuscarCliente.Size = new System.Drawing.Size(385, 24);
             this.txtBuscarCliente.TabIndex = 4;
@@ -103,7 +104,7 @@
             this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.White;
             this.btnBuscarCliente.Location = new System.Drawing.Point(420, 247);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(150, 32);
             this.btnBuscarCliente.TabIndex = 5;
@@ -117,7 +118,7 @@
             this.btnEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnEditarCliente.ForeColor = System.Drawing.Color.White;
             this.btnEditarCliente.Location = new System.Drawing.Point(588, 474);
-            this.btnEditarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Size = new System.Drawing.Size(150, 32);
             this.btnEditarCliente.TabIndex = 6;
@@ -131,7 +132,7 @@
             this.btnExcluirCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnExcluirCliente.ForeColor = System.Drawing.Color.White;
             this.btnExcluirCliente.Location = new System.Drawing.Point(588, 540);
-            this.btnExcluirCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExcluirCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnExcluirCliente.Name = "btnExcluirCliente";
             this.btnExcluirCliente.Size = new System.Drawing.Size(150, 32);
             this.btnExcluirCliente.TabIndex = 7;
@@ -145,7 +146,7 @@
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnVoltar.ForeColor = System.Drawing.Color.White;
             this.btnVoltar.Location = new System.Drawing.Point(646, 20);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(92, 32);
             this.btnVoltar.TabIndex = 8;
@@ -171,6 +172,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmGerenciamentoCliente";
             this.Text = "FormularioGerenciamentodeCliente";
+            this.Load += new System.EventHandler(this.frmGerenciamentoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewCliente)).EndInit();
             this.ResumeLayout(false);

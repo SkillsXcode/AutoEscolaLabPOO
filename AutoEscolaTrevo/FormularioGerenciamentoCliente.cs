@@ -21,5 +21,23 @@ namespace AutoEscolaTrevo
         {
 
         }
+
+        private void btnCadastrarCliente_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioCadastrarCliente();
+        }
+
+        private void frmGerenciamentoCliente_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private frmCadastrarCliente ExibirNovoFormularioCadastrarCliente()
+        {
+            frmCadastrarCliente frmCadastrarCliente = new frmCadastrarCliente();
+            frmCadastrarCliente.Show();
+            return frmCadastrarCliente;
+        }
+        
     }
 }
