@@ -87,7 +87,6 @@
             this.dataViewCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataViewCliente.MultiSelect = false;
             this.dataViewCliente.Name = "dataViewCliente";
-            this.dataViewCliente.ReadOnly = true;
             this.dataViewCliente.RowHeadersWidth = 51;
             this.dataViewCliente.Size = new System.Drawing.Size(720, 327);
             this.dataViewCliente.TabIndex = 3;
@@ -100,7 +99,6 @@
             this.txtBuscarCliente.Name = "txtBuscarCliente";
             this.txtBuscarCliente.Size = new System.Drawing.Size(512, 28);
             this.txtBuscarCliente.TabIndex = 4;
-            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
             // btnBuscarCliente
             // 
@@ -115,7 +113,6 @@
             this.btnBuscarCliente.TabIndex = 5;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // btnEditarCliente
             // 
@@ -130,6 +127,7 @@
             this.btnEditarCliente.TabIndex = 6;
             this.btnEditarCliente.Text = "Editar";
             this.btnEditarCliente.UseVisualStyleBackColor = false;
+            this.btnEditarCliente.Visible = false;
             this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
             // btnExcluirCliente
@@ -160,7 +158,7 @@
             this.btnVoltarGerenciarCliente.TabIndex = 8;
             this.btnVoltarGerenciarCliente.Text = "Voltar";
             this.btnVoltarGerenciarCliente.UseVisualStyleBackColor = false;
-            this.btnVoltarGerenciarCliente.Click += new System.EventHandler(this.button1_Click);
+            this.btnVoltarGerenciarCliente.Click += new System.EventHandler(this.btnVoltarGerenciarCliente_Click);
             // 
             // frmGerenciamentoCliente
             // 
@@ -177,8 +175,10 @@
             this.Controls.Add(this.btnCadastrarCliente);
             this.Controls.Add(this.lblGerenciarClientes);
             this.Controls.Add(this.pcbCliente);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmGerenciamentoCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioGerenciamentodeCliente";

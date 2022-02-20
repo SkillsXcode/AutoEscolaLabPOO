@@ -99,8 +99,10 @@
             this.Controls.Add(this.pcbGerenciarCliente);
             this.Controls.Add(this.btnGerenciarServicos);
             this.Controls.Add(this.pcbGerenciarServico);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmGerenciamentoGeral";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciamento Geral";

@@ -20,14 +20,12 @@ namespace AutoEscolaTrevo
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnCadastrarCliente_Click(object sender, EventArgs e)
         {
             ExibirNovoFormularioCadastrarCliente();
+            this.Close();
         }
 
         private void frmGerenciamentoCliente_Load(object sender, EventArgs e)
@@ -44,6 +42,11 @@ namespace AutoEscolaTrevo
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
+            frmCadastrarCliente formularioClienteEdicao = new frmCadastrarCliente();
+            formularioClienteEdicao.ShowDialog();
+            //formularioClienteEdicao.btnCadastrar_Click
+            //if(dataViewCliente.CurrentRow.Index != null)
+            
 
         }
 
@@ -95,6 +98,11 @@ namespace AutoEscolaTrevo
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnVoltarGerenciarCliente_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

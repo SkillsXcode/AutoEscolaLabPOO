@@ -69,13 +69,13 @@ namespace AutoEscolaTrevo
                     comandoMySQL.Parameters.AddWithValue("_dataExpedicaoIdentidade", AplicarPadraoAmericano(dtpDataExpedicao.Value).Trim());
                     comandoMySQL.Parameters.AddWithValue("_dataNascimento", AplicarPadraoAmericano(dtpDataNascimento.Value).Trim());                    
                     comandoMySQL.ExecuteNonQuery();
-                    MessageBox.Show("Cliente Gravado!");
+                    MessageBox.Show("Cliente Cadastrado com Sucesso!");
                     LimparTodosCampos();
                 }
             }
             else
             {
-                MessageBox.Show("Animal!");
+                MessageBox.Show("Existem campos vazios!");
             }
         }
 
@@ -104,7 +104,7 @@ namespace AutoEscolaTrevo
             }
             string dataAmericana = ano + "/" + mes + "/" + dia;
 
-            Console.WriteLine(dataAmericana);
+            
             return dataAmericana;
         }
 
@@ -112,6 +112,19 @@ namespace AutoEscolaTrevo
         {
             txtBoxNome.Text = txtBoxCpf.Text = txtBoxRg.Text = "";
             idCliente = 0;
+        }
+
+        private void btnVoltarCadastrarCliente_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioGerenciarClientes();
+        }
+
+        private frmGerenciamentoCliente ExibirNovoFormularioGerenciarClientes()
+        {
+            this.Close();
+            frmGerenciamentoCliente frmClientes = new frmGerenciamentoCliente();            
+            frmClientes.Show();
+            return frmClientes;
         }
     }
 }

@@ -199,6 +199,7 @@
             this.btnVoltarCadastrarCliente.TabIndex = 15;
             this.btnVoltarCadastrarCliente.Text = "Voltar";
             this.btnVoltarCadastrarCliente.UseVisualStyleBackColor = false;
+            this.btnVoltarCadastrarCliente.Click += new System.EventHandler(this.btnVoltarCadastrarCliente_Click);
             // 
             // frmCadastrarCliente
             // 
@@ -220,7 +221,10 @@
             this.Controls.Add(this.lblNomeCliente);
             this.Controls.Add(this.lblCadastrarCliente);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCadastrarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioCadastrarCliente";

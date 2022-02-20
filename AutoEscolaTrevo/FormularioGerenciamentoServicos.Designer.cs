@@ -149,6 +149,7 @@
             this.btnVoltar.TabIndex = 13;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // frmGerenciamentoServicos
             // 
@@ -165,8 +166,11 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblGerenciarServicos);
             this.Controls.Add(this.pcbServico);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmGerenciamentoServicos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioGerenciamentoServicos";
             this.Load += new System.EventHandler(this.FormularioGerenciamentoServicos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbServico)).EndInit();
