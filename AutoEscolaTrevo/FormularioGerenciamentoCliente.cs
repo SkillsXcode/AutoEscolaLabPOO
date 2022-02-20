@@ -38,6 +38,10 @@ namespace AutoEscolaTrevo
             frmCadastrarCliente.Show();
             return frmCadastrarCliente;
         }
-        
+
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

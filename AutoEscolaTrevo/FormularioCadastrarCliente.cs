@@ -13,6 +13,8 @@ namespace AutoEscolaTrevo
 {
     public partial class frmCadastrarCliente : Form
     {
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private int idCliente = 0;
         public frmCadastrarCliente()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace AutoEscolaTrevo
 
         private void frmCadastrarCliente_Load(object sender, EventArgs e)
         {
-            LimparCamposDatas();
+            LimparTodosCampos();
             
         }
         
@@ -51,34 +53,35 @@ namespace AutoEscolaTrevo
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {       
-            //Console.WriteLine(dtpDataExpedicao.Text);
-            AplicarPadraoAmericano(dtpDataExpedicao.Value);
+            
             if (VerificarTodosCampos())
             {
-                try
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
                 {
-                    MySqlConnection con = new MySqlConnection("Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin");
-                    string strSQL = " ";
-                    con.Open();
+                    conexaoMySQL.Open();
+                    MySqlCommand comandoMySQL = new MySqlCommand("AdcionarEditarCliente", conexaoMySQL);
+                    comandoMySQL.CommandType = CommandType.StoredProcedure;
+                    comandoMySQL.Parameters.AddWithValue("_id", idCliente);
+                    comandoMySQL.Parameters.AddWithValue("_sts", true);
+                    comandoMySQL.Parameters.AddWithValue("_nomeCliente", txtBoxNome.Text.Trim());
+                    comandoMySQL.Parameters.AddWithValue("_cpf", txtBoxCpf.Text.Trim());
+                    comandoMySQL.Parameters.AddWithValue("_numeroIdentidade", txtBoxRg.Text.Trim());
+                    comandoMySQL.Parameters.AddWithValue("_dataExpedicaoIdentidade", AplicarPadraoAmericano(dtpDataExpedicao.Value).Trim());
+                    comandoMySQL.Parameters.AddWithValue("_dataNascimento", AplicarPadraoAmericano(dtpDataNascimento.Value).Trim());                    
+                    comandoMySQL.ExecuteNonQuery();
+                    MessageBox.Show("Cliente Gravado!");
+                    LimparTodosCampos();
                 }
-                catch (Exception ex)
-                {
-
-                }
+            }
+            else
+            {
+                MessageBox.Show("Animal!");
             }
         }
 
         private void dtpDataNascimento_ValueChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void LimparCamposDatas()
-        {
-            /*dtpDataExpedicao.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            dtpDataExpedicao.CustomFormat = " ";
-            dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            dtpDataNascimento.CustomFormat = " ";*/
         }
 
         private bool VerificarTodosCampos()
@@ -103,6 +106,12 @@ namespace AutoEscolaTrevo
 
             Console.WriteLine(dataAmericana);
             return dataAmericana;
+        }
+
+        private void LimparTodosCampos()
+        {
+            txtBoxNome.Text = txtBoxCpf.Text = txtBoxRg.Text = "";
+            idCliente = 0;
         }
     }
 }

@@ -123,6 +123,7 @@
             this.btnEditarCliente.TabIndex = 6;
             this.btnEditarCliente.Text = "Editar";
             this.btnEditarCliente.UseVisualStyleBackColor = false;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
             // btnExcluirCliente
             // 
