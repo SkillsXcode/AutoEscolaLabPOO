@@ -40,10 +40,10 @@
             // pcbGerenciarServico
             // 
             this.pcbGerenciarServico.Image = ((System.Drawing.Image)(resources.GetObject("pcbGerenciarServico.Image")));
-            this.pcbGerenciarServico.Location = new System.Drawing.Point(332, 11);
-            this.pcbGerenciarServico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pcbGerenciarServico.Location = new System.Drawing.Point(443, 14);
+            this.pcbGerenciarServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pcbGerenciarServico.Name = "pcbGerenciarServico";
-            this.pcbGerenciarServico.Size = new System.Drawing.Size(96, 84);
+            this.pcbGerenciarServico.Size = new System.Drawing.Size(128, 103);
             this.pcbGerenciarServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbGerenciarServico.TabIndex = 0;
             this.pcbGerenciarServico.TabStop = false;
@@ -54,10 +54,10 @@
             this.btnGerenciarServicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGerenciarServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnGerenciarServicos.ForeColor = System.Drawing.Color.White;
-            this.btnGerenciarServicos.Location = new System.Drawing.Point(305, 106);
-            this.btnGerenciarServicos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGerenciarServicos.Location = new System.Drawing.Point(407, 130);
+            this.btnGerenciarServicos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGerenciarServicos.Name = "btnGerenciarServicos";
-            this.btnGerenciarServicos.Size = new System.Drawing.Size(150, 32);
+            this.btnGerenciarServicos.Size = new System.Drawing.Size(200, 39);
             this.btnGerenciarServicos.TabIndex = 1;
             this.btnGerenciarServicos.Text = "Gerenciar Serviços";
             this.btnGerenciarServicos.UseVisualStyleBackColor = false;
@@ -66,10 +66,10 @@
             // pcbGerenciarCliente
             // 
             this.pcbGerenciarCliente.Image = global::AutoEscolaTrevo.Properties.Resources.client;
-            this.pcbGerenciarCliente.Location = new System.Drawing.Point(91, 11);
-            this.pcbGerenciarCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.pcbGerenciarCliente.Location = new System.Drawing.Point(121, 14);
+            this.pcbGerenciarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pcbGerenciarCliente.Name = "pcbGerenciarCliente";
-            this.pcbGerenciarCliente.Size = new System.Drawing.Size(96, 84);
+            this.pcbGerenciarCliente.Size = new System.Drawing.Size(128, 103);
             this.pcbGerenciarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbGerenciarCliente.TabIndex = 2;
             this.pcbGerenciarCliente.TabStop = false;
@@ -80,9 +80,10 @@
             this.btnGerenciarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGerenciarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnGerenciarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnGerenciarCliente.Location = new System.Drawing.Point(68, 108);
+            this.btnGerenciarCliente.Location = new System.Drawing.Point(91, 133);
+            this.btnGerenciarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGerenciarCliente.Name = "btnGerenciarCliente";
-            this.btnGerenciarCliente.Size = new System.Drawing.Size(150, 32);
+            this.btnGerenciarCliente.Size = new System.Drawing.Size(200, 39);
             this.btnGerenciarCliente.TabIndex = 3;
             this.btnGerenciarCliente.Text = "Gerenciar Cliente";
             this.btnGerenciarCliente.UseVisualStyleBackColor = false;
@@ -90,17 +91,18 @@
             // 
             // frmGerenciamentoGeral
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(754, 586);
+            this.ClientSize = new System.Drawing.Size(1005, 721);
             this.Controls.Add(this.btnGerenciarCliente);
             this.Controls.Add(this.pcbGerenciarCliente);
             this.Controls.Add(this.btnGerenciarServicos);
             this.Controls.Add(this.pcbGerenciarServico);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmGerenciamentoGeral";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciamento Geral";
             this.Load += new System.EventHandler(this.frmGerenciamentoGeral_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarServico)).EndInit();

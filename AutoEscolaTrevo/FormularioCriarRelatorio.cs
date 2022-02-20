@@ -16,5 +16,10 @@ namespace AutoEscolaTrevo
         {
             InitializeComponent();
         }
+
+        private void FormularioCriarRelatorio_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

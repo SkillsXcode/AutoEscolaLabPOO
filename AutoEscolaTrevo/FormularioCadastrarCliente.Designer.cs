@@ -41,6 +41,7 @@
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.dtpDataExpedicao = new System.Windows.Forms.DateTimePicker();
+            this.btnVoltarCadastrarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             // 
             this.pictureBox1.Image = global::AutoEscolaTrevo.Properties.Resources.client_plus;
             this.pictureBox1.Location = new System.Drawing.Point(44, 34);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(168, 153);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -82,7 +83,7 @@
             // 
             this.txtBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxNome.Location = new System.Drawing.Point(315, 156);
-            this.txtBoxNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxNome.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxNome.Name = "txtBoxNome";
             this.txtBoxNome.Size = new System.Drawing.Size(427, 26);
             this.txtBoxNome.TabIndex = 3;
@@ -103,7 +104,7 @@
             // 
             this.txtBoxRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxRg.Location = new System.Drawing.Point(315, 302);
-            this.txtBoxRg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxRg.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxRg.Name = "txtBoxRg";
             this.txtBoxRg.Size = new System.Drawing.Size(427, 26);
             this.txtBoxRg.TabIndex = 7;
@@ -135,7 +136,8 @@
             // 
             this.txtBoxCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtBoxCpf.Location = new System.Drawing.Point(315, 447);
-            this.txtBoxCpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBoxCpf.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxCpf.MaxLength = 11;
             this.txtBoxCpf.Name = "txtBoxCpf";
             this.txtBoxCpf.Size = new System.Drawing.Size(427, 26);
             this.txtBoxCpf.TabIndex = 11;
@@ -159,7 +161,7 @@
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
             this.btnCadastrar.Location = new System.Drawing.Point(479, 507);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(119, 37);
             this.btnCadastrar.TabIndex = 12;
@@ -184,12 +186,27 @@
             this.dtpDataExpedicao.Size = new System.Drawing.Size(416, 22);
             this.dtpDataExpedicao.TabIndex = 14;
             // 
+            // btnVoltarCadastrarCliente
+            // 
+            this.btnVoltarCadastrarCliente.BackColor = System.Drawing.Color.Black;
+            this.btnVoltarCadastrarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltarCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnVoltarCadastrarCliente.ForeColor = System.Drawing.Color.White;
+            this.btnVoltarCadastrarCliente.Location = new System.Drawing.Point(872, 16);
+            this.btnVoltarCadastrarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVoltarCadastrarCliente.Name = "btnVoltarCadastrarCliente";
+            this.btnVoltarCadastrarCliente.Size = new System.Drawing.Size(123, 39);
+            this.btnVoltarCadastrarCliente.TabIndex = 15;
+            this.btnVoltarCadastrarCliente.Text = "Voltar";
+            this.btnVoltarCadastrarCliente.UseVisualStyleBackColor = false;
+            // 
             // frmCadastrarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.Controls.Add(this.btnVoltarCadastrarCliente);
             this.Controls.Add(this.dtpDataExpedicao);
             this.Controls.Add(this.dtpDataNascimento);
             this.Controls.Add(this.btnCadastrar);
@@ -203,8 +220,9 @@
             this.Controls.Add(this.lblNomeCliente);
             this.Controls.Add(this.lblCadastrarCliente);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmCadastrarCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioCadastrarCliente";
             this.Load += new System.EventHandler(this.frmCadastrarCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -228,5 +246,6 @@
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DateTimePicker dtpDataNascimento;
         private System.Windows.Forms.DateTimePicker dtpDataExpedicao;
+        private System.Windows.Forms.Button btnVoltarCadastrarCliente;
     }
 }

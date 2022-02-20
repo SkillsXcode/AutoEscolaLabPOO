@@ -36,7 +36,7 @@
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnEditarCliente = new System.Windows.Forms.Button();
             this.btnExcluirCliente = new System.Windows.Forms.Button();
-            this.btnVoltar = new System.Windows.Forms.Button();
+            this.btnVoltarGerenciarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewCliente)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +80,6 @@
             // dataViewCliente
             // 
             this.dataViewCliente.AllowUserToAddRows = false;
-            this.dataViewCliente.AllowUserToDeleteRows = false;
             this.dataViewCliente.AllowUserToResizeColumns = false;
             this.dataViewCliente.AllowUserToResizeRows = false;
             this.dataViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -101,6 +100,7 @@
             this.txtBuscarCliente.Name = "txtBuscarCliente";
             this.txtBuscarCliente.Size = new System.Drawing.Size(512, 28);
             this.txtBuscarCliente.TabIndex = 4;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
             // btnBuscarCliente
             // 
@@ -115,6 +115,7 @@
             this.btnBuscarCliente.TabIndex = 5;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // btnEditarCliente
             // 
@@ -144,21 +145,22 @@
             this.btnExcluirCliente.TabIndex = 7;
             this.btnExcluirCliente.Text = "Excluir";
             this.btnExcluirCliente.UseVisualStyleBackColor = false;
+            this.btnExcluirCliente.Click += new System.EventHandler(this.btnExcluirCliente_Click);
             // 
-            // btnVoltar
+            // btnVoltarGerenciarCliente
             // 
-            this.btnVoltar.BackColor = System.Drawing.Color.Black;
-            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnVoltar.ForeColor = System.Drawing.Color.White;
-            this.btnVoltar.Location = new System.Drawing.Point(861, 25);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(123, 39);
-            this.btnVoltar.TabIndex = 8;
-            this.btnVoltar.Text = "Voltar";
-            this.btnVoltar.UseVisualStyleBackColor = false;
-            this.btnVoltar.Click += new System.EventHandler(this.button1_Click);
+            this.btnVoltarGerenciarCliente.BackColor = System.Drawing.Color.Black;
+            this.btnVoltarGerenciarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltarGerenciarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnVoltarGerenciarCliente.ForeColor = System.Drawing.Color.White;
+            this.btnVoltarGerenciarCliente.Location = new System.Drawing.Point(861, 25);
+            this.btnVoltarGerenciarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVoltarGerenciarCliente.Name = "btnVoltarGerenciarCliente";
+            this.btnVoltarGerenciarCliente.Size = new System.Drawing.Size(123, 39);
+            this.btnVoltarGerenciarCliente.TabIndex = 8;
+            this.btnVoltarGerenciarCliente.Text = "Voltar";
+            this.btnVoltarGerenciarCliente.UseVisualStyleBackColor = false;
+            this.btnVoltarGerenciarCliente.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmGerenciamentoCliente
             // 
@@ -166,7 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1005, 721);
-            this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.btnVoltarGerenciarCliente);
             this.Controls.Add(this.btnExcluirCliente);
             this.Controls.Add(this.btnEditarCliente);
             this.Controls.Add(this.btnBuscarCliente);
@@ -178,6 +180,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGerenciamentoCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioGerenciamentodeCliente";
             this.Load += new System.EventHandler(this.frmGerenciamentoCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbCliente)).EndInit();
@@ -197,6 +200,6 @@
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Button btnEditarCliente;
         private System.Windows.Forms.Button btnExcluirCliente;
-        private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Button btnVoltarGerenciarCliente;
     }
 }

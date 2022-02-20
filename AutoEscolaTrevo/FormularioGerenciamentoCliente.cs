@@ -61,5 +61,40 @@ namespace AutoEscolaTrevo
 
             }
         }
+
+        private void btnExcluirCliente_Click(object sender, EventArgs e)
+        {
+            using(MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            {
+                conexaoMySQL.Open();
+                MySqlCommand comandoMySQL = new MySqlCommand("DeletarClienteporID", conexaoMySQL);
+                comandoMySQL.CommandType = CommandType.StoredProcedure;
+                idCliente = Convert.ToInt32(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
+                comandoMySQL.Parameters.AddWithValue("_id", idCliente);
+                comandoMySQL.ExecuteNonQuery();
+                MessageBox.Show("Cliente deletado!");
+                PreencherListagem();
+            }
+        }
+
+        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            {
+                conexaoMySQL.Open();
+                MySqlDataAdapter adaptador = new MySqlDataAdapter("ProcurarCliente", conexaoMySQL);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;  
+                adaptador.SelectCommand.Parameters.AddWithValue("_CampoBusca", txtBuscarCliente.Text);
+                DataTable dtbCliente = new DataTable();
+                adaptador.Fill(dtbCliente);
+                dataViewCliente.DataSource = dtbCliente;
+                dataViewCliente.Columns[0].Visible = false;                   
+            }
+        }
+
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
