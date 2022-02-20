@@ -104,7 +104,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conexao.cs" />
     <Compile Include="FormularioCadastrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
