@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace AutoEscolaTrevo
 {
     public partial class frmGerenciamentoCliente : Form
     {
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private int idCliente = 0;
         public frmGerenciamentoCliente()
         {
             InitializeComponent();
@@ -29,7 +32,7 @@ namespace AutoEscolaTrevo
 
         private void frmGerenciamentoCliente_Load(object sender, EventArgs e)
         {
-
+            PreencherListagem();
         }
 
         private frmCadastrarCliente ExibirNovoFormularioCadastrarCliente()
@@ -42,6 +45,21 @@ namespace AutoEscolaTrevo
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PreencherListagem()
+        {
+            using(MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            {
+                conexaoMySQL.Open();
+                MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosClientes", conexaoMySQL);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dtbCliente = new DataTable();
+                adaptador.Fill(dtbCliente);
+                dataViewCliente.DataSource = dtbCliente;
+                dataViewCliente.Columns[0].Visible = false;
+
+            }
         }
     }
 }

@@ -79,10 +79,16 @@
             // 
             // dataViewCliente
             // 
+            this.dataViewCliente.AllowUserToAddRows = false;
+            this.dataViewCliente.AllowUserToDeleteRows = false;
+            this.dataViewCliente.AllowUserToResizeColumns = false;
+            this.dataViewCliente.AllowUserToResizeRows = false;
             this.dataViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewCliente.Location = new System.Drawing.Point(40, 377);
             this.dataViewCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataViewCliente.MultiSelect = false;
             this.dataViewCliente.Name = "dataViewCliente";
+            this.dataViewCliente.ReadOnly = true;
             this.dataViewCliente.RowHeadersWidth = 51;
             this.dataViewCliente.Size = new System.Drawing.Size(720, 327);
             this.dataViewCliente.TabIndex = 3;
@@ -170,7 +176,7 @@
             this.Controls.Add(this.lblGerenciarClientes);
             this.Controls.Add(this.pcbCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGerenciamentoCliente";
             this.Text = "FormularioGerenciamentodeCliente";
             this.Load += new System.EventHandler(this.frmGerenciamentoCliente_Load);
