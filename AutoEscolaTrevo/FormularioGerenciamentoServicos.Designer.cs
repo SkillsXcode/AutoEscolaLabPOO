@@ -63,13 +63,18 @@
             // 
             // dataViewServicos
             // 
+            this.dataViewServicos.AllowUserToAddRows = false;
+            this.dataViewServicos.AllowUserToResizeColumns = false;
+            this.dataViewServicos.AllowUserToResizeRows = false;
             this.dataViewServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewServicos.Location = new System.Drawing.Point(40, 376);
+            this.dataViewServicos.MultiSelect = false;
             this.dataViewServicos.Name = "dataViewServicos";
             this.dataViewServicos.RowHeadersWidth = 51;
             this.dataViewServicos.RowTemplate.Height = 24;
             this.dataViewServicos.Size = new System.Drawing.Size(720, 328);
             this.dataViewServicos.TabIndex = 6;
+            this.dataViewServicos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewServicos_CellContentClick);
             // 
             // txtBuscarServico
             // 

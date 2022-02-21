@@ -88,5 +88,10 @@ namespace AutoEscolaTrevo
             frmCadastrarServico.Show();
             return frmCadastrarServico;
         }
+
+        private void dataViewServicos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

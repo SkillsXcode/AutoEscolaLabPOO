@@ -75,7 +75,7 @@
             // 
             this.lblNomeServico.AutoSize = true;
             this.lblNomeServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNomeServico.Location = new System.Drawing.Point(321, 194);
+            this.lblNomeServico.Location = new System.Drawing.Point(280, 194);
             this.lblNomeServico.Name = "lblNomeServico";
             this.lblNomeServico.Size = new System.Drawing.Size(158, 25);
             this.lblNomeServico.TabIndex = 3;
@@ -124,10 +124,10 @@
             // txtBoxNomeServico
             // 
             this.txtBoxNomeServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtBoxNomeServico.Location = new System.Drawing.Point(317, 223);
+            this.txtBoxNomeServico.Location = new System.Drawing.Point(285, 223);
             this.txtBoxNomeServico.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxNomeServico.Name = "txtBoxNomeServico";
-            this.txtBoxNomeServico.Size = new System.Drawing.Size(427, 30);
+            this.txtBoxNomeServico.Size = new System.Drawing.Size(473, 30);
             this.txtBoxNomeServico.TabIndex = 10;
             // 
             // numValorServico
