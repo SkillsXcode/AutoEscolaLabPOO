@@ -33,6 +33,7 @@
             this.btnGerenciarServicos = new System.Windows.Forms.Button();
             this.pcbGerenciarCliente = new System.Windows.Forms.PictureBox();
             this.btnGerenciarCliente = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarCliente)).BeginInit();
             this.SuspendLayout();
@@ -40,7 +41,7 @@
             // pcbGerenciarServico
             // 
             this.pcbGerenciarServico.Image = ((System.Drawing.Image)(resources.GetObject("pcbGerenciarServico.Image")));
-            this.pcbGerenciarServico.Location = new System.Drawing.Point(443, 14);
+            this.pcbGerenciarServico.Location = new System.Drawing.Point(446, 123);
             this.pcbGerenciarServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pcbGerenciarServico.Name = "pcbGerenciarServico";
             this.pcbGerenciarServico.Size = new System.Drawing.Size(128, 103);
@@ -54,7 +55,7 @@
             this.btnGerenciarServicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGerenciarServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnGerenciarServicos.ForeColor = System.Drawing.Color.White;
-            this.btnGerenciarServicos.Location = new System.Drawing.Point(407, 130);
+            this.btnGerenciarServicos.Location = new System.Drawing.Point(408, 232);
             this.btnGerenciarServicos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGerenciarServicos.Name = "btnGerenciarServicos";
             this.btnGerenciarServicos.Size = new System.Drawing.Size(200, 39);
@@ -66,7 +67,7 @@
             // pcbGerenciarCliente
             // 
             this.pcbGerenciarCliente.Image = global::AutoEscolaTrevo.Properties.Resources.client;
-            this.pcbGerenciarCliente.Location = new System.Drawing.Point(121, 14);
+            this.pcbGerenciarCliente.Location = new System.Drawing.Point(119, 123);
             this.pcbGerenciarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pcbGerenciarCliente.Name = "pcbGerenciarCliente";
             this.pcbGerenciarCliente.Size = new System.Drawing.Size(128, 103);
@@ -80,8 +81,8 @@
             this.btnGerenciarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGerenciarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnGerenciarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnGerenciarCliente.Location = new System.Drawing.Point(91, 133);
-            this.btnGerenciarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGerenciarCliente.Location = new System.Drawing.Point(82, 232);
+            this.btnGerenciarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnGerenciarCliente.Name = "btnGerenciarCliente";
             this.btnGerenciarCliente.Size = new System.Drawing.Size(200, 39);
             this.btnGerenciarCliente.TabIndex = 3;
@@ -89,12 +90,28 @@
             this.btnGerenciarCliente.UseVisualStyleBackColor = false;
             this.btnGerenciarCliente.Click += new System.EventHandler(this.btnGerenciarCliente_Click);
             // 
+            // btnFechar
+            // 
+            this.btnFechar.BackColor = System.Drawing.Color.Black;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnFechar.ForeColor = System.Drawing.Color.White;
+            this.btnFechar.Location = new System.Drawing.Point(870, 11);
+            this.btnFechar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(123, 39);
+            this.btnFechar.TabIndex = 9;
+            this.btnFechar.Text = "Fechar";
+            this.btnFechar.UseVisualStyleBackColor = false;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
             // frmGerenciamentoGeral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnGerenciarCliente);
             this.Controls.Add(this.pcbGerenciarCliente);
             this.Controls.Add(this.btnGerenciarServicos);
@@ -119,6 +136,7 @@
         private System.Windows.Forms.Button btnGerenciarServicos;
         private System.Windows.Forms.PictureBox pcbGerenciarCliente;
         private System.Windows.Forms.Button btnGerenciarCliente;
+        private System.Windows.Forms.Button btnFechar;
     }
 }
 

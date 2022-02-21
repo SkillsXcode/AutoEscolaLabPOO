@@ -7,44 +7,86 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace AutoEscolaTrevo
 {
     public partial class frmGerenciamentoServicos : Form
     {
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=fisica1997;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private int idServico = 0;
+
         public frmGerenciamentoServicos()
         {
             InitializeComponent();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGerenciarServicos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FormularioGerenciamentoServicos_Load(object sender, EventArgs e)
         {
-
+            PreencherListagem();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCadastrarServico_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioCadastrarServico();
+            this.Close();
+        }
+
+        private void btnBuscarServico_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            {
+                conexaoMySQL.Open();
+                MySqlDataAdapter adaptador = new MySqlDataAdapter("ProcurarServico", conexaoMySQL);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adaptador.SelectCommand.Parameters.AddWithValue("_CampoBusca", txtBuscarServico.Text);
+                DataTable dtbServico = new DataTable();
+                adaptador.Fill(dtbServico);
+                dataViewServicos.DataSource = dtbServico;
+                dataViewServicos.Columns[0].Visible = false;
+            }
+        }
+
+        private void btnExcluirServico_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            {
+                conexaoMySQL.Open();
+                MySqlCommand comandoMySQL = new MySqlCommand("DeletarServicoporID", conexaoMySQL);
+                comandoMySQL.CommandType = CommandType.StoredProcedure;
+                idServico = Convert.ToInt32(dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[0].Value);
+                comandoMySQL.Parameters.AddWithValue("_id", idServico);
+                comandoMySQL.ExecuteNonQuery();
+                MessageBox.Show("Servico deletado!");
+                PreencherListagem();
+            }
+        }
+
+        private void PreencherListagem()
+        {
+            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            {
+                conexaoMySQL.Open();
+                MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosServicos", conexaoMySQL);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dtbServico = new DataTable();
+                adaptador.Fill(dtbServico);
+                dataViewServicos.DataSource = dtbServico;
+                dataViewServicos.Columns[0].Visible = false;
+
+            }
+        }
+
+        private frmCadastrarServico ExibirNovoFormularioCadastrarServico()
+        {
+            frmCadastrarServico frmCadastrarServico = new frmCadastrarServico();
+            frmCadastrarServico.Show();
+            return frmCadastrarServico;
         }
     }
 }

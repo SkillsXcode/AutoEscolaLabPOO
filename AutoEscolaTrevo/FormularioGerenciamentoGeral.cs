@@ -45,5 +45,10 @@ namespace AutoEscolaTrevo
         {
             ExibirNovoFormularioGerenciarClientes();
         }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

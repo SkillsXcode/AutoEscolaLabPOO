@@ -13,7 +13,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmCadastrarCliente : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=fisica1997;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idCliente = 0;
         public frmCadastrarCliente()
         {
@@ -71,11 +71,12 @@ namespace AutoEscolaTrevo
                     comandoMySQL.ExecuteNonQuery();
                     MessageBox.Show("Cliente Cadastrado com Sucesso!");
                     LimparTodosCampos();
+                    ExibirNovoFormularioGerenciarClientes();
                 }
             }
             else
             {
-                MessageBox.Show("Existem campos vazios!");
+                MessageBox.Show("Preencha todos os campos, por favor!");
             }
         }
 

@@ -113,6 +113,7 @@
             this.btnBuscarCliente.TabIndex = 5;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click_1);
             // 
             // btnEditarCliente
             // 

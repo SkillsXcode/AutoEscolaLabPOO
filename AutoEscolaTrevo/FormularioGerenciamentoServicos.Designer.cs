@@ -31,15 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciamentoServicos));
             this.pcbServico = new System.Windows.Forms.PictureBox();
             this.lblGerenciarServicos = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataViewServicos = new System.Windows.Forms.DataGridView();
             this.txtBuscarServico = new System.Windows.Forms.TextBox();
             this.btnBuscarServico = new System.Windows.Forms.Button();
             this.btnCadastrarServico = new System.Windows.Forms.Button();
-            this.btnEditarServico = new System.Windows.Forms.Button();
             this.btnExcluirServico = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbServico)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewServicos)).BeginInit();
             this.SuspendLayout();
             // 
             // pcbServico
@@ -62,15 +61,15 @@
             this.lblGerenciarServicos.TabIndex = 1;
             this.lblGerenciarServicos.Text = "Gerenciar Serviços";
             // 
-            // dataGridView1
+            // dataViewServicos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 376);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(720, 328);
-            this.dataGridView1.TabIndex = 6;
+            this.dataViewServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewServicos.Location = new System.Drawing.Point(40, 376);
+            this.dataViewServicos.Name = "dataViewServicos";
+            this.dataViewServicos.RowHeadersWidth = 51;
+            this.dataViewServicos.RowTemplate.Height = 24;
+            this.dataViewServicos.Size = new System.Drawing.Size(720, 328);
+            this.dataViewServicos.TabIndex = 6;
             // 
             // txtBuscarServico
             // 
@@ -92,7 +91,7 @@
             this.btnBuscarServico.TabIndex = 8;
             this.btnBuscarServico.Text = "Buscar";
             this.btnBuscarServico.UseVisualStyleBackColor = false;
-            this.btnBuscarServico.Click += new System.EventHandler(this.btnGerenciarServicos_Click);
+            this.btnBuscarServico.Click += new System.EventHandler(this.btnBuscarServico_Click);
             // 
             // btnCadastrarServico
             // 
@@ -106,21 +105,7 @@
             this.btnCadastrarServico.TabIndex = 9;
             this.btnCadastrarServico.Text = "+    Cadastrar";
             this.btnCadastrarServico.UseVisualStyleBackColor = false;
-            this.btnCadastrarServico.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnEditarServico
-            // 
-            this.btnEditarServico.BackColor = System.Drawing.Color.Black;
-            this.btnEditarServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditarServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnEditarServico.ForeColor = System.Drawing.Color.White;
-            this.btnEditarServico.Location = new System.Drawing.Point(784, 584);
-            this.btnEditarServico.Name = "btnEditarServico";
-            this.btnEditarServico.Size = new System.Drawing.Size(200, 40);
-            this.btnEditarServico.TabIndex = 10;
-            this.btnEditarServico.Text = "Editar";
-            this.btnEditarServico.UseVisualStyleBackColor = false;
-            this.btnEditarServico.Click += new System.EventHandler(this.button2_Click);
+            this.btnCadastrarServico.Click += new System.EventHandler(this.btnCadastrarServico_Click);
             // 
             // btnExcluirServico
             // 
@@ -134,7 +119,7 @@
             this.btnExcluirServico.TabIndex = 12;
             this.btnExcluirServico.Text = "Excluir";
             this.btnExcluirServico.UseVisualStyleBackColor = false;
-            this.btnExcluirServico.Click += new System.EventHandler(this.button4_Click);
+            this.btnExcluirServico.Click += new System.EventHandler(this.btnExcluirServico_Click);
             // 
             // btnVoltar
             // 
@@ -159,11 +144,10 @@
             this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnExcluirServico);
-            this.Controls.Add(this.btnEditarServico);
             this.Controls.Add(this.btnCadastrarServico);
             this.Controls.Add(this.btnBuscarServico);
             this.Controls.Add(this.txtBuscarServico);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataViewServicos);
             this.Controls.Add(this.lblGerenciarServicos);
             this.Controls.Add(this.pcbServico);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -174,7 +158,7 @@
             this.Text = "FormularioGerenciamentoServicos";
             this.Load += new System.EventHandler(this.FormularioGerenciamentoServicos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbServico)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewServicos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,11 +168,10 @@
 
         private System.Windows.Forms.PictureBox pcbServico;
         private System.Windows.Forms.Label lblGerenciarServicos;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataViewServicos;
         private System.Windows.Forms.TextBox txtBuscarServico;
         private System.Windows.Forms.Button btnBuscarServico;
         private System.Windows.Forms.Button btnCadastrarServico;
-        private System.Windows.Forms.Button btnEditarServico;
         private System.Windows.Forms.Button btnExcluirServico;
         private System.Windows.Forms.Button btnVoltar;
     }

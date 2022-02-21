@@ -13,7 +13,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmGerenciamentoCliente : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=fisica1997;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idCliente = 0;
         public frmGerenciamentoCliente()
         {
@@ -80,29 +80,24 @@ namespace AutoEscolaTrevo
             }
         }
 
-        private void btnBuscarCliente_Click(object sender, EventArgs e)
+        private void btnVoltarGerenciarCliente_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnBuscarCliente_Click_1(object sender, EventArgs e)
         {
             using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
             {
                 conexaoMySQL.Open();
                 MySqlDataAdapter adaptador = new MySqlDataAdapter("ProcurarCliente", conexaoMySQL);
-                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;  
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
                 adaptador.SelectCommand.Parameters.AddWithValue("_CampoBusca", txtBuscarCliente.Text);
                 DataTable dtbCliente = new DataTable();
                 adaptador.Fill(dtbCliente);
                 dataViewCliente.DataSource = dtbCliente;
-                dataViewCliente.Columns[0].Visible = false;                   
+                dataViewCliente.Columns[0].Visible = false;
             }
-        }
-
-        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnVoltarGerenciarCliente_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
