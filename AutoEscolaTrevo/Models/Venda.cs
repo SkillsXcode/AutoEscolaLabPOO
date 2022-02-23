@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
 
@@ -7,6 +8,13 @@ namespace AutoEscolaTrevo.Models
 {
     public class Venda
     {
+        ItenServico iten = new ItenServico();
+        List<ItenServico> itenservico = new List<ItenServico>();
+
+        Pagamento pag = new Pagamento();
+        List<Pagamento> ListaPagamento = new List<Pagamento>();
+
+
         private double valorVenda;
         private DateTime dataVenda;
         private FormaPagamento formaPagamento;
@@ -14,10 +22,9 @@ namespace AutoEscolaTrevo.Models
         private int numeroParcelas;
         private double valorParcela;
         private double valorEntrada;
-        //private ItemServico List<Itens> itens = new List<Itens>();
         private Cliente cliente;
         private Pagamento pagamento;
-        
+        public object List { get; private set; }
 
         public Venda(double valorVenda, DateTime dataVencimento, int numeroParcelas, double valorParcela, double valorEntrada, DateTime dataVenda, FormaPagamento formaPagamento, ItemServico itens, Cliente cliente, Pagamento pagamento)
         {
@@ -27,11 +34,14 @@ namespace AutoEscolaTrevo.Models
             this.valorVenda = valorVenda;
             this.valorEntrada = valorEntrada;
             this.dataVenda = dataVenda;
-            //this.List.Add(itens);
             this.cliente = cliente;
             this.pagamento = pagamento;
             this.numeroParcelas = numeroParcelas;
+            this.itenservico = itenservico;
+            this.ListaPagamento = ListaPagamento;
         }
+
+
 
         public double getValorVenda()
         {
@@ -77,5 +87,13 @@ namespace AutoEscolaTrevo.Models
         {
             return pagamento;
         }      
+    }
+
+    internal class ItenServico
+    {
+    }
+    internal class Pagamento
+    {
+
     }
 }

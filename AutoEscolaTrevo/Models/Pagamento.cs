@@ -9,6 +9,10 @@ namespace AutoEscolaTrevo.Models
         private DateTime dataPagamento;
         private bool status;
 
+        public Pagamento()
+        {
+        }
+
         public Pagamento(DateTime dataPagamento, bool status)
         {
             this.dataPagamento = dataPagamento;

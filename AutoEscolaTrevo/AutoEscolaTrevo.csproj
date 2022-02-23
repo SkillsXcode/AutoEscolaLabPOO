@@ -94,6 +94,12 @@
     <Compile Include="FormularioRegistrarVenda.Designer.cs">
       <DependentUpon>FormularioRegistrarVenda.cs</DependentUpon>
     </Compile>
+    <Compile Include="FurmularioPagamentoDeCarnes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FurmularioPagamentoDeCarnes.Designer.cs">
+      <DependentUpon>FurmularioPagamentoDeCarnes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\FormaPagamento.cs" />
     <Compile Include="Models\ItemServico.cs" />
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioRegistrarVenda.resx">
       <DependentUpon>FormularioRegistrarVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FurmularioPagamentoDeCarnes.resx">
+      <DependentUpon>FurmularioPagamentoDeCarnes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

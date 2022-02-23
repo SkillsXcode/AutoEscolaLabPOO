@@ -1,11 +1,14 @@
 using System;
 using System.Globalization;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace AutoEscolaTrevo.Models
 {
     public class Servico
     {
+        List<Servico> servicos = new List<Servico>();
+
         private string nomeServico;
         private double valorServico; 
         private double valorMinimo;
@@ -19,6 +22,11 @@ namespace AutoEscolaTrevo.Models
             this.valorMinimo = valorMinimo;
             this.codigoServico = codigoServico;
             this.taxaServico = taxaServico;
+            this.servicos = servicos;
+        }
+
+        public Servico()
+        {
         }
 
         public string getNomeServico()

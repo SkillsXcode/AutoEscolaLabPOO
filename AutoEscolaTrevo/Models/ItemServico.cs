@@ -6,6 +6,8 @@ namespace AutoEscolaTrevo.Models
 {
     public class ItemServico
     {
+        Servico servico = new Servico();
+
         private double valorItem;
         private string nomeItem;
         private double taxaServico;
@@ -17,6 +19,7 @@ namespace AutoEscolaTrevo.Models
             this.valorItem = valorItem;
             this.taxaServico = taxaServico;
             this.quantidade = quantidade;
+            servico = servico;
         }
 
         public double getValorItem()
