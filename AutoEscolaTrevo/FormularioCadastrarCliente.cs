@@ -13,7 +13,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmCadastrarCliente : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=fisica1997;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=mysql;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idCliente = 0;
         public frmCadastrarCliente()
         {
@@ -117,12 +117,55 @@ namespace AutoEscolaTrevo
 
         private void btnVoltarCadastrarCliente_Click(object sender, EventArgs e)
         {
-            ExibirNovoFormularioGerenciarClientes();
+            
+
+            Form formBackground = new Form();
+            try
+            {
+                using (frmPopUp frmpopup = new frmPopUp())
+                {
+
+                    formBackground.StartPosition = FormStartPosition.Manual;
+                    formBackground.FormBorderStyle = FormBorderStyle.None;
+                    formBackground.Opacity = .70d;
+                    formBackground.BackColor = Color.Black;
+                    formBackground.TopMost = true;
+                    formBackground.StartPosition = FormStartPosition.CenterScreen;
+                    formBackground.Size = new Size(754,586);
+                    formBackground.ShowInTaskbar = false;
+                    formBackground.Show();
+
+
+                    frmpopup.Owner = formBackground;
+                    frmpopup.ShowDialog();
+                    formBackground.Dispose();
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                formBackground.Dispose();
+            }
+
+            
+            //ExibirNovoFormularioGerenciarClientes();
+
         }
+
+        /*private frmPopUp ExibirNovoFormularioPopUp()
+        {
+            frmPopUp frmpopup = new frmPopUp();
+            frmpopup.Show();
+            return frmpopup;
+        }*/
 
         private frmGerenciamentoCliente ExibirNovoFormularioGerenciarClientes()
         {
-            this.Close();
             frmGerenciamentoCliente frmClientes = new frmGerenciamentoCliente();            
             frmClientes.Show();
             return frmClientes;

@@ -13,7 +13,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmGerenciamentoCliente : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=fisica1997;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=mysql;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idCliente = 0;
         public frmGerenciamentoCliente()
         {
@@ -82,7 +82,14 @@ namespace AutoEscolaTrevo
 
         private void btnVoltarGerenciarCliente_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ExibirNovoFormularioGerenciamentoGeral();
+        }
+
+        private frmGerenciamentoGeral ExibirNovoFormularioGerenciamentoGeral()
+        {
+            frmGerenciamentoGeral frmGerenciamentogeral = new frmGerenciamentoGeral();
+            frmGerenciamentogeral.Show();
+            return frmGerenciamentogeral;
         }
 
         private void btnBuscarCliente_Click_1(object sender, EventArgs e)

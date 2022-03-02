@@ -166,6 +166,12 @@
     <Compile Include="Models\PagamentoCarne.cs" />
     <Compile Include="Models\Servico.cs" />
     <Compile Include="Models\Venda.cs" />
+    <Compile Include="PopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp.Designer.cs">
+      <DependentUpon>PopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormularioCadastrarCliente.resx">
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioRegistrarVenda.resx">
       <DependentUpon>FormularioRegistrarVenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp.resx">
+      <DependentUpon>PopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -52,10 +52,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(38, 35);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(28, 28);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 153);
+            this.pictureBox1.Size = new System.Drawing.Size(126, 124);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -64,10 +63,9 @@
             // 
             this.lblCadastrarCliente.AutoSize = true;
             this.lblCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblCadastrarCliente.Location = new System.Drawing.Point(309, 35);
-            this.lblCadastrarCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCadastrarCliente.Location = new System.Drawing.Point(232, 28);
             this.lblCadastrarCliente.Name = "lblCadastrarCliente";
-            this.lblCadastrarCliente.Size = new System.Drawing.Size(426, 58);
+            this.lblCadastrarCliente.Size = new System.Drawing.Size(339, 46);
             this.lblCadastrarCliente.TabIndex = 2;
             this.lblCadastrarCliente.Text = "Cadastrar Serviço";
             // 
@@ -75,9 +73,10 @@
             // 
             this.lblNomeServico.AutoSize = true;
             this.lblNomeServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNomeServico.Location = new System.Drawing.Point(280, 194);
+            this.lblNomeServico.Location = new System.Drawing.Point(210, 158);
+            this.lblNomeServico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNomeServico.Name = "lblNomeServico";
-            this.lblNomeServico.Size = new System.Drawing.Size(158, 25);
+            this.lblNomeServico.Size = new System.Drawing.Size(126, 20);
             this.lblNomeServico.TabIndex = 3;
             this.lblNomeServico.Text = "Nome do serviço";
             // 
@@ -85,9 +84,10 @@
             // 
             this.lblCodServico.AutoSize = true;
             this.lblCodServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblCodServico.Location = new System.Drawing.Point(444, 281);
+            this.lblCodServico.Location = new System.Drawing.Point(333, 228);
+            this.lblCodServico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodServico.Name = "lblCodServico";
-            this.lblCodServico.Size = new System.Drawing.Size(173, 25);
+            this.lblCodServico.Size = new System.Drawing.Size(137, 20);
             this.lblCodServico.TabIndex = 4;
             this.lblCodServico.Text = "Código do Serviço";
             // 
@@ -95,9 +95,10 @@
             // 
             this.lblValorServico.AutoSize = true;
             this.lblValorServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblValorServico.Location = new System.Drawing.Point(314, 357);
+            this.lblValorServico.Location = new System.Drawing.Point(236, 290);
+            this.lblValorServico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorServico.Name = "lblValorServico";
-            this.lblValorServico.Size = new System.Drawing.Size(58, 25);
+            this.lblValorServico.Size = new System.Drawing.Size(46, 20);
             this.lblValorServico.TabIndex = 5;
             this.lblValorServico.Text = "Valor";
             // 
@@ -105,9 +106,10 @@
             // 
             this.lblValorMinServico.AutoSize = true;
             this.lblValorMinServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblValorMinServico.Location = new System.Drawing.Point(458, 357);
+            this.lblValorMinServico.Location = new System.Drawing.Point(344, 290);
+            this.lblValorMinServico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorMinServico.Name = "lblValorMinServico";
-            this.lblValorMinServico.Size = new System.Drawing.Size(126, 25);
+            this.lblValorMinServico.Size = new System.Drawing.Size(100, 20);
             this.lblValorMinServico.TabIndex = 6;
             this.lblValorMinServico.Text = "Valor Mínimo";
             // 
@@ -115,66 +117,70 @@
             // 
             this.lblTaxaServico.AutoSize = true;
             this.lblTaxaServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblTaxaServico.Location = new System.Drawing.Point(667, 357);
+            this.lblTaxaServico.Location = new System.Drawing.Point(500, 290);
+            this.lblTaxaServico.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTaxaServico.Name = "lblTaxaServico";
-            this.lblTaxaServico.Size = new System.Drawing.Size(57, 25);
+            this.lblTaxaServico.Size = new System.Drawing.Size(43, 20);
             this.lblTaxaServico.TabIndex = 7;
             this.lblTaxaServico.Text = "Taxa";
             // 
             // txtBoxNomeServico
             // 
             this.txtBoxNomeServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtBoxNomeServico.Location = new System.Drawing.Point(285, 223);
-            this.txtBoxNomeServico.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxNomeServico.Location = new System.Drawing.Point(214, 181);
             this.txtBoxNomeServico.Name = "txtBoxNomeServico";
-            this.txtBoxNomeServico.Size = new System.Drawing.Size(473, 30);
+            this.txtBoxNomeServico.Size = new System.Drawing.Size(356, 26);
             this.txtBoxNomeServico.TabIndex = 10;
             // 
             // numValorServico
             // 
             this.numValorServico.DecimalPlaces = 2;
-            this.numValorServico.Location = new System.Drawing.Point(285, 385);
+            this.numValorServico.Location = new System.Drawing.Point(214, 313);
+            this.numValorServico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numValorServico.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.numValorServico.Name = "numValorServico";
-            this.numValorServico.Size = new System.Drawing.Size(121, 22);
+            this.numValorServico.Size = new System.Drawing.Size(91, 20);
             this.numValorServico.TabIndex = 16;
             // 
             // mskTxtCodigoServico
             // 
-            this.mskTxtCodigoServico.Location = new System.Drawing.Point(475, 309);
+            this.mskTxtCodigoServico.Location = new System.Drawing.Point(356, 251);
+            this.mskTxtCodigoServico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.mskTxtCodigoServico.Mask = "0000";
             this.mskTxtCodigoServico.Name = "mskTxtCodigoServico";
-            this.mskTxtCodigoServico.Size = new System.Drawing.Size(100, 22);
+            this.mskTxtCodigoServico.Size = new System.Drawing.Size(76, 20);
             this.mskTxtCodigoServico.TabIndex = 17;
             // 
             // numValorMinServico
             // 
             this.numValorMinServico.DecimalPlaces = 2;
-            this.numValorMinServico.Location = new System.Drawing.Point(463, 385);
+            this.numValorMinServico.Location = new System.Drawing.Point(347, 313);
+            this.numValorMinServico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numValorMinServico.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
             this.numValorMinServico.Name = "numValorMinServico";
-            this.numValorMinServico.Size = new System.Drawing.Size(121, 22);
+            this.numValorMinServico.Size = new System.Drawing.Size(91, 20);
             this.numValorMinServico.TabIndex = 18;
             // 
             // numTaxaServico
             // 
             this.numTaxaServico.DecimalPlaces = 2;
-            this.numTaxaServico.Location = new System.Drawing.Point(637, 385);
+            this.numTaxaServico.Location = new System.Drawing.Point(478, 313);
+            this.numTaxaServico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numTaxaServico.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numTaxaServico.Name = "numTaxaServico";
-            this.numTaxaServico.Size = new System.Drawing.Size(121, 22);
+            this.numTaxaServico.Size = new System.Drawing.Size(91, 20);
             this.numTaxaServico.TabIndex = 19;
             // 
             // btnCadastrarServico
@@ -183,10 +189,9 @@
             this.btnCadastrarServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrarServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCadastrarServico.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrarServico.Location = new System.Drawing.Point(463, 483);
-            this.btnCadastrarServico.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastrarServico.Location = new System.Drawing.Point(347, 392);
             this.btnCadastrarServico.Name = "btnCadastrarServico";
-            this.btnCadastrarServico.Size = new System.Drawing.Size(119, 37);
+            this.btnCadastrarServico.Size = new System.Drawing.Size(89, 30);
             this.btnCadastrarServico.TabIndex = 20;
             this.btnCadastrarServico.Text = "Cadastrar";
             this.btnCadastrarServico.UseVisualStyleBackColor = false;
@@ -198,10 +203,10 @@
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnVoltar.ForeColor = System.Drawing.Color.White;
-            this.btnVoltar.Location = new System.Drawing.Point(861, 35);
-            this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVoltar.Location = new System.Drawing.Point(652, 9);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(122, 39);
+            this.btnVoltar.Size = new System.Drawing.Size(92, 32);
             this.btnVoltar.TabIndex = 21;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = false;
@@ -209,10 +214,10 @@
             // 
             // frmCadastrarServico
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.ClientSize = new System.Drawing.Size(754, 586);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnCadastrarServico);
             this.Controls.Add(this.numTaxaServico);
@@ -228,6 +233,7 @@
             this.Controls.Add(this.lblCadastrarCliente);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmCadastrarServico";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioCadastrarServico";

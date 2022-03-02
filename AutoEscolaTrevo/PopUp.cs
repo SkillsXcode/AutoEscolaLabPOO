@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AutoEscolaTrevo
 {
-    public partial class PopUp : Form
+    public partial class frmPopUp : Form
     {
-        public PopUp()
+        public frmPopUp()
         {
             InitializeComponent();
         }
@@ -20,6 +20,37 @@ namespace AutoEscolaTrevo
         private void lblTextoConfirmacao_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnYes_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioGerenciarClientes();
+        }
+
+        private void btnNo_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioCadastrarCliente();
+        }
+
+        private void frmPopUp_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private frmGerenciamentoCliente ExibirNovoFormularioGerenciarClientes()
+        {
+            this.Close();
+            frmGerenciamentoCliente frmClientes = new frmGerenciamentoCliente();
+            frmClientes.Show();
+            return frmClientes;
+        }
+
+        private frmCadastrarCliente ExibirNovoFormularioCadastrarCliente()
+        {
+            this.Close();
+            frmCadastrarCliente frmcadastrarcliente = new frmCadastrarCliente();
+            frmcadastrarcliente.Show();
+            return frmcadastrarcliente;
         }
     }
 }

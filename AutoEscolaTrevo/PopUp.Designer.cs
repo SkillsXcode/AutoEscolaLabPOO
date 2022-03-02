@@ -1,6 +1,6 @@
 ﻿namespace AutoEscolaTrevo
 {
-    partial class PopUp
+    partial class frmPopUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PopUp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPopUp));
             this.pcbAutoEscolaTrevo = new System.Windows.Forms.PictureBox();
             this.lblTextoConfirmacao = new System.Windows.Forms.Label();
             this.btnYes = new System.Windows.Forms.Button();
@@ -52,9 +52,9 @@
             this.lblTextoConfirmacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTextoConfirmacao.Location = new System.Drawing.Point(45, 95);
             this.lblTextoConfirmacao.Name = "lblTextoConfirmacao";
-            this.lblTextoConfirmacao.Size = new System.Drawing.Size(397, 20);
+            this.lblTextoConfirmacao.Size = new System.Drawing.Size(389, 20);
             this.lblTextoConfirmacao.TabIndex = 1;
-            this.lblTextoConfirmacao.Text = "Tem certeza que gostaria de deixar a tela de cadastro?";
+            this.lblTextoConfirmacao.Text = "Tem certeza que gostaria de sair da tela de cadastro?";
             this.lblTextoConfirmacao.Click += new System.EventHandler(this.lblTextoConfirmacao_Click);
             // 
             // btnYes
@@ -68,6 +68,7 @@
             this.btnYes.TabIndex = 2;
             this.btnYes.Text = "Sim";
             this.btnYes.UseVisualStyleBackColor = false;
+            this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
             // btnNo
             // 
@@ -80,8 +81,9 @@
             this.btnNo.TabIndex = 3;
             this.btnNo.Text = "Não";
             this.btnNo.UseVisualStyleBackColor = false;
+            this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
-            // PopUp
+            // frmPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -94,9 +96,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "PopUp";
+            this.Name = "frmPopUp";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.frmPopUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbAutoEscolaTrevo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
