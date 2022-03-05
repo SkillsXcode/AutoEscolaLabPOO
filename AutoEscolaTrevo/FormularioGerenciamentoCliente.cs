@@ -71,7 +71,7 @@ namespace AutoEscolaTrevo
             {
                 conexaoMySQL.Open();
                 MySqlCommand comandoMySQL = new MySqlCommand("DeletarClienteporID", conexaoMySQL);
-                comandoMySQL.CommandType = CommandType.StoredProcedure;
+                comandoMySQL.CommandType = CommandType.StoredProcedure;                
                 idCliente = Convert.ToInt32(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
                 comandoMySQL.Parameters.AddWithValue("_id", idCliente);
                 comandoMySQL.ExecuteNonQuery();
@@ -105,6 +105,11 @@ namespace AutoEscolaTrevo
                 dataViewCliente.DataSource = dtbCliente;
                 dataViewCliente.Columns[0].Visible = false;
             }
+        }
+
+        private void txtBuscarCliente_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

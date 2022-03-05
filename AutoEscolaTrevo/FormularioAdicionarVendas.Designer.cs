@@ -37,7 +37,7 @@
             this.lblTipoPagamento = new System.Windows.Forms.Label();
             this.lblDataVenda = new System.Windows.Forms.Label();
             this.dtpDataVenda = new System.Windows.Forms.DateTimePicker();
-            this.txtNomeCpfCliente = new System.Windows.Forms.TextBox();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.cmbxTipoPagamento = new System.Windows.Forms.ComboBox();
             this.btnVoltar = new System.Windows.Forms.Button();
@@ -50,11 +50,13 @@
             this.btnAdicionarServico = new System.Windows.Forms.Button();
             this.btnRemoverServico = new System.Windows.Forms.Button();
             this.btnRegistrarVenda = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataViewCliente = new System.Windows.Forms.DataGridView();
+            this.lblNomeCliente = new System.Windows.Forms.Label();
+            this.lblMscNomeCliente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrinhoRegistrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicosAdicionados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // pcbCarrinhoRegistrar
@@ -91,7 +93,7 @@
             // txtTaxaVenda
             // 
             this.txtTaxaVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtTaxaVenda.Location = new System.Drawing.Point(32, 592);
+            this.txtTaxaVenda.Location = new System.Drawing.Point(79, 592);
             this.txtTaxaVenda.Name = "txtTaxaVenda";
             this.txtTaxaVenda.Size = new System.Drawing.Size(240, 26);
             this.txtTaxaVenda.TabIndex = 17;
@@ -100,7 +102,7 @@
             // 
             this.lblTaxaServico.AutoSize = true;
             this.lblTaxaServico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblTaxaServico.Location = new System.Drawing.Point(32, 560);
+            this.lblTaxaServico.Location = new System.Drawing.Point(79, 560);
             this.lblTaxaServico.Name = "lblTaxaServico";
             this.lblTaxaServico.Size = new System.Drawing.Size(228, 25);
             this.lblTaxaServico.TabIndex = 16;
@@ -110,7 +112,7 @@
             // 
             this.lblTipoPagamento.AutoSize = true;
             this.lblTipoPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblTipoPagamento.Location = new System.Drawing.Point(368, 552);
+            this.lblTipoPagamento.Location = new System.Drawing.Point(415, 552);
             this.lblTipoPagamento.Name = "lblTipoPagamento";
             this.lblTipoPagamento.Size = new System.Drawing.Size(187, 25);
             this.lblTipoPagamento.TabIndex = 18;
@@ -120,7 +122,7 @@
             // 
             this.lblDataVenda.AutoSize = true;
             this.lblDataVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblDataVenda.Location = new System.Drawing.Point(696, 552);
+            this.lblDataVenda.Location = new System.Drawing.Point(743, 552);
             this.lblDataVenda.Name = "lblDataVenda";
             this.lblDataVenda.Size = new System.Drawing.Size(149, 25);
             this.lblDataVenda.TabIndex = 20;
@@ -131,18 +133,18 @@
             this.dtpDataVenda.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.dtpDataVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpDataVenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataVenda.Location = new System.Drawing.Point(696, 592);
+            this.dtpDataVenda.Location = new System.Drawing.Point(743, 592);
             this.dtpDataVenda.Name = "dtpDataVenda";
             this.dtpDataVenda.Size = new System.Drawing.Size(240, 26);
             this.dtpDataVenda.TabIndex = 21;
             // 
-            // txtNomeCpfCliente
+            // txtBuscarCliente
             // 
-            this.txtNomeCpfCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtNomeCpfCliente.Location = new System.Drawing.Point(640, 168);
-            this.txtNomeCpfCliente.Name = "txtNomeCpfCliente";
-            this.txtNomeCpfCliente.Size = new System.Drawing.Size(240, 26);
-            this.txtNomeCpfCliente.TabIndex = 17;
+            this.txtBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBuscarCliente.Location = new System.Drawing.Point(640, 168);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(240, 26);
+            this.txtBuscarCliente.TabIndex = 17;
             // 
             // btnBuscarCliente
             // 
@@ -166,7 +168,7 @@
             this.cmbxTipoPagamento.FormattingEnabled = true;
             this.cmbxTipoPagamento.Items.AddRange(new object[] {
             "A VISTA"});
-            this.cmbxTipoPagamento.Location = new System.Drawing.Point(368, 592);
+            this.cmbxTipoPagamento.Location = new System.Drawing.Point(415, 592);
             this.cmbxTipoPagamento.Name = "cmbxTipoPagamento";
             this.cmbxTipoPagamento.Size = new System.Drawing.Size(240, 28);
             this.cmbxTipoPagamento.TabIndex = 23;
@@ -177,7 +179,7 @@
             this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnVoltar.ForeColor = System.Drawing.Color.White;
-            this.btnVoltar.Location = new System.Drawing.Point(1072, 8);
+            this.btnVoltar.Location = new System.Drawing.Point(936, 8);
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(123, 39);
@@ -188,13 +190,16 @@
             // 
             // dataViewServicos
             // 
+            this.dataViewServicos.AllowUserToAddRows = false;
             this.dataViewServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewServicos.Location = new System.Drawing.Point(16, 208);
             this.dataViewServicos.Name = "dataViewServicos";
             this.dataViewServicos.RowHeadersWidth = 51;
+            this.dataViewServicos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataViewServicos.RowTemplate.Height = 24;
             this.dataViewServicos.Size = new System.Drawing.Size(240, 240);
             this.dataViewServicos.TabIndex = 25;
+            this.dataViewServicos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewServicos_CellContentClick);
             // 
             // dataViewServicosAdicionados
             // 
@@ -231,7 +236,7 @@
             // 
             this.lblListaServicos.AutoSize = true;
             this.lblListaServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblListaServicos.Location = new System.Drawing.Point(16, 169);
+            this.lblListaServicos.Location = new System.Drawing.Point(56, 168);
             this.lblListaServicos.Name = "lblListaServicos";
             this.lblListaServicos.Size = new System.Drawing.Size(161, 25);
             this.lblListaServicos.TabIndex = 27;
@@ -241,7 +246,7 @@
             // 
             this.lblServicosAdicionados.AutoSize = true;
             this.lblServicosAdicionados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblServicosAdicionados.Location = new System.Drawing.Point(312, 169);
+            this.lblServicosAdicionados.Location = new System.Drawing.Point(312, 168);
             this.lblServicosAdicionados.Name = "lblServicosAdicionados";
             this.lblServicosAdicionados.Size = new System.Drawing.Size(201, 25);
             this.lblServicosAdicionados.TabIndex = 27;
@@ -261,6 +266,7 @@
             this.btnAdicionarServico.TabIndex = 24;
             this.btnAdicionarServico.Text = "Adicionar";
             this.btnAdicionarServico.UseVisualStyleBackColor = false;
+            this.btnAdicionarServico.Click += new System.EventHandler(this.btnAdicionarServico_Click);
             // 
             // btnRemoverServico
             // 
@@ -282,7 +288,7 @@
             this.btnRegistrarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnRegistrarVenda.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarVenda.Location = new System.Drawing.Point(513, 672);
+            this.btnRegistrarVenda.Location = new System.Drawing.Point(442, 672);
             this.btnRegistrarVenda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegistrarVenda.Name = "btnRegistrarVenda";
             this.btnRegistrarVenda.Size = new System.Drawing.Size(179, 39);
@@ -290,28 +296,54 @@
             this.btnRegistrarVenda.Text = "Registrar Venda";
             this.btnRegistrarVenda.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // dataViewCliente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(560, 208);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(480, 240);
-            this.dataGridView1.TabIndex = 25;
+            this.dataViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewCliente.Location = new System.Drawing.Point(560, 208);
+            this.dataViewCliente.Name = "dataViewCliente";
+            this.dataViewCliente.RowHeadersWidth = 51;
+            this.dataViewCliente.RowTemplate.Height = 24;
+            this.dataViewCliente.Size = new System.Drawing.Size(480, 240);
+            this.dataViewCliente.TabIndex = 25;
+            this.dataViewCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewCliente_CellContentClick);
+            // 
+            // lblNomeCliente
+            // 
+            this.lblNomeCliente.AutoSize = true;
+            this.lblNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNomeCliente.ForeColor = System.Drawing.Color.Red;
+            this.lblNomeCliente.Location = new System.Drawing.Point(520, 96);
+            this.lblNomeCliente.Name = "lblNomeCliente";
+            this.lblNomeCliente.Size = new System.Drawing.Size(114, 25);
+            this.lblNomeCliente.TabIndex = 28;
+            this.lblNomeCliente.Text = "Não apagar";
+            this.lblNomeCliente.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblMscNomeCliente
+            // 
+            this.lblMscNomeCliente.AutoSize = true;
+            this.lblMscNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblMscNomeCliente.Location = new System.Drawing.Point(352, 96);
+            this.lblMscNomeCliente.Name = "lblMscNomeCliente";
+            this.lblMscNomeCliente.Size = new System.Drawing.Size(163, 25);
+            this.lblMscNomeCliente.TabIndex = 29;
+            this.lblMscNomeCliente.Text = "Nome do Cliente:";
+            this.lblMscNomeCliente.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblMscNomeCliente_MouseDown);
             // 
             // frmAdicionarVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1205, 721);
+            this.ClientSize = new System.Drawing.Size(1063, 721);
+            this.Controls.Add(this.lblNomeCliente);
+            this.Controls.Add(this.lblMscNomeCliente);
             this.Controls.Add(this.lblServicosAdicionados);
             this.Controls.Add(this.lblListaServicos);
             this.Controls.Add(this.lblValorTotal);
             this.Controls.Add(this.lblMascValorTotal);
             this.Controls.Add(this.dataViewServicosAdicionados);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataViewCliente);
             this.Controls.Add(this.dataViewServicos);
             this.Controls.Add(this.btnAdicionarServico);
             this.Controls.Add(this.btnRemoverServico);
@@ -322,7 +354,7 @@
             this.Controls.Add(this.dtpDataVenda);
             this.Controls.Add(this.lblDataVenda);
             this.Controls.Add(this.lblTipoPagamento);
-            this.Controls.Add(this.txtNomeCpfCliente);
+            this.Controls.Add(this.txtBuscarCliente);
             this.Controls.Add(this.txtTaxaVenda);
             this.Controls.Add(this.lblTaxaServico);
             this.Controls.Add(this.lblClienteRegistrar);
@@ -335,10 +367,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormularioAdicionarVendas";
             this.Load += new System.EventHandler(this.frmAdicionarVendas_Load);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.frmAdicionarVendas_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrinhoRegistrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicosAdicionados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,7 +387,7 @@
         private System.Windows.Forms.Label lblTipoPagamento;
         private System.Windows.Forms.Label lblDataVenda;
         private System.Windows.Forms.DateTimePicker dtpDataVenda;
-        private System.Windows.Forms.TextBox txtNomeCpfCliente;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.ComboBox cmbxTipoPagamento;
         private System.Windows.Forms.Button btnVoltar;
@@ -367,6 +400,8 @@
         private System.Windows.Forms.Button btnAdicionarServico;
         private System.Windows.Forms.Button btnRemoverServico;
         private System.Windows.Forms.Button btnRegistrarVenda;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataViewCliente;
+        private System.Windows.Forms.Label lblNomeCliente;
+        private System.Windows.Forms.Label lblMscNomeCliente;
     }
 }

@@ -99,6 +99,7 @@
             this.txtBuscarCliente.Name = "txtBuscarCliente";
             this.txtBuscarCliente.Size = new System.Drawing.Size(512, 28);
             this.txtBuscarCliente.TabIndex = 4;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.txtBuscarCliente_TextChanged);
             // 
             // btnBuscarCliente
             // 
@@ -177,7 +178,7 @@
             this.Controls.Add(this.lblGerenciarClientes);
             this.Controls.Add(this.pcbCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmGerenciamentoCliente";
