@@ -41,5 +41,10 @@ namespace AutoEscolaTrevo
             }
             
         }
+
+        private void lblServicosAdicionados_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

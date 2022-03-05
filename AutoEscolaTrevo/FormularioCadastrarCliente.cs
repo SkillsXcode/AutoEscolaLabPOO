@@ -13,7 +13,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmCadastrarCliente : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=mysql;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idCliente = 0;
         public frmCadastrarCliente()
         {
@@ -151,7 +151,7 @@ namespace AutoEscolaTrevo
             {
                 formBackground.Dispose();
             }
-
+            
             
             //ExibirNovoFormularioGerenciarClientes();
 
