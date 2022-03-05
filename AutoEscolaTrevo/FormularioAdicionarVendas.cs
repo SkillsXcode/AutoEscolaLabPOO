@@ -14,7 +14,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmAdicionarVendas : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=mysql;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idServicoSelecionado = 0;
         private int contLinServAdc = 0; //Contador Linha Servico Adicionado
 
@@ -54,7 +54,7 @@ namespace AutoEscolaTrevo
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            var confirmacao = MessageBox.Show("Tem certeza que deseja SAIR da área de Registrar Vendas?", "Tem certeza?", MessageBoxButtons.YesNo);
+            var confirmacao = MessageBox.Show("Tem certeza que deseja SAIR da área de Registrar Vendas?", "Tem certeza?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if(confirmacao == DialogResult.Yes)
             {
                 this.Close();

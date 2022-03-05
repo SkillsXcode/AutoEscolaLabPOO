@@ -13,7 +13,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmCadastrarCliente : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=mysql;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idCliente = 0;
         public frmCadastrarCliente()
         {
@@ -117,8 +117,13 @@ namespace AutoEscolaTrevo
 
         private void btnVoltarCadastrarCliente_Click(object sender, EventArgs e)
         {
-            
+            var msg = MessageBox.Show("Tem certeza que deseja SAIR da área de Cadastro de Clientes?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (msg == DialogResult.Yes)
+            {
+                this.Close();
+            }
 
+            /*
             Form formBackground = new Form();
             try
             {
@@ -150,19 +155,14 @@ namespace AutoEscolaTrevo
             finally
             {
                 formBackground.Dispose();
-            }
-            
-            
-            //ExibirNovoFormularioGerenciarClientes();
+            }*/
+
+
+
 
         }
 
-        /*private frmPopUp ExibirNovoFormularioPopUp()
-        {
-            frmPopUp frmpopup = new frmPopUp();
-            frmpopup.Show();
-            return frmpopup;
-        }*/
+      
 
         private frmGerenciamentoCliente ExibirNovoFormularioGerenciarClientes()
         {

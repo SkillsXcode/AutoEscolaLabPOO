@@ -44,10 +44,10 @@
             // pcbGerenciarServico
             // 
             this.pcbGerenciarServico.Image = ((System.Drawing.Image)(resources.GetObject("pcbGerenciarServico.Image")));
-            this.pcbGerenciarServico.Location = new System.Drawing.Point(416, 120);
-            this.pcbGerenciarServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pcbGerenciarServico.Location = new System.Drawing.Point(312, 98);
+            this.pcbGerenciarServico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pcbGerenciarServico.Name = "pcbGerenciarServico";
-            this.pcbGerenciarServico.Size = new System.Drawing.Size(128, 103);
+            this.pcbGerenciarServico.Size = new System.Drawing.Size(96, 84);
             this.pcbGerenciarServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbGerenciarServico.TabIndex = 0;
             this.pcbGerenciarServico.TabStop = false;
@@ -58,10 +58,10 @@
             this.btnGerenciarServicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGerenciarServicos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnGerenciarServicos.ForeColor = System.Drawing.Color.White;
-            this.btnGerenciarServicos.Location = new System.Drawing.Point(379, 228);
-            this.btnGerenciarServicos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGerenciarServicos.Location = new System.Drawing.Point(284, 185);
+            this.btnGerenciarServicos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGerenciarServicos.Name = "btnGerenciarServicos";
-            this.btnGerenciarServicos.Size = new System.Drawing.Size(200, 39);
+            this.btnGerenciarServicos.Size = new System.Drawing.Size(150, 32);
             this.btnGerenciarServicos.TabIndex = 1;
             this.btnGerenciarServicos.Text = "Gerenciar Serviços";
             this.btnGerenciarServicos.UseVisualStyleBackColor = false;
@@ -70,10 +70,10 @@
             // pcbGerenciarCliente
             // 
             this.pcbGerenciarCliente.Image = global::AutoEscolaTrevo.Properties.Resources.client;
-            this.pcbGerenciarCliente.Location = new System.Drawing.Point(90, 120);
-            this.pcbGerenciarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pcbGerenciarCliente.Location = new System.Drawing.Point(68, 98);
+            this.pcbGerenciarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pcbGerenciarCliente.Name = "pcbGerenciarCliente";
-            this.pcbGerenciarCliente.Size = new System.Drawing.Size(128, 103);
+            this.pcbGerenciarCliente.Size = new System.Drawing.Size(96, 84);
             this.pcbGerenciarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pcbGerenciarCliente.TabIndex = 2;
             this.pcbGerenciarCliente.TabStop = false;
@@ -84,10 +84,10 @@
             this.btnGerenciarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGerenciarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnGerenciarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnGerenciarCliente.Location = new System.Drawing.Point(54, 228);
-            this.btnGerenciarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGerenciarCliente.Location = new System.Drawing.Point(40, 185);
+            this.btnGerenciarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGerenciarCliente.Name = "btnGerenciarCliente";
-            this.btnGerenciarCliente.Size = new System.Drawing.Size(200, 39);
+            this.btnGerenciarCliente.Size = new System.Drawing.Size(150, 32);
             this.btnGerenciarCliente.TabIndex = 1;
             this.btnGerenciarCliente.Text = "Gerenciar Cliente";
             this.btnGerenciarCliente.UseVisualStyleBackColor = false;
@@ -99,10 +99,10 @@
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnFechar.ForeColor = System.Drawing.Color.White;
-            this.btnFechar.Location = new System.Drawing.Point(869, 11);
-            this.btnFechar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnFechar.Location = new System.Drawing.Point(652, 9);
+            this.btnFechar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(123, 39);
+            this.btnFechar.Size = new System.Drawing.Size(92, 32);
             this.btnFechar.TabIndex = 9;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = false;
@@ -111,9 +111,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(736, 104);
+            this.pictureBox1.Location = new System.Drawing.Point(552, 84);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 103);
+            this.pictureBox1.Size = new System.Drawing.Size(96, 84);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -124,10 +125,10 @@
             this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnVendas.ForeColor = System.Drawing.Color.White;
-            this.btnVendas.Location = new System.Drawing.Point(704, 224);
-            this.btnVendas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVendas.Location = new System.Drawing.Point(528, 182);
+            this.btnVendas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(200, 39);
+            this.btnVendas.Size = new System.Drawing.Size(150, 32);
             this.btnVendas.TabIndex = 11;
             this.btnVendas.Text = "Vendas";
             this.btnVendas.UseVisualStyleBackColor = false;
@@ -135,10 +136,10 @@
             // 
             // frmGerenciamentoGeral
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.ClientSize = new System.Drawing.Size(754, 586);
             this.Controls.Add(this.btnVendas);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnFechar);
@@ -147,7 +148,7 @@
             this.Controls.Add(this.btnGerenciarServicos);
             this.Controls.Add(this.pcbGerenciarServico);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmGerenciamentoGeral";

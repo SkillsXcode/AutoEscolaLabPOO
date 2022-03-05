@@ -13,7 +13,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmGerenciamentoServicos : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=mysql;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idServico = 0;
 
         public frmGerenciamentoServicos()
