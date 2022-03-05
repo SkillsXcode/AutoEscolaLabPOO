@@ -16,5 +16,10 @@ namespace AutoEscolaTrevo
         {
             InitializeComponent();
         }
+
+        private void frmPagamentoPendente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

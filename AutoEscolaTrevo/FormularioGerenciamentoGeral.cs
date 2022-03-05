@@ -41,6 +41,13 @@ namespace AutoEscolaTrevo
             return frmClientes;
         }
 
+        private frmListarVendas ExibirNovoFormularioListarVendas()
+        {
+            frmListarVendas frmVendas = new frmListarVendas();
+            frmVendas.Show();
+            return frmVendas;
+        }
+
         private void btnGerenciarCliente_Click(object sender, EventArgs e)
         {
             ExibirNovoFormularioGerenciarClientes();
@@ -49,6 +56,11 @@ namespace AutoEscolaTrevo
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioListarVendas();
         }
     }
 }

@@ -104,6 +104,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormularioAdicionarVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioAdicionarVendas.Designer.cs">
+      <DependentUpon>FormularioAdicionarVendas.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioCadastrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,11 +158,11 @@
     <Compile Include="FormularioPagamentoPendente.Designer.cs">
       <DependentUpon>FormularioPagamentoPendente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormularioRegistrarVenda.cs">
+    <Compile Include="FormularioListarVendas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioRegistrarVenda.Designer.cs">
-      <DependentUpon>FormularioRegistrarVenda.cs</DependentUpon>
+    <Compile Include="FormularioListarVendas.Designer.cs">
+      <DependentUpon>FormularioListarVendas.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\FormaPagamento.cs" />
@@ -174,6 +180,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormularioAdicionarVendas.resx">
+      <DependentUpon>FormularioAdicionarVendas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioCadastrarCliente.resx">
       <DependentUpon>FormularioCadastrarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,8 +207,8 @@
     <EmbeddedResource Include="FormularioPagamentoPendente.resx">
       <DependentUpon>FormularioPagamentoPendente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioRegistrarVenda.resx">
-      <DependentUpon>FormularioRegistrarVenda.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioListarVendas.resx">
+      <DependentUpon>FormularioListarVendas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PopUp.resx">
       <DependentUpon>PopUp.cs</DependentUpon>

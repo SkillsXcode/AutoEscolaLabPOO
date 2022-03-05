@@ -16,5 +16,10 @@ namespace AutoEscolaTrevo
         {
             InitializeComponent();
         }
+
+        private void FormularioInserirPagamento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
