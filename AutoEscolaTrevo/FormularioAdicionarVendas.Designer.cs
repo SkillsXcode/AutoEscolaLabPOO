@@ -191,8 +191,11 @@
             // dataViewServicos
             // 
             this.dataViewServicos.AllowUserToAddRows = false;
+            this.dataViewServicos.AllowUserToResizeColumns = false;
+            this.dataViewServicos.AllowUserToResizeRows = false;
             this.dataViewServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewServicos.Location = new System.Drawing.Point(16, 208);
+            this.dataViewServicos.MultiSelect = false;
             this.dataViewServicos.Name = "dataViewServicos";
             this.dataViewServicos.RowHeadersWidth = 51;
             this.dataViewServicos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -203,6 +206,8 @@
             // 
             // dataViewServicosAdicionados
             // 
+            this.dataViewServicosAdicionados.AllowUserToResizeColumns = false;
+            this.dataViewServicosAdicionados.AllowUserToResizeRows = false;
             this.dataViewServicosAdicionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewServicosAdicionados.Location = new System.Drawing.Point(288, 208);
             this.dataViewServicosAdicionados.Name = "dataViewServicosAdicionados";
@@ -281,6 +286,7 @@
             this.btnRemoverServico.TabIndex = 24;
             this.btnRemoverServico.Text = "Remover";
             this.btnRemoverServico.UseVisualStyleBackColor = false;
+            this.btnRemoverServico.Click += new System.EventHandler(this.btnRemoverServico_Click);
             // 
             // btnRegistrarVenda
             // 
@@ -298,6 +304,8 @@
             // 
             // dataViewCliente
             // 
+            this.dataViewCliente.AllowUserToResizeColumns = false;
+            this.dataViewCliente.AllowUserToResizeRows = false;
             this.dataViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewCliente.Location = new System.Drawing.Point(560, 208);
             this.dataViewCliente.Name = "dataViewCliente";

@@ -47,7 +47,7 @@ namespace AutoEscolaTrevo
         {
             PreencherListagemServicos();
             PreencherListagemClientes();
-            
+            ClonarEstiloTabelaServico();
 
             //lembrar de fazer uma função para gerar data de vencimento :D
         }
@@ -97,23 +97,22 @@ namespace AutoEscolaTrevo
 
         private void btnAdicionarServico_Click(object sender, EventArgs e)
         {
-            /*dataViewServicosAdicionados.Rows.Clear();
-            dataViewServicosAdicionados.Columns.Add("id", "nomeServico", "valorServico", "valorMinino", "taxaServico", "codigoServico");
-            for (int i = 0; i< dataViewServicos.Rows.Count; i++)
-            {
-                if (Convert.ToBoolean(dataViewServicos.Rows[i].Cells[0].Value) == true)
-                {
-                    int col = dataViewServicosAdicionados.Rows.Add();
-                    dataViewServicosAdicionados.Rows[col].Cells[0].Value = dataViewCliente.Rows[col].Cells[1].Value.ToString();
-                    dataViewServicosAdicionados.Rows[col].Cells[1].Value = dataViewCliente.Rows[col].Cells[2].Value.ToString();
-                    dataViewServicosAdicionados.Rows[col].Cells[2].Value = dataViewCliente.Rows[col].Cells[3].Value.ToString();
-                    dataViewServicosAdicionados.Rows[col].Cells[3].Value = dataViewCliente.Rows[col].Cells[4].Value.ToString();
-                    dataViewServicosAdicionados.Rows[col].Cells[4].Value = dataViewCliente.Rows[col].Cells[5].Value.ToString();
-                    dataViewServicosAdicionados.Rows[col].Cells[5].Value = dataViewCliente.Rows[col].Cells[6].Value.ToString();
+            //dataViewServicosAdicionados.Rows.Clear();
+            //dataViewServicosAdicionados.Columns.Add("id", "nomeServico", "valorServico", "valorMinino", "taxaServico", "codigoServico");
+            //dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value
 
-                }
+            dataViewServicosAdicionados.Rows.Add();
+            //int col = 
+            Console.WriteLine(contLinServAdc);
+            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[0].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[0].Value.ToString();
+            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[1].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[1].Value.ToString();
+            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[2].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value.ToString();
+            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[3].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[3].Value.ToString();
+            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[4].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[4].Value.ToString();
+            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[5].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[5].Value.ToString();            
 
-            }*/
+            contLinServAdc++;           
+            
         }
 
         private void MudarNomeLabelCliente()
@@ -124,6 +123,14 @@ namespace AutoEscolaTrevo
 
 
 
+        }
+
+        private void ClonarEstiloTabelaServico()
+        {
+            foreach (DataGridViewColumn coluna in dataViewServicos.Columns)
+            {
+                dataViewServicosAdicionados.Columns.Add(coluna.Clone() as DataGridViewColumn);
+            }
         }
 
         private void dataViewServicos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -149,6 +156,17 @@ namespace AutoEscolaTrevo
         private void frmAdicionarVendas_MouseUp(object sender, MouseEventArgs e)
         {
             
+        }
+
+        private void btnRemoverServico_Click(object sender, EventArgs e)
+        {
+            if (dataViewServicosAdicionados.CurrentRow == null)
+            {
+                foreach (DataGridViewRow elemento in dataViewServicosAdicionados.SelectedRows)
+                {
+                    dataViewServicosAdicionados.Rows.RemoveAt(elemento.Index);
+                }
+            }
         }
     }
 }
