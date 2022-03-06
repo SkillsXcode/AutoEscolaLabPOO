@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace AutoEscolaTrevo
 {
@@ -64,7 +65,7 @@ namespace AutoEscolaTrevo
                     comandoMySQL.Parameters.AddWithValue("_id", idCliente);
                     comandoMySQL.Parameters.AddWithValue("_sts", true);
                     comandoMySQL.Parameters.AddWithValue("_nomeCliente", txtBoxNome.Text.Trim());
-                    comandoMySQL.Parameters.AddWithValue("_cpf", txtBoxCpf.Text.Trim());
+                    comandoMySQL.Parameters.AddWithValue("_cpf", Regex.Replace(maskedtxtboxCpf.Text, @"[^0-9a-zA-Z\._]", ""));
                     comandoMySQL.Parameters.AddWithValue("_numeroIdentidade", txtBoxRg.Text.Trim());
                     comandoMySQL.Parameters.AddWithValue("_dataExpedicaoIdentidade", AplicarPadraoAmericano(dtpDataExpedicao.Value).Trim());
                     comandoMySQL.Parameters.AddWithValue("_dataNascimento", AplicarPadraoAmericano(dtpDataNascimento.Value).Trim());                    
@@ -88,7 +89,7 @@ namespace AutoEscolaTrevo
         private bool VerificarTodosCampos()
         {
             //Console.WriteLine(dtpDataNascimento.Text);
-            if(txtBoxNome.Text == "" || txtBoxRg.Text == "" || txtBoxCpf.Text == "")
+            if(txtBoxNome.Text == "" || txtBoxRg.Text == "" || maskedtxtboxCpf.Text == "")
             {
                 Console.WriteLine("Existem campos vazios");
                 return false;
@@ -111,7 +112,7 @@ namespace AutoEscolaTrevo
 
         private void LimparTodosCampos()
         {
-            txtBoxNome.Text = txtBoxCpf.Text = txtBoxRg.Text = "";
+            txtBoxNome.Text = maskedtxtboxCpf.Text = txtBoxRg.Text = "";
             idCliente = 0;
         }
 
@@ -169,6 +170,11 @@ namespace AutoEscolaTrevo
             frmGerenciamentoCliente frmClientes = new frmGerenciamentoCliente();            
             frmClientes.Show();
             return frmClientes;
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

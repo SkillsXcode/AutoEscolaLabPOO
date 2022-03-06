@@ -36,12 +36,12 @@
             this.txtBoxRg = new System.Windows.Forms.TextBox();
             this.lblRg = new System.Windows.Forms.Label();
             this.lblDataExpedicao = new System.Windows.Forms.Label();
-            this.txtBoxCpf = new System.Windows.Forms.TextBox();
             this.lblCpf = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
             this.dtpDataExpedicao = new System.Windows.Forms.DateTimePicker();
             this.btnVoltarCadastrarCliente = new System.Windows.Forms.Button();
+            this.maskedtxtboxCpf = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,9 +79,9 @@
             // txtBoxNome
             // 
             this.txtBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxNome.Location = new System.Drawing.Point(236, 127);
+            this.txtBoxNome.Location = new System.Drawing.Point(236, 129);
             this.txtBoxNome.Name = "txtBoxNome";
-            this.txtBoxNome.Size = new System.Drawing.Size(321, 23);
+            this.txtBoxNome.Size = new System.Drawing.Size(317, 23);
             this.txtBoxNome.TabIndex = 3;
             this.txtBoxNome.TextChanged += new System.EventHandler(this.txtBoxNome_TextChanged);
             // 
@@ -89,7 +89,7 @@
             // 
             this.lblDataNascimento.AutoSize = true;
             this.lblDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblDataNascimento.Location = new System.Drawing.Point(236, 158);
+            this.lblDataNascimento.Location = new System.Drawing.Point(236, 162);
             this.lblDataNascimento.Name = "lblDataNascimento";
             this.lblDataNascimento.Size = new System.Drawing.Size(154, 20);
             this.lblDataNascimento.TabIndex = 4;
@@ -98,9 +98,9 @@
             // txtBoxRg
             // 
             this.txtBoxRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxRg.Location = new System.Drawing.Point(236, 245);
+            this.txtBoxRg.Location = new System.Drawing.Point(236, 252);
             this.txtBoxRg.Name = "txtBoxRg";
-            this.txtBoxRg.Size = new System.Drawing.Size(321, 23);
+            this.txtBoxRg.Size = new System.Drawing.Size(317, 23);
             this.txtBoxRg.TabIndex = 7;
             this.txtBoxRg.TextChanged += new System.EventHandler(this.txtBoxRg_TextChanged);
             // 
@@ -108,7 +108,7 @@
             // 
             this.lblRg.AutoSize = true;
             this.lblRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblRg.Location = new System.Drawing.Point(236, 217);
+            this.lblRg.Location = new System.Drawing.Point(236, 222);
             this.lblRg.Name = "lblRg";
             this.lblRg.Size = new System.Drawing.Size(34, 20);
             this.lblRg.TabIndex = 6;
@@ -118,27 +118,17 @@
             // 
             this.lblDataExpedicao.AutoSize = true;
             this.lblDataExpedicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblDataExpedicao.Location = new System.Drawing.Point(236, 276);
+            this.lblDataExpedicao.Location = new System.Drawing.Point(236, 285);
             this.lblDataExpedicao.Name = "lblDataExpedicao";
             this.lblDataExpedicao.Size = new System.Drawing.Size(144, 20);
             this.lblDataExpedicao.TabIndex = 8;
             this.lblDataExpedicao.Text = "Data de Expedição";
             // 
-            // txtBoxCpf
-            // 
-            this.txtBoxCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxCpf.Location = new System.Drawing.Point(236, 363);
-            this.txtBoxCpf.MaxLength = 11;
-            this.txtBoxCpf.Name = "txtBoxCpf";
-            this.txtBoxCpf.Size = new System.Drawing.Size(321, 23);
-            this.txtBoxCpf.TabIndex = 11;
-            this.txtBoxCpf.TextChanged += new System.EventHandler(this.txtBoxCpf_TextChanged);
-            // 
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
             this.lblCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblCpf.Location = new System.Drawing.Point(236, 335);
+            this.lblCpf.Location = new System.Drawing.Point(236, 345);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(40, 20);
             this.lblCpf.TabIndex = 10;
@@ -150,7 +140,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrar.Location = new System.Drawing.Point(359, 412);
+            this.btnCadastrar.Location = new System.Drawing.Point(359, 405);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(89, 30);
             this.btnCadastrar.TabIndex = 12;
@@ -161,20 +151,20 @@
             // dtpDataNascimento
             // 
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(240, 188);
-            this.dtpDataNascimento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(236, 192);
+            this.dtpDataNascimento.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(313, 20);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(317, 20);
             this.dtpDataNascimento.TabIndex = 13;
             this.dtpDataNascimento.ValueChanged += new System.EventHandler(this.dtpDataNascimento_ValueChanged);
             // 
             // dtpDataExpedicao
             // 
             this.dtpDataExpedicao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataExpedicao.Location = new System.Drawing.Point(240, 306);
-            this.dtpDataExpedicao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDataExpedicao.Location = new System.Drawing.Point(236, 315);
+            this.dtpDataExpedicao.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDataExpedicao.Name = "dtpDataExpedicao";
-            this.dtpDataExpedicao.Size = new System.Drawing.Size(313, 20);
+            this.dtpDataExpedicao.Size = new System.Drawing.Size(317, 20);
             this.dtpDataExpedicao.TabIndex = 14;
             // 
             // btnVoltarCadastrarCliente
@@ -184,7 +174,7 @@
             this.btnVoltarCadastrarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnVoltarCadastrarCliente.ForeColor = System.Drawing.Color.White;
             this.btnVoltarCadastrarCliente.Location = new System.Drawing.Point(652, 9);
-            this.btnVoltarCadastrarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVoltarCadastrarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnVoltarCadastrarCliente.Name = "btnVoltarCadastrarCliente";
             this.btnVoltarCadastrarCliente.Size = new System.Drawing.Size(92, 32);
             this.btnVoltarCadastrarCliente.TabIndex = 15;
@@ -192,17 +182,26 @@
             this.btnVoltarCadastrarCliente.UseVisualStyleBackColor = false;
             this.btnVoltarCadastrarCliente.Click += new System.EventHandler(this.btnVoltarCadastrarCliente_Click);
             // 
+            // maskedtxtboxCpf
+            // 
+            this.maskedtxtboxCpf.Location = new System.Drawing.Point(236, 375);
+            this.maskedtxtboxCpf.Mask = "000.000.000-00";
+            this.maskedtxtboxCpf.Name = "maskedtxtboxCpf";
+            this.maskedtxtboxCpf.Size = new System.Drawing.Size(317, 20);
+            this.maskedtxtboxCpf.TabIndex = 16;
+            this.maskedtxtboxCpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
+            // 
             // frmCadastrarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(754, 586);
+            this.Controls.Add(this.maskedtxtboxCpf);
             this.Controls.Add(this.btnVoltarCadastrarCliente);
             this.Controls.Add(this.dtpDataExpedicao);
             this.Controls.Add(this.dtpDataNascimento);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.txtBoxCpf);
             this.Controls.Add(this.lblCpf);
             this.Controls.Add(this.lblDataExpedicao);
             this.Controls.Add(this.txtBoxRg);
@@ -235,11 +234,11 @@
         private System.Windows.Forms.TextBox txtBoxRg;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblDataExpedicao;
-        private System.Windows.Forms.TextBox txtBoxCpf;
         private System.Windows.Forms.Label lblCpf;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.DateTimePicker dtpDataNascimento;
         private System.Windows.Forms.DateTimePicker dtpDataExpedicao;
         private System.Windows.Forms.Button btnVoltarCadastrarCliente;
+        private System.Windows.Forms.MaskedTextBox maskedtxtboxCpf;
     }
 }
