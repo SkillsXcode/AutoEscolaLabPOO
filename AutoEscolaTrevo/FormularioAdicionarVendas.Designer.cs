@@ -282,6 +282,7 @@
             this.btnRegistrarVenda.TabIndex = 24;
             this.btnRegistrarVenda.Text = "Registrar Venda";
             this.btnRegistrarVenda.UseVisualStyleBackColor = false;
+            this.btnRegistrarVenda.Click += new System.EventHandler(this.btnRegistrarVenda_Click);
             // 
             // dataViewCliente
             // 
@@ -289,6 +290,7 @@
             this.dataViewCliente.AllowUserToResizeRows = false;
             this.dataViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewCliente.Location = new System.Drawing.Point(560, 208);
+            this.dataViewCliente.MultiSelect = false;
             this.dataViewCliente.Name = "dataViewCliente";
             this.dataViewCliente.RowHeadersWidth = 51;
             this.dataViewCliente.RowTemplate.Height = 24;

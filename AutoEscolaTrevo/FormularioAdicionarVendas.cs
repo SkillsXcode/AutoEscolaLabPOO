@@ -185,5 +185,45 @@ namespace AutoEscolaTrevo
             lblValorTotal.Text = contGloValTot.ToString();
             
         }
+
+        private string AplicarPadraoAmericano(DateTime data)
+        {
+            string dia = data.Day.ToString(), mes = data.Month.ToString(), ano = data.Year.ToString();
+            if (data.Month >= 1 && data.Month <= 9)
+            {
+                mes = "0" + mes;
+            }
+            string dataAmericana = ano + "/" + mes + "/" + dia;
+
+
+            return dataAmericana;
+        }
+
+        private void btnRegistrarVenda_Click(object sender, EventArgs e)
+        {
+            VerificarTodosCampos();
+        }
+
+        private bool VerificarTodosCampos()
+        {
+            //Console.WriteLine(dtpDataNascimento.Text);
+            if (cmbxTipoPagamento.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione um tipo de pagamento!");
+                Console.WriteLine("Selecione um tipo de pagamento!");
+                return false;
+            }
+            else if(dataViewServicosAdicionados.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione, pelo menos, um serviço a ser adcionado!");
+                Console.WriteLine("Selecione, pelo menos, um serviço a ser adcionado!");
+                return false;
+            } else if(dataViewCliente.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um Cliente!");
+                Console.WriteLine("Selecione um Cliente!");
+            }
+            return true;
+        }
     }
 }
