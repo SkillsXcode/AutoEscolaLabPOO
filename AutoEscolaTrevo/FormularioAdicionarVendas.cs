@@ -17,6 +17,7 @@ namespace AutoEscolaTrevo
         private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idServicoSelecionado = 0;
         private int contLinServAdc = 0; //Contador Linha Servico Adicionado
+        private double contGloValTot = 0; //Contador Global do Valor Total de Venda
 
         public frmAdicionarVendas()
         {
@@ -97,21 +98,18 @@ namespace AutoEscolaTrevo
 
         private void btnAdicionarServico_Click(object sender, EventArgs e)
         {
-            //dataViewServicosAdicionados.Rows.Clear();
-            //dataViewServicosAdicionados.Columns.Add("id", "nomeServico", "valorServico", "valorMinino", "taxaServico", "codigoServico");
-            //dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value
-
-            dataViewServicosAdicionados.Rows.Add();
-            //int col = 
-            Console.WriteLine(contLinServAdc);
-            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[0].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[0].Value.ToString();
-            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[1].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[1].Value.ToString();
-            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[2].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value.ToString();
-            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[3].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[3].Value.ToString();
-            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[4].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[4].Value.ToString();
-            dataViewServicosAdicionados.Rows[contLinServAdc].Cells[5].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[5].Value.ToString();            
-
-            contLinServAdc++;           
+            if (dataViewServicos.CurrentRow != null)
+            {
+                dataViewServicosAdicionados.Rows.Add();                
+                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[0].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[0].Value.ToString();
+                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[1].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[1].Value.ToString();
+                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[2].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value.ToString();
+                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[3].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[3].Value.ToString();
+                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[4].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[4].Value.ToString();
+                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[5].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[5].Value.ToString();
+                contLinServAdc++;
+                ManipularLabelValorTotal((double)dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value);
+            }                      
             
         }
 
@@ -160,13 +158,32 @@ namespace AutoEscolaTrevo
 
         private void btnRemoverServico_Click(object sender, EventArgs e)
         {
-            if (dataViewServicosAdicionados.CurrentRow == null)
+            if (dataViewServicosAdicionados.CurrentRow != null)
             {
                 foreach (DataGridViewRow elemento in dataViewServicosAdicionados.SelectedRows)
                 {
-                    dataViewServicosAdicionados.Rows.RemoveAt(elemento.Index);
+                    dataViewServicosAdicionados.Rows.RemoveAt(elemento.Index); //alterar para linha inteira
+                    ManipularLabelValorTotal(Convert.ToDouble(elemento.Cells[2].Value) * - 1);
+                    //ManipularLabelValorTotal(((double)elemento.Index) * - 1);
                 }
+                //ManipularLabelValorTotal(dataViewServicosAdicionados.CurrentRow);
             }
+            if(dataViewServicosAdicionados.RowCount == 0)
+            {
+                ZerarContador();
+            }
+        }
+
+        private void ZerarContador()
+        {
+            contLinServAdc = 0;
+        }
+
+        private void ManipularLabelValorTotal(double valorEnviado)
+        {            
+            contGloValTot += valorEnviado;
+            lblValorTotal.Text = contGloValTot.ToString();
+            
         }
     }
 }
