@@ -86,7 +86,7 @@
             this.btnFrmRegistrarNovasVendas.Name = "btnFrmRegistrarNovasVendas";
             this.btnFrmRegistrarNovasVendas.Size = new System.Drawing.Size(232, 48);
             this.btnFrmRegistrarNovasVendas.TabIndex = 14;
-            this.btnFrmRegistrarNovasVendas.Text = "Registrar Novas Vendas";
+            this.btnFrmRegistrarNovasVendas.Text = "Registrar Vendas";
             this.btnFrmRegistrarNovasVendas.UseVisualStyleBackColor = false;
             this.btnFrmRegistrarNovasVendas.Click += new System.EventHandler(this.btnFrmRegistrarNovasVendas_Click);
             // 

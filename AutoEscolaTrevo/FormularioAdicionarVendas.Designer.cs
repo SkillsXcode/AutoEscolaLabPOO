@@ -211,12 +211,12 @@
             // 
             this.lblValorTotal.AutoSize = true;
             this.lblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblValorTotal.ForeColor = System.Drawing.Color.Red;
+            this.lblValorTotal.ForeColor = System.Drawing.Color.Purple;
             this.lblValorTotal.Location = new System.Drawing.Point(712, 600);
             this.lblValorTotal.Name = "lblValorTotal";
-            this.lblValorTotal.Size = new System.Drawing.Size(114, 25);
+            this.lblValorTotal.Size = new System.Drawing.Size(19, 25);
             this.lblValorTotal.TabIndex = 26;
-            this.lblValorTotal.Text = "Não apagar";
+            this.lblValorTotal.Text = "-";
             // 
             // lblListaServicos
             // 
@@ -302,12 +302,12 @@
             // 
             this.lblNomeCliente.AutoSize = true;
             this.lblNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNomeCliente.ForeColor = System.Drawing.Color.Red;
+            this.lblNomeCliente.ForeColor = System.Drawing.Color.Purple;
             this.lblNomeCliente.Location = new System.Drawing.Point(560, 488);
             this.lblNomeCliente.Name = "lblNomeCliente";
-            this.lblNomeCliente.Size = new System.Drawing.Size(268, 25);
+            this.lblNomeCliente.Size = new System.Drawing.Size(307, 25);
             this.lblNomeCliente.TabIndex = 28;
-            this.lblNomeCliente.Text = "Nenhume cliente selecionade";
+            this.lblNomeCliente.Text = "Nenhum(a) cliente selecionado(a)";
             this.lblNomeCliente.Click += new System.EventHandler(this.lblNomeCliente_Click);
             // 
             // lblMscNomeCliente
