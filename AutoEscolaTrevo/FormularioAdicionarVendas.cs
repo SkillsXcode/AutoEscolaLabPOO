@@ -15,7 +15,7 @@ namespace AutoEscolaTrevo
     public partial class frmAdicionarVendas : Form
     {
         private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
-        private int idVendaSelecionada = 0;
+        private int idVenda = 0;
         private int contLinServAdc = 0; //Contador Linha Servico Adicionado
         private double contGloValTot = 0; //Contador Global do Valor Total de Venda
 
@@ -201,53 +201,61 @@ namespace AutoEscolaTrevo
 
         private void btnRegistrarVenda_Click(object sender, EventArgs e)
         {
-            /*if(VerificarTodosCampos())
+            if(VerificarTodosCampos())
             {
                 string pseudoListaServicos = "";
                 for (int i = 0; i < dataViewServicosAdicionados.Rows.Count; i++)
-                {
-                    pseudoListaServicos += " ";
+                {                    
                     pseudoListaServicos += dataViewServicosAdicionados.Rows[i].Cells[1].Value.ToString();
+                    pseudoListaServicos += "; ";
                 }
                 //Console.WriteLine(Convert.ToInt32(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value));
-                /*
-                    id int(11) AI PK 
-                    fk_idCliente int(11) 
-                    dataVenda date 
-                    valorVenda double 
-                    valorParcela double 
-                    valorEntrada double 
-                    dataVencimento date 
-                    formaPagamento varchar(255) 
-                    itensServico varchar(255) 
-                 
-                
-                
-                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+
+                    /*_id INT,
+                    _itensServico VARCHAR(255),
+                    _formaPagamento VARCHAR(255),
+                    _fk_idCliente INT,
+                    _dataVenda DATE,
+                    _valorVenda DOUBLE,
+                    _valorParcela DOUBLE,
+                    _valorEntrada DOUBLE,
+                    _dataVencimento DATE*/
+
+
+                try
                 {
-                    Console.WriteLine(pseudoListaServicos);
-                    conexaoMySQL.Open();
-                    MySqlCommand comandoMySQL = new MySqlCommand("AdcionarEditarVenda", conexaoMySQL);
-                    comandoMySQL.CommandType = CommandType.StoredProcedure;
-                    comandoMySQL.Parameters.AddWithValue("_id", idVendaSelecionada);
-                    comandoMySQL.Parameters.AddWithValue("_fk_idCliente", (int)dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
-                    comandoMySQL.Parameters.AddWithValue("_dataVenda", AplicarPadraoAmericano(dtpDataVenda.Value).Trim());
-                    comandoMySQL.Parameters.AddWithValue("_valorVenda", contGloValTot);
-                    comandoMySQL.Parameters.AddWithValue("_valorParcela", null);
-                    comandoMySQL.Parameters.AddWithValue("_valorEntrada", null);
-                    comandoMySQL.Parameters.AddWithValue("_dataVencimento", null);
-                    comandoMySQL.Parameters.AddWithValue("_formaPagamento", cmbxTipoPagamento.Text); //alterar quando for outras formas de pagamento
-                    comandoMySQL.Parameters.AddWithValue("_itensServico", pseudoListaServicos);
-                    comandoMySQL.ExecuteNonQuery();
-                    MessageBox.Show("Venda Cadastrada com Sucesso!");
-                    this.Close();
+                    using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                    {
+                        Console.WriteLine(pseudoListaServicos);
+                        conexaoMySQL.Open();
+                        MySqlCommand comandoMySQL = new MySqlCommand("AdcionarEditarVenda", conexaoMySQL);
+                        comandoMySQL.CommandType = CommandType.StoredProcedure;
+                        comandoMySQL.Parameters.AddWithValue("_id", idVenda);
+                        comandoMySQL.Parameters.AddWithValue("_itensServico", pseudoListaServicos);
+                        comandoMySQL.Parameters.AddWithValue("_formaPagamento", cmbxTipoPagamento.Text); //alterar quando for outras formas de pagamento
+                        comandoMySQL.Parameters.AddWithValue("_fk_idCliente", (int)dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
+                        comandoMySQL.Parameters.AddWithValue("_dataVenda", AplicarPadraoAmericano(dtpDataVenda.Value).Trim());
+                        comandoMySQL.Parameters.AddWithValue("_valorVenda", contGloValTot);
+                        comandoMySQL.Parameters.AddWithValue("_valorParcela", null);
+                        comandoMySQL.Parameters.AddWithValue("_valorEntrada", null);
+                        comandoMySQL.Parameters.AddWithValue("_dataVencimento", null);                      
+                        comandoMySQL.ExecuteNonQuery();
+                        MessageBox.Show("Venda Cadastrada com Sucesso!");
+                        idVenda = 0;
+                        this.Close();
+                    }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                
 
                 Console.WriteLine();
 
 
                 Console.WriteLine(pseudoListaServicos);
-            }*/
+            }
         }
 
         private bool VerificarTodosCampos()

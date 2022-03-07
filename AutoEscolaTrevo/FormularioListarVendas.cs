@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace AutoEscolaTrevo
 {
     public partial class frmListarVendas : Form
     {
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+
         public frmListarVendas()
         {
             InitializeComponent();
@@ -19,7 +22,7 @@ namespace AutoEscolaTrevo
 
         private void FormularioVendas_Load(object sender, EventArgs e)
         {
-
+            PreencherListagemVenda();
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -47,6 +50,20 @@ namespace AutoEscolaTrevo
             frmAdicionarVendas frmVendas = new frmAdicionarVendas();
             frmVendas.Show();
             return frmVendas;
+        }
+
+        private void PreencherListagemVenda()
+        {
+            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            {
+                conexaoMySQL.Open();
+                MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodasVendas", conexaoMySQL);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dtbVenda = new DataTable();
+                adaptador.Fill(dtbVenda);
+                dataViewListagemVendas.DataSource = dtbVenda;
+                dataViewListagemVendas.Columns[0].Visible = false;
+            }
         }
     }
 }
