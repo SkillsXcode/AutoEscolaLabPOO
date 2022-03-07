@@ -18,6 +18,7 @@ namespace AutoEscolaTrevo
         private int idVenda = 0;
         private int contLinServAdc = 0; //Contador Linha Servico Adicionado
         private double contGloValTot = 0; //Contador Global do Valor Total de Venda
+        private frmListarVendas vendaGlobal;
 
         public frmAdicionarVendas()
         {
@@ -50,7 +51,7 @@ namespace AutoEscolaTrevo
             PreencherListagemClientes();
             ClonarEstiloTabelaServico();
 
-            //lembrar de fazer uma função para gerar data de vencimento :D
+            //lembrar de fazer uma função para gerar data de vencimento, caso seja carnê :D
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -114,13 +115,8 @@ namespace AutoEscolaTrevo
         }
 
         private void MudarNomeLabelCliente()
-        {
-            //Console.WriteLine(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[1].Value);
+        {            
             lblNomeCliente.Text = dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[1].Value.ToString();
-
-
-
-
         }
 
         private void ClonarEstiloTabelaServico()
@@ -163,10 +159,8 @@ namespace AutoEscolaTrevo
                 foreach (DataGridViewRow elemento in dataViewServicosAdicionados.SelectedRows)
                 {
                     dataViewServicosAdicionados.Rows.RemoveAt(elemento.Index); //alterar para linha inteira
-                    ManipularLabelValorTotal(Convert.ToDouble(elemento.Cells[2].Value) * - 1);
-                    //ManipularLabelValorTotal(((double)elemento.Index) * - 1);
-                }
-                //ManipularLabelValorTotal(dataViewServicosAdicionados.CurrentRow);
+                    ManipularLabelValorTotal(Convert.ToDouble(elemento.Cells[2].Value) * - 1);                    
+                }                
             }
             if(dataViewServicosAdicionados.RowCount == 0)
             {
@@ -203,35 +197,18 @@ namespace AutoEscolaTrevo
         {
             if(VerificarTodosCampos())
             {
-                string pseudoListaServicos = "";
-                for (int i = 0; i < dataViewServicosAdicionados.Rows.Count; i++)
-                {                    
-                    pseudoListaServicos += dataViewServicosAdicionados.Rows[i].Cells[1].Value.ToString();
-                    pseudoListaServicos += "; ";
-                }
-                //Console.WriteLine(Convert.ToInt32(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value));
-
-                    /*_id INT,
-                    _itensServico VARCHAR(255),
-                    _formaPagamento VARCHAR(255),
-                    _fk_idCliente INT,
-                    _dataVenda DATE,
-                    _valorVenda DOUBLE,
-                    _valorParcela DOUBLE,
-                    _valorEntrada DOUBLE,
-                    _dataVencimento DATE*/
-
+                PreencherCampoServicosAdicionadosBanco();
 
                 try
                 {
                     using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
                     {
-                        Console.WriteLine(pseudoListaServicos);
+                        Console.WriteLine(PreencherCampoServicosAdicionadosBanco());
                         conexaoMySQL.Open();
                         MySqlCommand comandoMySQL = new MySqlCommand("AdcionarEditarVenda", conexaoMySQL);
                         comandoMySQL.CommandType = CommandType.StoredProcedure;
                         comandoMySQL.Parameters.AddWithValue("_id", idVenda);
-                        comandoMySQL.Parameters.AddWithValue("_itensServico", pseudoListaServicos);
+                        comandoMySQL.Parameters.AddWithValue("_itensServico", PreencherCampoServicosAdicionadosBanco());
                         comandoMySQL.Parameters.AddWithValue("_formaPagamento", cmbxTipoPagamento.Text); //alterar quando for outras formas de pagamento
                         comandoMySQL.Parameters.AddWithValue("_fk_idCliente", (int)dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
                         comandoMySQL.Parameters.AddWithValue("_dataVenda", AplicarPadraoAmericano(dtpDataVenda.Value).Trim());
@@ -241,26 +218,24 @@ namespace AutoEscolaTrevo
                         comandoMySQL.Parameters.AddWithValue("_dataVencimento", null);                      
                         comandoMySQL.ExecuteNonQuery();
                         MessageBox.Show("Venda Cadastrada com Sucesso!");
+                        vendaGlobal.PreencherListagemVenda();
                         idVenda = 0;
-                        this.Close();
+                        var confirmacao = MessageBox.Show("Deseja cadastrar outra venda?", "Atenção!", MessageBoxButtons.YesNo);
+                        if (confirmacao == DialogResult.No)
+                        {
+                            this.Close();
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
-                }
-                
-
-                Console.WriteLine();
-
-
-                Console.WriteLine(pseudoListaServicos);
+                }               
             }
         }
 
         private bool VerificarTodosCampos()
-        {
-            //Console.WriteLine(dtpDataNascimento.Text);
+        {            
             if (cmbxTipoPagamento.SelectedItem == null)
             {
                 MessageBox.Show("Selecione um tipo de pagamento!");
@@ -278,6 +253,22 @@ namespace AutoEscolaTrevo
                 Console.WriteLine("Selecione um Cliente!");
             }
             return true;
+        }
+
+        private string PreencherCampoServicosAdicionadosBanco()
+        {
+            string pseudoListaServicos = "";
+            for (int i = 0; i < dataViewServicosAdicionados.Rows.Count; i++)
+            {
+                pseudoListaServicos += dataViewServicosAdicionados.Rows[i].Cells[1].Value.ToString();
+                pseudoListaServicos += "; ";
+            }
+            return pseudoListaServicos;
+        }
+        
+        public void ReceberObjetoAnteriorVenda(frmListarVendas listarVendas)
+        {
+            vendaGlobal = listarVendas;            
         }
     }
 }

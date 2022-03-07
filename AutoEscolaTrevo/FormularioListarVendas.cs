@@ -49,10 +49,11 @@ namespace AutoEscolaTrevo
         {
             frmAdicionarVendas frmVendas = new frmAdicionarVendas();
             frmVendas.Show();
+            frmVendas.ReceberObjetoAnteriorVenda(this);
             return frmVendas;
         }
 
-        private void PreencherListagemVenda()
+        public void PreencherListagemVenda()
         {
             using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
             {
