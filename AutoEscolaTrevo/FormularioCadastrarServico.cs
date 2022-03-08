@@ -35,23 +35,31 @@ namespace AutoEscolaTrevo
         {
             if (VerificarTodosCampos())
             {
-                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
-                {      
+                try
+                {
+                    using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                    {
 
-                    conexaoMySQL.Open();
-                    MySqlCommand comandoMySQL = new MySqlCommand("AdcionarEditarServico", conexaoMySQL);
-                    comandoMySQL.CommandType = CommandType.StoredProcedure;
-                    comandoMySQL.Parameters.AddWithValue("_id", idServico);
-                    comandoMySQL.Parameters.AddWithValue("_nomeServico", txtBoxNomeServico.Text.Trim());                    
-                    comandoMySQL.Parameters.AddWithValue("_valorServico", numValorServico.Value);
-                    comandoMySQL.Parameters.AddWithValue("_valorMinimo", numValorMinServico.Value);
-                    comandoMySQL.Parameters.AddWithValue("_taxaServico", numTaxaServico.Value);
-                    comandoMySQL.Parameters.AddWithValue("_codigoServico", mskTxtCodigoServico.Text);
-                    comandoMySQL.ExecuteNonQuery();
-                    MessageBox.Show("Serviço Cadastrado com Sucesso!");
-                    LimparTodosCampos();
-                    ExibirNovoFormularioGerenciarServicos();
+                        conexaoMySQL.Open();
+                        MySqlCommand comandoMySQL = new MySqlCommand("AdcionarEditarServico", conexaoMySQL);
+                        comandoMySQL.CommandType = CommandType.StoredProcedure;
+                        comandoMySQL.Parameters.AddWithValue("_id", idServico);
+                        comandoMySQL.Parameters.AddWithValue("_nomeServico", txtBoxNomeServico.Text.Trim());
+                        comandoMySQL.Parameters.AddWithValue("_valorServico", numValorServico.Value);
+                        comandoMySQL.Parameters.AddWithValue("_valorMinimo", numValorMinServico.Value);
+                        comandoMySQL.Parameters.AddWithValue("_taxaServico", numTaxaServico.Value);
+                        comandoMySQL.Parameters.AddWithValue("_codigoServico", mskTxtCodigoServico.Text);
+                        comandoMySQL.ExecuteNonQuery();
+                        MessageBox.Show("Serviço Cadastrado com Sucesso!");
+                        LimparTodosCampos();
+                        ExibirNovoFormularioGerenciarServicos();
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
             else
             {

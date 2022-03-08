@@ -32,16 +32,25 @@ namespace AutoEscolaTrevo
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            try 
+            { 
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter("ProcurarCliente", conexaoMySQL);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adaptador.SelectCommand.Parameters.AddWithValue("_CampoBusca", txtBuscarCliente.Text);
+                    DataTable dtbCliente = new DataTable();
+                    adaptador.Fill(dtbCliente);
+                    dataViewCliente.DataSource = dtbCliente;
+                    dataViewCliente.Columns[0].Visible = false;
+                }
+
+            }
+            catch (Exception ex)
             {
-                conexaoMySQL.Open();
-                MySqlDataAdapter adaptador = new MySqlDataAdapter("ProcurarCliente", conexaoMySQL);
-                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                adaptador.SelectCommand.Parameters.AddWithValue("_CampoBusca", txtBuscarCliente.Text);
-                DataTable dtbCliente = new DataTable();
-                adaptador.Fill(dtbCliente);
-                dataViewCliente.DataSource = dtbCliente;
-                dataViewCliente.Columns[0].Visible = false;
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -71,29 +80,45 @@ namespace AutoEscolaTrevo
 
         private void PreencherListagemServicos()
         {
-            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            try
+            {            
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosServicos", conexaoMySQL);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable dtbServico = new DataTable();
+                    adaptador.Fill(dtbServico);
+                    dataViewServicos.DataSource = dtbServico;
+                    dataViewServicos.Columns[0].Visible = false;
+                }
+            }
+            catch (Exception ex)
             {
-                conexaoMySQL.Open();
-                MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosServicos", conexaoMySQL);
-                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataTable dtbServico = new DataTable();
-                adaptador.Fill(dtbServico);
-                dataViewServicos.DataSource = dtbServico;
-                dataViewServicos.Columns[0].Visible = false;
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
             }
         }
 
         private void PreencherListagemClientes()
         {
-            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            try 
+            { 
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosClientes", conexaoMySQL);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable dtbCliente = new DataTable();
+                    adaptador.Fill(dtbCliente);
+                    dataViewCliente.DataSource = dtbCliente;
+                    dataViewCliente.Columns[0].Visible = false;
+                }
+            }
+            catch (Exception ex)
             {
-                conexaoMySQL.Open();
-                MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosClientes", conexaoMySQL);
-                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataTable dtbCliente = new DataTable();
-                adaptador.Fill(dtbCliente);
-                dataViewCliente.DataSource = dtbCliente;
-                dataViewCliente.Columns[0].Visible = false;
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -229,6 +254,7 @@ namespace AutoEscolaTrevo
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Console.WriteLine(ex.Message);
                 }               
             }

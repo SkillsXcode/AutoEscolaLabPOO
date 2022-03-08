@@ -39,47 +39,73 @@ namespace AutoEscolaTrevo
 
         private void btnBuscarServico_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            try
             {
-                conexaoMySQL.Open();
-                MySqlDataAdapter adaptador = new MySqlDataAdapter("ProcurarServico", conexaoMySQL);
-                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                adaptador.SelectCommand.Parameters.AddWithValue("_CampoBusca", txtBuscarServico.Text);
-                DataTable dtbServico = new DataTable();
-                adaptador.Fill(dtbServico);
-                dataViewServicos.DataSource = dtbServico;
-                dataViewServicos.Columns[0].Visible = false;
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter("ProcurarServico", conexaoMySQL);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adaptador.SelectCommand.Parameters.AddWithValue("_CampoBusca", txtBuscarServico.Text);
+                    DataTable dtbServico = new DataTable();
+                    adaptador.Fill(dtbServico);
+                    dataViewServicos.DataSource = dtbServico;
+                    dataViewServicos.Columns[0].Visible = false;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
         private void btnExcluirServico_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            try
             {
-                conexaoMySQL.Open();
-                MySqlCommand comandoMySQL = new MySqlCommand("DeletarServicoporID", conexaoMySQL);
-                comandoMySQL.CommandType = CommandType.StoredProcedure;
-                idServico = Convert.ToInt32(dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[0].Value);
-                comandoMySQL.Parameters.AddWithValue("_id", idServico);
-                comandoMySQL.ExecuteNonQuery();
-                MessageBox.Show("Servico deletado!");
-                PreencherListagem();
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlCommand comandoMySQL = new MySqlCommand("DeletarServicoporID", conexaoMySQL);
+                    comandoMySQL.CommandType = CommandType.StoredProcedure;
+                    idServico = Convert.ToInt32(dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[0].Value);
+                    comandoMySQL.Parameters.AddWithValue("_id", idServico);
+                    comandoMySQL.ExecuteNonQuery();
+                    MessageBox.Show("Servico deletado!");
+                    PreencherListagem();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }            
         }
 
         private void PreencherListagem()
         {
-            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            try
             {
-                conexaoMySQL.Open();
-                MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosServicos", conexaoMySQL);
-                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataTable dtbServico = new DataTable();
-                adaptador.Fill(dtbServico);
-                dataViewServicos.DataSource = dtbServico;
-                dataViewServicos.Columns[0].Visible = false;
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosServicos", conexaoMySQL);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable dtbServico = new DataTable();
+                    adaptador.Fill(dtbServico);
+                    dataViewServicos.DataSource = dtbServico;
+                    dataViewServicos.Columns[0].Visible = false;
 
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
         private frmCadastrarServico ExibirNovoFormularioCadastrarServico()

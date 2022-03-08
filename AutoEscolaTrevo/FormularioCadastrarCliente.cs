@@ -56,22 +56,30 @@ namespace AutoEscolaTrevo
             
             if (VerificarTodosCampos())
             {
-                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                try
+                { 
+                    using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                    {
+                        conexaoMySQL.Open();
+                        MySqlCommand comandoMySQL = new MySqlCommand("AdcionarEditarCliente", conexaoMySQL);
+                        comandoMySQL.CommandType = CommandType.StoredProcedure;
+                        comandoMySQL.Parameters.AddWithValue("_id", idCliente);
+                        comandoMySQL.Parameters.AddWithValue("_sts", true);
+                        comandoMySQL.Parameters.AddWithValue("_nomeCliente", txtBoxNome.Text.Trim());
+                        comandoMySQL.Parameters.AddWithValue("_cpf", txtBoxCpf.Text.Trim());
+                        comandoMySQL.Parameters.AddWithValue("_numeroIdentidade", txtBoxRg.Text.Trim());
+                        comandoMySQL.Parameters.AddWithValue("_dataExpedicaoIdentidade", AplicarPadraoAmericano(dtpDataExpedicao.Value).Trim());
+                        comandoMySQL.Parameters.AddWithValue("_dataNascimento", AplicarPadraoAmericano(dtpDataNascimento.Value).Trim());                    
+                        comandoMySQL.ExecuteNonQuery();
+                        MessageBox.Show("Cliente Cadastrado com Sucesso!");
+                        LimparTodosCampos();
+                        ExibirNovoFormularioGerenciarClientes();
+                    }
+                }
+                catch (Exception ex)
                 {
-                    conexaoMySQL.Open();
-                    MySqlCommand comandoMySQL = new MySqlCommand("AdcionarEditarCliente", conexaoMySQL);
-                    comandoMySQL.CommandType = CommandType.StoredProcedure;
-                    comandoMySQL.Parameters.AddWithValue("_id", idCliente);
-                    comandoMySQL.Parameters.AddWithValue("_sts", true);
-                    comandoMySQL.Parameters.AddWithValue("_nomeCliente", txtBoxNome.Text.Trim());
-                    comandoMySQL.Parameters.AddWithValue("_cpf", txtBoxCpf.Text.Trim());
-                    comandoMySQL.Parameters.AddWithValue("_numeroIdentidade", txtBoxRg.Text.Trim());
-                    comandoMySQL.Parameters.AddWithValue("_dataExpedicaoIdentidade", AplicarPadraoAmericano(dtpDataExpedicao.Value).Trim());
-                    comandoMySQL.Parameters.AddWithValue("_dataNascimento", AplicarPadraoAmericano(dtpDataNascimento.Value).Trim());                    
-                    comandoMySQL.ExecuteNonQuery();
-                    MessageBox.Show("Cliente Cadastrado com Sucesso!");
-                    LimparTodosCampos();
-                    ExibirNovoFormularioGerenciarClientes();
+                    MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine(ex.Message);
                 }
             }
             else
@@ -145,7 +153,7 @@ namespace AutoEscolaTrevo
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

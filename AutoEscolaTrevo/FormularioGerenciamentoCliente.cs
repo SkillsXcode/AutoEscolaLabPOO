@@ -52,32 +52,49 @@ namespace AutoEscolaTrevo
 
         private void PreencherListagem()
         {
-            using(MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            try
             {
-                conexaoMySQL.Open();
-                MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosClientes", conexaoMySQL);
-                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataTable dtbCliente = new DataTable();
-                adaptador.Fill(dtbCliente);
-                dataViewCliente.DataSource = dtbCliente;
-                dataViewCliente.Columns[0].Visible = false;
-
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosClientes", conexaoMySQL);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable dtbCliente = new DataTable();
+                    adaptador.Fill(dtbCliente);
+                    dataViewCliente.DataSource = dtbCliente;
+                    dataViewCliente.Columns[0].Visible = false;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }
+
+            
         }
 
         private void btnExcluirCliente_Click(object sender, EventArgs e)
         {
-            using(MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            try
             {
-                conexaoMySQL.Open();
-                MySqlCommand comandoMySQL = new MySqlCommand("DeletarClienteporID", conexaoMySQL);
-                comandoMySQL.CommandType = CommandType.StoredProcedure;                
-                idCliente = Convert.ToInt32(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
-                comandoMySQL.Parameters.AddWithValue("_id", idCliente);
-                comandoMySQL.ExecuteNonQuery();
-                MessageBox.Show("Cliente deletado!");
-                PreencherListagem();
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlCommand comandoMySQL = new MySqlCommand("DeletarClienteporID", conexaoMySQL);
+                    comandoMySQL.CommandType = CommandType.StoredProcedure;
+                    idCliente = Convert.ToInt32(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
+                    comandoMySQL.Parameters.AddWithValue("_id", idCliente);
+                    comandoMySQL.ExecuteNonQuery();
+                    MessageBox.Show("Cliente deletado!");
+                    PreencherListagem();
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }            
         }
 
         private void btnVoltarGerenciarCliente_Click(object sender, EventArgs e)
@@ -94,17 +111,25 @@ namespace AutoEscolaTrevo
 
         private void btnBuscarCliente_Click_1(object sender, EventArgs e)
         {
-            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            try
             {
-                conexaoMySQL.Open();
-                MySqlDataAdapter adaptador = new MySqlDataAdapter("ProcurarCliente", conexaoMySQL);
-                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                adaptador.SelectCommand.Parameters.AddWithValue("_CampoBusca", txtBuscarCliente.Text);
-                DataTable dtbCliente = new DataTable();
-                adaptador.Fill(dtbCliente);
-                dataViewCliente.DataSource = dtbCliente;
-                dataViewCliente.Columns[0].Visible = false;
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter("ProcurarCliente", conexaoMySQL);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adaptador.SelectCommand.Parameters.AddWithValue("_CampoBusca", txtBuscarCliente.Text);
+                    DataTable dtbCliente = new DataTable();
+                    adaptador.Fill(dtbCliente);
+                    dataViewCliente.DataSource = dtbCliente;
+                    dataViewCliente.Columns[0].Visible = false;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }            
         }
 
         private void txtBuscarCliente_TextChanged(object sender, EventArgs e)

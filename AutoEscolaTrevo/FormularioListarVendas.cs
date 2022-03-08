@@ -55,16 +55,24 @@ namespace AutoEscolaTrevo
 
         public void PreencherListagemVenda()
         {
-            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            try
             {
-                conexaoMySQL.Open();
-                MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodasVendas", conexaoMySQL);
-                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataTable dtbVenda = new DataTable();
-                adaptador.Fill(dtbVenda);
-                dataViewListagemVendas.DataSource = dtbVenda;
-                dataViewListagemVendas.Columns[0].Visible = false;
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodasVendas", conexaoMySQL);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable dtbVenda = new DataTable();
+                    adaptador.Fill(dtbVenda);
+                    dataViewListagemVendas.DataSource = dtbVenda;
+                    dataViewListagemVendas.Columns[0].Visible = false;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }            
         }
     }
 }
