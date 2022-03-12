@@ -227,18 +227,18 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblCadastrarCliente;
         private System.Windows.Forms.Label lblNomeCliente;
-        private System.Windows.Forms.TextBox txtBoxNome;
         private System.Windows.Forms.Label lblDataNascimento;
-        private System.Windows.Forms.TextBox txtBoxRg;
         private System.Windows.Forms.Label lblRg;
         private System.Windows.Forms.Label lblDataExpedicao;
         private System.Windows.Forms.Label lblCpf;
-        private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.DateTimePicker dtpDataNascimento;
-        private System.Windows.Forms.DateTimePicker dtpDataExpedicao;
-        private System.Windows.Forms.Button btnVoltarCadastrarCliente;
-        private System.Windows.Forms.MaskedTextBox maskedtxtboxCpf;
+        public System.Windows.Forms.TextBox txtBoxNome;
+        public System.Windows.Forms.Button btnCadastrar;
+        public System.Windows.Forms.DateTimePicker dtpDataNascimento;
+        public System.Windows.Forms.DateTimePicker dtpDataExpedicao;
+        public System.Windows.Forms.MaskedTextBox maskedtxtboxCpf;
+        public System.Windows.Forms.TextBox txtBoxRg;
+        public System.Windows.Forms.Label lblCadastrarCliente;
+        public System.Windows.Forms.Button btnVoltarCadastrarCliente;
     }
 }

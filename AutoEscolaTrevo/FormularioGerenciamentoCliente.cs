@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Text.RegularExpressions;
 
 namespace AutoEscolaTrevo
 {
@@ -43,10 +44,33 @@ namespace AutoEscolaTrevo
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
             frmCadastrarCliente formularioClienteEdicao = new frmCadastrarCliente();
+
+            formularioClienteEdicao.lblCadastrarCliente.Text = "Editar Cliente";
+            formularioClienteEdicao.btnCadastrar.Text = "Editar";
+            formularioClienteEdicao.btnVoltarCadastrarCliente.Visible = false;
             formularioClienteEdicao.ShowDialog();
+
             //formularioClienteEdicao.btnCadastrar_Click
-            //if(dataViewCliente.CurrentRow.Index != null)
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlCommand comandoMySQL = new MySqlCommand("AdcionarEditarCliente", conexaoMySQL);
+                    comandoMySQL.CommandType = CommandType.StoredProcedure;
+
+                    idCliente = Convert.ToInt32(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
+                    comandoMySQL.Parameters.AddWithValue("_id", idCliente);
+
+                    comandoMySQL.Parameters.AddWithValue("_sts", true);
+                    comandoMySQL.Parameters.AddWithValue("_nomeCliente", formularioClienteEdicao.txtBoxNome.Text.Trim());
+                    comandoMySQL.Parameters.AddWithValue("_cpf", Regex.Replace(formularioClienteEdicao.maskedtxtboxCpf.Text, @"[^0-9a-zA-Z\._]", ""));
+                    comandoMySQL.Parameters.AddWithValue("_numeroIdentidade", formularioClienteEdicao.txtBoxRg.Text.Trim());
+                    comandoMySQL.Parameters.AddWithValue("_dataExpedicaoIdentidade", formularioClienteEdicao.AplicarPadraoAmericano(formularioClienteEdicao.dtpDataExpedicao.Value).Trim());
+                    comandoMySQL.Parameters.AddWithValue("_dataNascimento", formularioClienteEdicao.AplicarPadraoAmericano(formularioClienteEdicao.dtpDataNascimento.Value).Trim());
+                    comandoMySQL.ExecuteNonQuery();
+                    MessageBox.Show("Cliente Editado com Sucesso!");
+                }
             
+
 
         }
 

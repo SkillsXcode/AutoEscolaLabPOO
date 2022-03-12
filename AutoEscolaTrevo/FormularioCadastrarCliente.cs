@@ -32,7 +32,7 @@ namespace AutoEscolaTrevo
             
         }
         
-        private void txtBoxNome_TextChanged(object sender, EventArgs e)
+        public void txtBoxNome_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -97,7 +97,7 @@ namespace AutoEscolaTrevo
             return true;
         }
 
-        private string AplicarPadraoAmericano(DateTime data)
+        public string AplicarPadraoAmericano(DateTime data)
         {
             string dia = data.Day.ToString(), mes = data.Month.ToString(), ano = data.Year.ToString();
             if(data.Month >= 1  && data.Month <= 9)
@@ -116,7 +116,7 @@ namespace AutoEscolaTrevo
             idCliente = 0;
         }
 
-        private void btnVoltarCadastrarCliente_Click(object sender, EventArgs e)
+        public void btnVoltarCadastrarCliente_Click(object sender, EventArgs e)
         {
             var msg = MessageBox.Show("Tem certeza que deseja SAIR da área de Cadastro de Clientes?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (msg == DialogResult.Yes)
