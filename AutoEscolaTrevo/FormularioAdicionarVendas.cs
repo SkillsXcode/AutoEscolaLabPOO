@@ -133,6 +133,7 @@ namespace AutoEscolaTrevo
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[3].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[3].Value.ToString();
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[4].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[4].Value.ToString();
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[5].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[5].Value.ToString();
+                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[6].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[6].Value.ToString();
                 contLinServAdc++;
                 ManipularLabelValorTotal((double)dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value);
             }                      
@@ -219,7 +220,7 @@ namespace AutoEscolaTrevo
         }
 
         private void btnRegistrarVenda_Click(object sender, EventArgs e)
-        {
+        {           
             if(VerificarTodosCampos())
             {
                 PreencherCampoServicosAdicionadosBanco();
@@ -240,7 +241,8 @@ namespace AutoEscolaTrevo
                         comandoMySQL.Parameters.AddWithValue("_valorVenda", contGloValTot);
                         comandoMySQL.Parameters.AddWithValue("_valorParcela", null);
                         comandoMySQL.Parameters.AddWithValue("_valorEntrada", null);
-                        comandoMySQL.Parameters.AddWithValue("_dataVencimento", null);                      
+                        comandoMySQL.Parameters.AddWithValue("_dataVencimento", null);
+                        comandoMySQL.Parameters.AddWithValue("_numeroParcelas", null);
                         comandoMySQL.ExecuteNonQuery();
                         MessageBox.Show("Venda Cadastrada com Sucesso!");
                         vendaGlobal.PreencherListagemVenda();
@@ -295,6 +297,24 @@ namespace AutoEscolaTrevo
         public void ReceberObjetoAnteriorVenda(frmListarVendas listarVendas)
         {
             vendaGlobal = listarVendas;            
+        }
+
+        private void cmbxTipoPagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbxTipoPagamento.SelectedIndex > 1)
+            {
+                lblValorEntrada.Visible = true;
+                txtValorEntrada.Visible = true;
+                lblNumeroParcelas.Visible = true;
+                mskTxtNumeroParcelas.Visible = true;               
+            } 
+            else
+            {
+                lblValorEntrada.Visible = false;
+                txtValorEntrada.Visible = false;
+                lblNumeroParcelas.Visible = false;
+                mskTxtNumeroParcelas.Visible = false;
+            }
         }
     }
 }

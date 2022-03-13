@@ -51,6 +51,10 @@
             this.dataViewCliente = new System.Windows.Forms.DataGridView();
             this.lblNomeCliente = new System.Windows.Forms.Label();
             this.lblMscNomeCliente = new System.Windows.Forms.Label();
+            this.lblValorEntrada = new System.Windows.Forms.Label();
+            this.txtValorEntrada = new System.Windows.Forms.TextBox();
+            this.lblNumeroParcelas = new System.Windows.Forms.Label();
+            this.mskTxtNumeroParcelas = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrinhoRegistrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicosAdicionados)).BeginInit();
@@ -147,11 +151,15 @@
             this.cmbxTipoPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbxTipoPagamento.FormattingEnabled = true;
             this.cmbxTipoPagamento.Items.AddRange(new object[] {
-            "A VISTA"});
+            "À VISTA (Dinheiro)",
+            "À VISTA (Débito)",
+            "PRAZO (Crédito)",
+            "PRAZO (Carnê)"});
             this.cmbxTipoPagamento.Location = new System.Drawing.Point(24, 600);
             this.cmbxTipoPagamento.Name = "cmbxTipoPagamento";
             this.cmbxTipoPagamento.Size = new System.Drawing.Size(240, 28);
             this.cmbxTipoPagamento.TabIndex = 23;
+            this.cmbxTipoPagamento.SelectedIndexChanged += new System.EventHandler(this.cmbxTipoPagamento_SelectedIndexChanged);
             // 
             // btnVoltar
             // 
@@ -201,7 +209,7 @@
             // 
             this.lblMascValorTotal.AutoSize = true;
             this.lblMascValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblMascValorTotal.Location = new System.Drawing.Point(568, 600);
+            this.lblMascValorTotal.Location = new System.Drawing.Point(696, 680);
             this.lblMascValorTotal.Name = "lblMascValorTotal";
             this.lblMascValorTotal.Size = new System.Drawing.Size(145, 25);
             this.lblMascValorTotal.TabIndex = 26;
@@ -212,7 +220,7 @@
             this.lblValorTotal.AutoSize = true;
             this.lblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblValorTotal.ForeColor = System.Drawing.Color.Purple;
-            this.lblValorTotal.Location = new System.Drawing.Point(712, 600);
+            this.lblValorTotal.Location = new System.Drawing.Point(840, 680);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(19, 25);
             this.lblValorTotal.TabIndex = 26;
@@ -321,12 +329,56 @@
             this.lblMscNomeCliente.Text = "Cliente selecionado:";
             this.lblMscNomeCliente.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblMscNomeCliente_MouseDown);
             // 
+            // lblValorEntrada
+            // 
+            this.lblValorEntrada.AutoSize = true;
+            this.lblValorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblValorEntrada.Location = new System.Drawing.Point(592, 560);
+            this.lblValorEntrada.Name = "lblValorEntrada";
+            this.lblValorEntrada.Size = new System.Drawing.Size(164, 25);
+            this.lblValorEntrada.TabIndex = 20;
+            this.lblValorEntrada.Text = "Valor da Entrada:";
+            this.lblValorEntrada.Visible = false;
+            // 
+            // txtValorEntrada
+            // 
+            this.txtValorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtValorEntrada.Location = new System.Drawing.Point(592, 600);
+            this.txtValorEntrada.Name = "txtValorEntrada";
+            this.txtValorEntrada.Size = new System.Drawing.Size(168, 26);
+            this.txtValorEntrada.TabIndex = 30;
+            this.txtValorEntrada.Visible = false;
+            // 
+            // lblNumeroParcelas
+            // 
+            this.lblNumeroParcelas.AutoSize = true;
+            this.lblNumeroParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblNumeroParcelas.Location = new System.Drawing.Point(792, 560);
+            this.lblNumeroParcelas.Name = "lblNumeroParcelas";
+            this.lblNumeroParcelas.Size = new System.Drawing.Size(195, 25);
+            this.lblNumeroParcelas.TabIndex = 20;
+            this.lblNumeroParcelas.Text = "Numero de Parcelas:";
+            this.lblNumeroParcelas.Visible = false;
+            // 
+            // mskTxtNumeroParcelas
+            // 
+            this.mskTxtNumeroParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.mskTxtNumeroParcelas.Location = new System.Drawing.Point(800, 600);
+            this.mskTxtNumeroParcelas.Mask = "00";
+            this.mskTxtNumeroParcelas.Name = "mskTxtNumeroParcelas";
+            this.mskTxtNumeroParcelas.Size = new System.Drawing.Size(100, 26);
+            this.mskTxtNumeroParcelas.TabIndex = 31;
+            this.mskTxtNumeroParcelas.ValidatingType = typeof(int);
+            this.mskTxtNumeroParcelas.Visible = false;
+            // 
             // frmAdicionarVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1063, 721);
+            this.Controls.Add(this.mskTxtNumeroParcelas);
+            this.Controls.Add(this.txtValorEntrada);
             this.Controls.Add(this.lblNomeCliente);
             this.Controls.Add(this.lblMscNomeCliente);
             this.Controls.Add(this.lblServicosAdicionados);
@@ -343,6 +395,8 @@
             this.Controls.Add(this.cmbxTipoPagamento);
             this.Controls.Add(this.btnBuscarCliente);
             this.Controls.Add(this.dtpDataVenda);
+            this.Controls.Add(this.lblNumeroParcelas);
+            this.Controls.Add(this.lblValorEntrada);
             this.Controls.Add(this.lblDataVenda);
             this.Controls.Add(this.lblTipoPagamento);
             this.Controls.Add(this.txtBuscarCliente);
@@ -390,5 +444,9 @@
         private System.Windows.Forms.DataGridView dataViewCliente;
         private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.Label lblMscNomeCliente;
+        private System.Windows.Forms.Label lblValorEntrada;
+        private System.Windows.Forms.TextBox txtValorEntrada;
+        private System.Windows.Forms.Label lblNumeroParcelas;
+        private System.Windows.Forms.MaskedTextBox mskTxtNumeroParcelas;
     }
 }
