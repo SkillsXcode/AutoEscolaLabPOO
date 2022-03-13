@@ -54,7 +54,7 @@ namespace AutoEscolaTrevo
         }
 
         private void frmAdicionarVendas_Load(object sender, EventArgs e)
-        {
+        {            
             PreencherListagemServicos();
             PreencherListagemClientes();
             ClonarEstiloTabelaServico();
@@ -134,6 +134,7 @@ namespace AutoEscolaTrevo
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[5].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[5].Value.ToString();               
                 contLinServAdc++;
                 ManipularLabelValorTotal((double)dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value);
+                //ManipularLabelValorParcela(mskTxtNumeroParcelas);
             }                      
             
         }
@@ -204,6 +205,12 @@ namespace AutoEscolaTrevo
             
         }
 
+        private void ManipularLabelValorParcela(double valorEnviado)
+        {
+
+            //lblResultadoValorParcela.Text = 
+        }
+
         private string AplicarPadraoAmericano(DateTime data)
         {
             string dia = data.Day.ToString(), mes = data.Month.ToString(), ano = data.Year.ToString();
@@ -225,7 +232,8 @@ namespace AutoEscolaTrevo
 
         private void btnRegistrarVenda_Click(object sender, EventArgs e)
         {
-            Console.WriteLine();
+            
+            Console.WriteLine(numUpDownValorEntrada.ToString());
             if(VerificarTodosCampos())
             {
                 PreencherCampoServicosAdicionadosBanco();
@@ -248,7 +256,7 @@ namespace AutoEscolaTrevo
                         if (cmbxTipoPagamento.SelectedIndex > 1)
                         {                            
                             comandoMySQL.Parameters.AddWithValue("_valorParcela", null); //criar função pra calcular
-                            comandoMySQL.Parameters.AddWithValue("_valorEntrada", Convert.ToDouble(mskTxtValorEntrada.Text));
+                            comandoMySQL.Parameters.AddWithValue("_valorEntrada", Convert.ToDouble(numUpDownValorEntrada.Text));
                             comandoMySQL.Parameters.AddWithValue("_dataVencimento", AplicarPadraoAmericano(AdicionarUmMes(DateTime.Today)));
                             comandoMySQL.Parameters.AddWithValue("_numeroParcelas", Convert.ToInt32(mskTxtNumeroParcelas.Text));
                         }
@@ -325,11 +333,11 @@ namespace AutoEscolaTrevo
         }
 
         private void cmbxTipoPagamento_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
             if (cmbxTipoPagamento.SelectedIndex > 1)
             {
                 lblValorEntrada.Visible = true;
-                mskTxtValorEntrada.Visible = true;
+                numUpDownValorEntrada.Visible = true;
                 lblNumeroParcelas.Visible = true;
                 mskTxtNumeroParcelas.Visible = true;
                 //lblResultadoValorParcela.Text = CalcularParcela(Convert.ToInt32(mskTxtNumeroParcelas.Text)).ToString();
@@ -337,10 +345,15 @@ namespace AutoEscolaTrevo
             else
             {
                 lblValorEntrada.Visible = false;
-                mskTxtValorEntrada.Visible = false;
+                numUpDownValorEntrada.Visible = false;
                 lblNumeroParcelas.Visible = false;
                 mskTxtNumeroParcelas.Visible = false;
             }
+        }
+
+        private void lblNumeroParcelas_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -54,13 +54,14 @@
             this.lblValorEntrada = new System.Windows.Forms.Label();
             this.lblNumeroParcelas = new System.Windows.Forms.Label();
             this.mskTxtNumeroParcelas = new System.Windows.Forms.MaskedTextBox();
-            this.mskTxtValorEntrada = new System.Windows.Forms.MaskedTextBox();
             this.lblValorParcela = new System.Windows.Forms.Label();
             this.lblResultadoValorParcela = new System.Windows.Forms.Label();
+            this.numUpDownValorEntrada = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrinhoRegistrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicosAdicionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownValorEntrada)).BeginInit();
             this.SuspendLayout();
             // 
             // pcbCarrinhoRegistrar
@@ -352,6 +353,7 @@
             this.lblNumeroParcelas.TabIndex = 20;
             this.lblNumeroParcelas.Text = "Numero de Parcelas:";
             this.lblNumeroParcelas.Visible = false;
+            this.lblNumeroParcelas.Click += new System.EventHandler(this.lblNumeroParcelas_Click);
             // 
             // mskTxtNumeroParcelas
             // 
@@ -363,16 +365,6 @@
             this.mskTxtNumeroParcelas.TabIndex = 31;
             this.mskTxtNumeroParcelas.ValidatingType = typeof(int);
             this.mskTxtNumeroParcelas.Visible = false;
-            // 
-            // mskTxtValorEntrada
-            // 
-            this.mskTxtValorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.mskTxtValorEntrada.Location = new System.Drawing.Point(536, 600);
-            this.mskTxtValorEntrada.Mask = "9999,00";
-            this.mskTxtValorEntrada.Name = "mskTxtValorEntrada";
-            this.mskTxtValorEntrada.Size = new System.Drawing.Size(152, 26);
-            this.mskTxtValorEntrada.TabIndex = 32;
-            this.mskTxtValorEntrada.Visible = false;
             // 
             // lblValorParcela
             // 
@@ -396,13 +388,26 @@
             this.lblResultadoValorParcela.Text = "-";
             this.lblResultadoValorParcela.Click += new System.EventHandler(this.lblNomeCliente_Click);
             // 
+            // numUpDownValorEntrada
+            // 
+            this.numUpDownValorEntrada.Location = new System.Drawing.Point(536, 600);
+            this.numUpDownValorEntrada.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numUpDownValorEntrada.Name = "numUpDownValorEntrada";
+            this.numUpDownValorEntrada.Size = new System.Drawing.Size(152, 22);
+            this.numUpDownValorEntrada.TabIndex = 32;
+            this.numUpDownValorEntrada.Visible = false;
+            // 
             // frmAdicionarVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1063, 721);
-            this.Controls.Add(this.mskTxtValorEntrada);
+            this.Controls.Add(this.numUpDownValorEntrada);
             this.Controls.Add(this.mskTxtNumeroParcelas);
             this.Controls.Add(this.lblResultadoValorParcela);
             this.Controls.Add(this.lblNomeCliente);
@@ -442,6 +447,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicosAdicionados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDownValorEntrada)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -474,8 +480,8 @@
         private System.Windows.Forms.Label lblValorEntrada;
         private System.Windows.Forms.Label lblNumeroParcelas;
         private System.Windows.Forms.MaskedTextBox mskTxtNumeroParcelas;
-        private System.Windows.Forms.MaskedTextBox mskTxtValorEntrada;
         private System.Windows.Forms.Label lblValorParcela;
         private System.Windows.Forms.Label lblResultadoValorParcela;
+        private System.Windows.Forms.NumericUpDown numUpDownValorEntrada;
     }
 }
