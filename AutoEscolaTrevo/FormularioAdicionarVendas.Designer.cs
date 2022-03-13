@@ -52,9 +52,11 @@
             this.lblNomeCliente = new System.Windows.Forms.Label();
             this.lblMscNomeCliente = new System.Windows.Forms.Label();
             this.lblValorEntrada = new System.Windows.Forms.Label();
-            this.txtValorEntrada = new System.Windows.Forms.TextBox();
             this.lblNumeroParcelas = new System.Windows.Forms.Label();
             this.mskTxtNumeroParcelas = new System.Windows.Forms.MaskedTextBox();
+            this.mskTxtValorEntrada = new System.Windows.Forms.MaskedTextBox();
+            this.lblValorParcela = new System.Windows.Forms.Label();
+            this.lblResultadoValorParcela = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrinhoRegistrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewServicosAdicionados)).BeginInit();
@@ -96,7 +98,7 @@
             // 
             this.lblTipoPagamento.AutoSize = true;
             this.lblTipoPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblTipoPagamento.Location = new System.Drawing.Point(24, 560);
+            this.lblTipoPagamento.Location = new System.Drawing.Point(8, 560);
             this.lblTipoPagamento.Name = "lblTipoPagamento";
             this.lblTipoPagamento.Size = new System.Drawing.Size(187, 25);
             this.lblTipoPagamento.TabIndex = 18;
@@ -106,7 +108,7 @@
             // 
             this.lblDataVenda.AutoSize = true;
             this.lblDataVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblDataVenda.Location = new System.Drawing.Point(304, 560);
+            this.lblDataVenda.Location = new System.Drawing.Point(272, 560);
             this.lblDataVenda.Name = "lblDataVenda";
             this.lblDataVenda.Size = new System.Drawing.Size(149, 25);
             this.lblDataVenda.TabIndex = 20;
@@ -117,7 +119,7 @@
             this.dtpDataVenda.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.dtpDataVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dtpDataVenda.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataVenda.Location = new System.Drawing.Point(304, 600);
+            this.dtpDataVenda.Location = new System.Drawing.Point(272, 600);
             this.dtpDataVenda.Name = "dtpDataVenda";
             this.dtpDataVenda.Size = new System.Drawing.Size(240, 26);
             this.dtpDataVenda.TabIndex = 21;
@@ -155,7 +157,7 @@
             "À VISTA (Débito)",
             "PRAZO (Crédito)",
             "PRAZO (Carnê)"});
-            this.cmbxTipoPagamento.Location = new System.Drawing.Point(24, 600);
+            this.cmbxTipoPagamento.Location = new System.Drawing.Point(8, 600);
             this.cmbxTipoPagamento.Name = "cmbxTipoPagamento";
             this.cmbxTipoPagamento.Size = new System.Drawing.Size(240, 28);
             this.cmbxTipoPagamento.TabIndex = 23;
@@ -333,27 +335,18 @@
             // 
             this.lblValorEntrada.AutoSize = true;
             this.lblValorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblValorEntrada.Location = new System.Drawing.Point(592, 560);
+            this.lblValorEntrada.Location = new System.Drawing.Point(528, 560);
             this.lblValorEntrada.Name = "lblValorEntrada";
             this.lblValorEntrada.Size = new System.Drawing.Size(164, 25);
             this.lblValorEntrada.TabIndex = 20;
             this.lblValorEntrada.Text = "Valor da Entrada:";
             this.lblValorEntrada.Visible = false;
             // 
-            // txtValorEntrada
-            // 
-            this.txtValorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtValorEntrada.Location = new System.Drawing.Point(592, 600);
-            this.txtValorEntrada.Name = "txtValorEntrada";
-            this.txtValorEntrada.Size = new System.Drawing.Size(168, 26);
-            this.txtValorEntrada.TabIndex = 30;
-            this.txtValorEntrada.Visible = false;
-            // 
             // lblNumeroParcelas
             // 
             this.lblNumeroParcelas.AutoSize = true;
             this.lblNumeroParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNumeroParcelas.Location = new System.Drawing.Point(792, 560);
+            this.lblNumeroParcelas.Location = new System.Drawing.Point(712, 560);
             this.lblNumeroParcelas.Name = "lblNumeroParcelas";
             this.lblNumeroParcelas.Size = new System.Drawing.Size(195, 25);
             this.lblNumeroParcelas.TabIndex = 20;
@@ -363,7 +356,7 @@
             // mskTxtNumeroParcelas
             // 
             this.mskTxtNumeroParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.mskTxtNumeroParcelas.Location = new System.Drawing.Point(800, 600);
+            this.mskTxtNumeroParcelas.Location = new System.Drawing.Point(720, 600);
             this.mskTxtNumeroParcelas.Mask = "00";
             this.mskTxtNumeroParcelas.Name = "mskTxtNumeroParcelas";
             this.mskTxtNumeroParcelas.Size = new System.Drawing.Size(100, 26);
@@ -371,14 +364,47 @@
             this.mskTxtNumeroParcelas.ValidatingType = typeof(int);
             this.mskTxtNumeroParcelas.Visible = false;
             // 
+            // mskTxtValorEntrada
+            // 
+            this.mskTxtValorEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.mskTxtValorEntrada.Location = new System.Drawing.Point(536, 600);
+            this.mskTxtValorEntrada.Mask = "9999,00";
+            this.mskTxtValorEntrada.Name = "mskTxtValorEntrada";
+            this.mskTxtValorEntrada.Size = new System.Drawing.Size(152, 26);
+            this.mskTxtValorEntrada.TabIndex = 32;
+            this.mskTxtValorEntrada.Visible = false;
+            // 
+            // lblValorParcela
+            // 
+            this.lblValorParcela.AutoSize = true;
+            this.lblValorParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblValorParcela.Location = new System.Drawing.Point(8, 672);
+            this.lblValorParcela.Name = "lblValorParcela";
+            this.lblValorParcela.Size = new System.Drawing.Size(162, 25);
+            this.lblValorParcela.TabIndex = 18;
+            this.lblValorParcela.Text = "Valor da Parcela:";
+            // 
+            // lblResultadoValorParcela
+            // 
+            this.lblResultadoValorParcela.AutoSize = true;
+            this.lblResultadoValorParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblResultadoValorParcela.ForeColor = System.Drawing.Color.Purple;
+            this.lblResultadoValorParcela.Location = new System.Drawing.Point(176, 672);
+            this.lblResultadoValorParcela.Name = "lblResultadoValorParcela";
+            this.lblResultadoValorParcela.Size = new System.Drawing.Size(19, 25);
+            this.lblResultadoValorParcela.TabIndex = 28;
+            this.lblResultadoValorParcela.Text = "-";
+            this.lblResultadoValorParcela.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
             // frmAdicionarVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1063, 721);
+            this.Controls.Add(this.mskTxtValorEntrada);
             this.Controls.Add(this.mskTxtNumeroParcelas);
-            this.Controls.Add(this.txtValorEntrada);
+            this.Controls.Add(this.lblResultadoValorParcela);
             this.Controls.Add(this.lblNomeCliente);
             this.Controls.Add(this.lblMscNomeCliente);
             this.Controls.Add(this.lblServicosAdicionados);
@@ -398,6 +424,7 @@
             this.Controls.Add(this.lblNumeroParcelas);
             this.Controls.Add(this.lblValorEntrada);
             this.Controls.Add(this.lblDataVenda);
+            this.Controls.Add(this.lblValorParcela);
             this.Controls.Add(this.lblTipoPagamento);
             this.Controls.Add(this.txtBuscarCliente);
             this.Controls.Add(this.lblClienteRegistrar);
@@ -445,8 +472,10 @@
         private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.Label lblMscNomeCliente;
         private System.Windows.Forms.Label lblValorEntrada;
-        private System.Windows.Forms.TextBox txtValorEntrada;
         private System.Windows.Forms.Label lblNumeroParcelas;
         private System.Windows.Forms.MaskedTextBox mskTxtNumeroParcelas;
+        private System.Windows.Forms.MaskedTextBox mskTxtValorEntrada;
+        private System.Windows.Forms.Label lblValorParcela;
+        private System.Windows.Forms.Label lblResultadoValorParcela;
     }
 }

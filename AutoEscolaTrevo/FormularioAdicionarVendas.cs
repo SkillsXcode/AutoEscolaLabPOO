@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-
 namespace AutoEscolaTrevo
 {
     public partial class frmAdicionarVendas : Form
@@ -132,8 +131,7 @@ namespace AutoEscolaTrevo
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[2].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value.ToString();
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[3].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[3].Value.ToString();
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[4].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[4].Value.ToString();
-                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[5].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[5].Value.ToString();
-                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[6].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[6].Value.ToString();
+                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[5].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[5].Value.ToString();               
                 contLinServAdc++;
                 ManipularLabelValorTotal((double)dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value);
             }                      
@@ -219,8 +217,15 @@ namespace AutoEscolaTrevo
             return dataAmericana;
         }
 
+        private DateTime AdicionarUmMes(DateTime data)
+        {
+            data = data.AddMonths(1);
+            return data;
+        }
+
         private void btnRegistrarVenda_Click(object sender, EventArgs e)
-        {           
+        {
+            Console.WriteLine();
             if(VerificarTodosCampos())
             {
                 PreencherCampoServicosAdicionadosBanco();
@@ -237,12 +242,23 @@ namespace AutoEscolaTrevo
                         comandoMySQL.Parameters.AddWithValue("_itensServico", PreencherCampoServicosAdicionadosBanco());
                         comandoMySQL.Parameters.AddWithValue("_formaPagamento", cmbxTipoPagamento.Text); //alterar quando for outras formas de pagamento
                         comandoMySQL.Parameters.AddWithValue("_fk_idCliente", (int)dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
-                        comandoMySQL.Parameters.AddWithValue("_dataVenda", AplicarPadraoAmericano(dtpDataVenda.Value).Trim());
+                        comandoMySQL.Parameters.AddWithValue("_dataVenda", AplicarPadraoAmericano(dtpDataVenda.Value).Trim());                       
                         comandoMySQL.Parameters.AddWithValue("_valorVenda", contGloValTot);
-                        comandoMySQL.Parameters.AddWithValue("_valorParcela", null);
-                        comandoMySQL.Parameters.AddWithValue("_valorEntrada", null);
-                        comandoMySQL.Parameters.AddWithValue("_dataVencimento", null);
-                        comandoMySQL.Parameters.AddWithValue("_numeroParcelas", null);
+                        //campos referentes às parcelas, cuidado ao mexer aqui
+                        if (cmbxTipoPagamento.SelectedIndex > 1)
+                        {                            
+                            comandoMySQL.Parameters.AddWithValue("_valorParcela", null); //criar função pra calcular
+                            comandoMySQL.Parameters.AddWithValue("_valorEntrada", Convert.ToDouble(mskTxtValorEntrada.Text));
+                            comandoMySQL.Parameters.AddWithValue("_dataVencimento", AplicarPadraoAmericano(AdicionarUmMes(DateTime.Today)));
+                            comandoMySQL.Parameters.AddWithValue("_numeroParcelas", Convert.ToInt32(mskTxtNumeroParcelas.Text));
+                        }
+                        else
+                        {
+                            comandoMySQL.Parameters.AddWithValue("_valorParcela", null);
+                            comandoMySQL.Parameters.AddWithValue("_valorEntrada", null);
+                            comandoMySQL.Parameters.AddWithValue("_dataVencimento", null);
+                            comandoMySQL.Parameters.AddWithValue("_numeroParcelas", null);
+                        }                        
                         comandoMySQL.ExecuteNonQuery();
                         MessageBox.Show("Venda Cadastrada com Sucesso!");
                         vendaGlobal.PreencherListagemVenda();
@@ -260,6 +276,15 @@ namespace AutoEscolaTrevo
                     Console.WriteLine(ex.Message);
                 }               
             }
+        }
+
+        private double CalcularParcela(int totalParcelas)
+        {
+            double totalParcela;
+
+            totalParcela = contGloValTot / totalParcelas;
+
+            return totalParcela;
         }
 
         private bool VerificarTodosCampos()
@@ -304,14 +329,15 @@ namespace AutoEscolaTrevo
             if (cmbxTipoPagamento.SelectedIndex > 1)
             {
                 lblValorEntrada.Visible = true;
-                txtValorEntrada.Visible = true;
+                mskTxtValorEntrada.Visible = true;
                 lblNumeroParcelas.Visible = true;
-                mskTxtNumeroParcelas.Visible = true;               
+                mskTxtNumeroParcelas.Visible = true;
+                //lblResultadoValorParcela.Text = CalcularParcela(Convert.ToInt32(mskTxtNumeroParcelas.Text)).ToString();
             } 
             else
             {
                 lblValorEntrada.Visible = false;
-                txtValorEntrada.Visible = false;
+                mskTxtValorEntrada.Visible = false;
                 lblNumeroParcelas.Visible = false;
                 mskTxtNumeroParcelas.Visible = false;
             }
