@@ -365,6 +365,8 @@
             this.mskTxtNumeroParcelas.TabIndex = 31;
             this.mskTxtNumeroParcelas.ValidatingType = typeof(int);
             this.mskTxtNumeroParcelas.Visible = false;
+            this.mskTxtNumeroParcelas.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskTxtNumeroParcelas_MaskInputRejected);
+            this.mskTxtNumeroParcelas.TextChanged += new System.EventHandler(this.mskTxtNumeroParcelas_TextChanged);
             // 
             // lblValorParcela
             // 
@@ -390,6 +392,7 @@
             // 
             // numUpDownValorEntrada
             // 
+            this.numUpDownValorEntrada.DecimalPlaces = 2;
             this.numUpDownValorEntrada.Location = new System.Drawing.Point(536, 600);
             this.numUpDownValorEntrada.Maximum = new decimal(new int[] {
             100000,
@@ -400,6 +403,7 @@
             this.numUpDownValorEntrada.Size = new System.Drawing.Size(152, 22);
             this.numUpDownValorEntrada.TabIndex = 32;
             this.numUpDownValorEntrada.Visible = false;
+            this.numUpDownValorEntrada.ValueChanged += new System.EventHandler(this.numUpDownValorEntrada_ValueChanged);
             // 
             // frmAdicionarVendas
             // 
