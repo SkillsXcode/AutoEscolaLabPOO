@@ -82,6 +82,7 @@
             this.btnPagarVenda.TabIndex = 14;
             this.btnPagarVenda.Text = "Pagar";
             this.btnPagarVenda.UseVisualStyleBackColor = false;
+            this.btnPagarVenda.Click += new System.EventHandler(this.btnPagarVenda_Click);
             // 
             // btnVoltar
             // 
