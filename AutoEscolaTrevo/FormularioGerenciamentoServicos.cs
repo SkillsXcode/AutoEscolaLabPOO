@@ -65,16 +65,24 @@ namespace AutoEscolaTrevo
         {
             try
             {
-                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                var msg = MessageBox.Show("Tem certeza que deseja excluir o serviço " + (dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[1].Value) + " ?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (msg == DialogResult.Yes)
                 {
-                    conexaoMySQL.Open();
-                    MySqlCommand comandoMySQL = new MySqlCommand("DeletarServicoporID", conexaoMySQL);
-                    comandoMySQL.CommandType = CommandType.StoredProcedure;
-                    idServico = Convert.ToInt32(dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[0].Value);
-                    comandoMySQL.Parameters.AddWithValue("_id", idServico);
-                    comandoMySQL.ExecuteNonQuery();
-                    MessageBox.Show("Servico deletado!");
-                    PreencherListagem();
+                    using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                    {
+                        conexaoMySQL.Open();
+                        MySqlCommand comandoMySQL = new MySqlCommand("DeletarServicoporID", conexaoMySQL);
+                        comandoMySQL.CommandType = CommandType.StoredProcedure;
+                        idServico = Convert.ToInt32(dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[0].Value);
+                        comandoMySQL.Parameters.AddWithValue("_id", idServico);
+                        comandoMySQL.ExecuteNonQuery();
+                        MessageBox.Show("Servico deletado!");
+                        PreencherListagem();
+                    }
+                }
+                else
+                {
+                    this.Close();
                 }
             }
             catch (Exception ex)

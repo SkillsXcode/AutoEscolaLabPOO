@@ -85,18 +85,28 @@ namespace AutoEscolaTrevo
 
         private void btnExcluirCliente_Click(object sender, EventArgs e)
         {
+
             try
             {
-                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                var msg = MessageBox.Show("Tem certeza que deseja excluir o cliente " + (dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[1].Value) + " ?", "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (msg == DialogResult.Yes)
                 {
-                    conexaoMySQL.Open();
-                    MySqlCommand comandoMySQL = new MySqlCommand("DeletarClienteporID", conexaoMySQL);
-                    comandoMySQL.CommandType = CommandType.StoredProcedure;
-                    idCliente = Convert.ToInt32(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
-                    comandoMySQL.Parameters.AddWithValue("_id", idCliente);
-                    comandoMySQL.ExecuteNonQuery();
-                    MessageBox.Show("Cliente deletado!");
-                    PreencherListagem();
+                    using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                    {
+                        conexaoMySQL.Open();
+                        MySqlCommand comandoMySQL = new MySqlCommand("DeletarClienteporID", conexaoMySQL);
+                        comandoMySQL.CommandType = CommandType.StoredProcedure;
+                        idCliente = Convert.ToInt32(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
+                        comandoMySQL.Parameters.AddWithValue("_id", idCliente);
+                        comandoMySQL.ExecuteNonQuery();
+                        MessageBox.Show("Cliente deletado!");
+                        PreencherListagem();
+                    }
+                    this.Close();
+                }
+                else
+                {
+                    this.Close();
                 }
             }
             catch (Exception ex)
