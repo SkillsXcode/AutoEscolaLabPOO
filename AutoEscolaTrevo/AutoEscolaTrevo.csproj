@@ -104,6 +104,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarCliente.designer.cs">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioAdicionarVendas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EditarCliente.resx">
+      <DependentUpon>EditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormularioAdicionarVendas.resx">
       <DependentUpon>FormularioAdicionarVendas.cs</DependentUpon>
     </EmbeddedResource>

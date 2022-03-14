@@ -42,11 +42,20 @@ namespace AutoEscolaTrevo
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
-            frmCadastrarCliente formularioClienteEdicao = new frmCadastrarCliente();
-            formularioClienteEdicao.ShowDialog();
-            //formularioClienteEdicao.btnCadastrar_Click
-            //if(dataViewCliente.CurrentRow.Index != null)
-            
+            if (dataViewCliente.CurrentRow.Index != -1)
+            {
+
+                frmEditarCliente formularioClienteEdicao = new frmEditarCliente();
+
+                formularioClienteEdicao.txtBoxNome.Text = dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[1].Value.ToString();
+                formularioClienteEdicao.maskedtxtboxCpf.Text = dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[2].Value.ToString();
+                formularioClienteEdicao.txtBoxRg.Text = dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[3].Value.ToString();
+                formularioClienteEdicao.dtpDataExpedicao.Value = Convert.ToDateTime(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[4].Value.ToString());
+                formularioClienteEdicao.dtpDataNascimento.Value = Convert.ToDateTime(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[5].Value.ToString());
+                formularioClienteEdicao.ShowDialog();
+            }
+            this.Close();
+
 
         }
 
