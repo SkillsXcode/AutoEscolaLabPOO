@@ -16,7 +16,7 @@ namespace AutoEscolaTrevo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGerenciamentoGeral());
+            Application.Run(new frmAutenticacao());
         }
     }
 }

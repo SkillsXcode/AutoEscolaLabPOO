@@ -110,6 +110,12 @@
     <Compile Include="FormularioAdicionarVendas.Designer.cs">
       <DependentUpon>FormularioAdicionarVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioAutenticacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioAutenticacao.Designer.cs">
+      <DependentUpon>FormularioAutenticacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioCadastrarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormularioAdicionarVendas.resx">
       <DependentUpon>FormularioAdicionarVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioAutenticacao.resx">
+      <DependentUpon>FormularioAutenticacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioCadastrarCliente.resx">
       <DependentUpon>FormularioCadastrarCliente.cs</DependentUpon>

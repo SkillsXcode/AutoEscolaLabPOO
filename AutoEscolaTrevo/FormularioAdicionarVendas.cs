@@ -13,7 +13,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmAdicionarVendas : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=fisica1997;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idVenda = 0;
         private int contLinServAdc = 0; //Contador Linha Servico Adicionado
         private double contGloValTot = 0; //Contador Global do Valor Total de Venda

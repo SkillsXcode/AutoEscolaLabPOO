@@ -29,7 +29,6 @@ C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscol
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmGerenciamentoCliente.resources
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmGerenciamentoGeral.resources
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmGerenciamentoServicos.resources
-C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.FormularioRegistrarVenda.resources
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.Properties.Resources.resources
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.csproj.GenerateResource.cache
 C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.csproj.CoreCompileInputs.cache
@@ -127,3 +126,7 @@ C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscola
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmPopUp.resources
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmAdicionarVendas.resources
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmListarVendas.resources
+C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmAdicionarVendas.resources
+C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmListarVendas.resources
+C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmPopUp.resources
+C:\Users\frizz\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmAutenticacao.resources
