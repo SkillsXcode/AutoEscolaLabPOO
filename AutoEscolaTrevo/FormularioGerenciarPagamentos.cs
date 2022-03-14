@@ -11,46 +11,17 @@ using MySql.Data.MySqlClient;
 
 namespace AutoEscolaTrevo
 {
-    public partial class frmListarVendas : Form
+    public partial class frmGerenciarPagamentos : Form
     {
         private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
-
-        public frmListarVendas()
+        public frmGerenciarPagamentos()
         {
             InitializeComponent();
         }
 
-        private void FormularioVendas_Load(object sender, EventArgs e)
+        private void frmGerenciarPagamentos_Load(object sender, EventArgs e)
         {
             PreencherListagemVenda();
-        }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnFrmRegistrarNovasVendas_Click(object sender, EventArgs e)
-        {
-            ExibirNovoFormularioAdicionarVendas();
-        }
-
-        private void lblSinalMais_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private frmAdicionarVendas ExibirNovoFormularioAdicionarVendas()
-        {
-            frmAdicionarVendas frmVendas = new frmAdicionarVendas();
-            frmVendas.Show();
-            frmVendas.ReceberObjetoAnteriorVenda(this);
-            return frmVendas;
         }
 
         public void PreencherListagemVenda()
@@ -72,7 +43,12 @@ namespace AutoEscolaTrevo
             {
                 MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex.Message);
-            }            
+            }
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

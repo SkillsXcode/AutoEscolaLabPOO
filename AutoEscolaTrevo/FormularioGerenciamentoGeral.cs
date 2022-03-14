@@ -48,11 +48,6 @@ namespace AutoEscolaTrevo
             return frmVendas;
         }
 
-        private void btnGerenciarCliente_Click(object sender, EventArgs e)
-        {
-            ExibirNovoFormularioGerenciarClientes();
-        }
-
         private void btnFechar_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -61,6 +56,18 @@ namespace AutoEscolaTrevo
         private void btnVendas_Click(object sender, EventArgs e)
         {
             ExibirNovoFormularioListarVendas();
+        }
+
+        private void btnInserirPagamento_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioInserirPagamento();
+        }
+
+        private frmGerenciarPagamentos ExibirNovoFormularioInserirPagamento()
+        {
+            frmGerenciarPagamentos frmPagamentos = new frmGerenciarPagamentos();
+            frmPagamentos.Show();
+            return frmPagamentos;
         }
     }
 }

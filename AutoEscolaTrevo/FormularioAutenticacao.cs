@@ -13,7 +13,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmAutenticacao : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=fisica1997;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         public frmAutenticacao()
         {
             InitializeComponent();
@@ -54,6 +54,11 @@ namespace AutoEscolaTrevo
             frmGerenciamentoGeral frmGerenciamentogeral = new frmGerenciamentoGeral();
             frmGerenciamentogeral.Show();
             return frmGerenciamentogeral;
+        }
+
+        private void frmAutenticacao_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

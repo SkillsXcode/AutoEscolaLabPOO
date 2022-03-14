@@ -158,6 +158,12 @@
     <Compile Include="FormularioGerenciamentoServicos.Designer.cs">
       <DependentUpon>FormularioGerenciamentoServicos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormularioGerenciarPagamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioGerenciarPagamentos.Designer.cs">
+      <DependentUpon>FormularioGerenciarPagamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioInserirPagamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioGerenciamentoServicos.resx">
       <DependentUpon>FormularioGerenciamentoServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioGerenciarPagamentos.resx">
+      <DependentUpon>FormularioGerenciarPagamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioInserirPagamento.resx">
       <DependentUpon>FormularioInserirPagamento.cs</DependentUpon>

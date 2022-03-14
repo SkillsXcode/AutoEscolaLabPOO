@@ -44,28 +44,29 @@
             // 
             // maskedtxtboxCpf
             // 
-            this.maskedtxtboxCpf.Location = new System.Drawing.Point(244, 369);
+            this.maskedtxtboxCpf.Location = new System.Drawing.Point(325, 454);
+            this.maskedtxtboxCpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.maskedtxtboxCpf.Mask = "000.000.000-00";
             this.maskedtxtboxCpf.Name = "maskedtxtboxCpf";
-            this.maskedtxtboxCpf.Size = new System.Drawing.Size(317, 20);
+            this.maskedtxtboxCpf.Size = new System.Drawing.Size(421, 22);
             this.maskedtxtboxCpf.TabIndex = 28;
             // 
             // dtpDataExpedicao
             // 
             this.dtpDataExpedicao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataExpedicao.Location = new System.Drawing.Point(244, 309);
-            this.dtpDataExpedicao.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDataExpedicao.Location = new System.Drawing.Point(325, 380);
+            this.dtpDataExpedicao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDataExpedicao.Name = "dtpDataExpedicao";
-            this.dtpDataExpedicao.Size = new System.Drawing.Size(317, 20);
+            this.dtpDataExpedicao.Size = new System.Drawing.Size(421, 22);
             this.dtpDataExpedicao.TabIndex = 27;
             // 
             // dtpDataNascimento
             // 
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(244, 186);
-            this.dtpDataNascimento.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(325, 229);
+            this.dtpDataNascimento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
-            this.dtpDataNascimento.Size = new System.Drawing.Size(317, 20);
+            this.dtpDataNascimento.Size = new System.Drawing.Size(421, 22);
             this.dtpDataNascimento.TabIndex = 26;
             // 
             // btnEditar
@@ -74,9 +75,10 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(367, 399);
+            this.btnEditar.Location = new System.Drawing.Point(489, 491);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(89, 30);
+            this.btnEditar.Size = new System.Drawing.Size(119, 37);
             this.btnEditar.TabIndex = 25;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -86,9 +88,10 @@
             // 
             this.lblCpf.AutoSize = true;
             this.lblCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblCpf.Location = new System.Drawing.Point(244, 339);
+            this.lblCpf.Location = new System.Drawing.Point(325, 417);
+            this.lblCpf.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(40, 20);
+            this.lblCpf.Size = new System.Drawing.Size(52, 25);
             this.lblCpf.TabIndex = 24;
             this.lblCpf.Text = "CPF";
             // 
@@ -96,27 +99,30 @@
             // 
             this.lblDataExpedicao.AutoSize = true;
             this.lblDataExpedicao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblDataExpedicao.Location = new System.Drawing.Point(244, 279);
+            this.lblDataExpedicao.Location = new System.Drawing.Point(325, 343);
+            this.lblDataExpedicao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDataExpedicao.Name = "lblDataExpedicao";
-            this.lblDataExpedicao.Size = new System.Drawing.Size(144, 20);
+            this.lblDataExpedicao.Size = new System.Drawing.Size(177, 25);
             this.lblDataExpedicao.TabIndex = 23;
             this.lblDataExpedicao.Text = "Data de Expedição";
             // 
             // txtBoxRg
             // 
             this.txtBoxRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxRg.Location = new System.Drawing.Point(244, 246);
+            this.txtBoxRg.Location = new System.Drawing.Point(325, 303);
+            this.txtBoxRg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxRg.Name = "txtBoxRg";
-            this.txtBoxRg.Size = new System.Drawing.Size(317, 23);
+            this.txtBoxRg.Size = new System.Drawing.Size(421, 26);
             this.txtBoxRg.TabIndex = 22;
             // 
             // lblRg
             // 
             this.lblRg.AutoSize = true;
             this.lblRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblRg.Location = new System.Drawing.Point(244, 216);
+            this.lblRg.Location = new System.Drawing.Point(325, 266);
+            this.lblRg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRg.Name = "lblRg";
-            this.lblRg.Size = new System.Drawing.Size(34, 20);
+            this.lblRg.Size = new System.Drawing.Size(40, 25);
             this.lblRg.TabIndex = 21;
             this.lblRg.Text = "RG";
             // 
@@ -124,27 +130,30 @@
             // 
             this.lblDataNascimento.AutoSize = true;
             this.lblDataNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblDataNascimento.Location = new System.Drawing.Point(244, 156);
+            this.lblDataNascimento.Location = new System.Drawing.Point(325, 192);
+            this.lblDataNascimento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDataNascimento.Name = "lblDataNascimento";
-            this.lblDataNascimento.Size = new System.Drawing.Size(154, 20);
+            this.lblDataNascimento.Size = new System.Drawing.Size(188, 25);
             this.lblDataNascimento.TabIndex = 20;
             this.lblDataNascimento.Text = "Data de Nascimento";
             // 
             // txtBoxNome
             // 
             this.txtBoxNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtBoxNome.Location = new System.Drawing.Point(244, 123);
+            this.txtBoxNome.Location = new System.Drawing.Point(325, 151);
+            this.txtBoxNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBoxNome.Name = "txtBoxNome";
-            this.txtBoxNome.Size = new System.Drawing.Size(317, 23);
+            this.txtBoxNome.Size = new System.Drawing.Size(421, 26);
             this.txtBoxNome.TabIndex = 19;
             // 
             // lblNomeCliente
             // 
             this.lblNomeCliente.AutoSize = true;
             this.lblNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNomeCliente.Location = new System.Drawing.Point(244, 93);
+            this.lblNomeCliente.Location = new System.Drawing.Point(325, 114);
+            this.lblNomeCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNomeCliente.Name = "lblNomeCliente";
-            this.lblNomeCliente.Size = new System.Drawing.Size(51, 20);
+            this.lblNomeCliente.Size = new System.Drawing.Size(64, 25);
             this.lblNomeCliente.TabIndex = 18;
             this.lblNomeCliente.Text = "Nome";
             // 
@@ -152,18 +161,19 @@
             // 
             this.lblEditarCliente.AutoSize = true;
             this.lblEditarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblEditarCliente.Location = new System.Drawing.Point(236, 22);
+            this.lblEditarCliente.Location = new System.Drawing.Point(315, 27);
+            this.lblEditarCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEditarCliente.Name = "lblEditarCliente";
-            this.lblEditarCliente.Size = new System.Drawing.Size(259, 46);
+            this.lblEditarCliente.Size = new System.Drawing.Size(325, 58);
             this.lblEditarCliente.TabIndex = 17;
             this.lblEditarCliente.Text = "Editar Cliente";
             // 
             // frmEditarCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(754, 586);
+            this.ClientSize = new System.Drawing.Size(1005, 721);
             this.Controls.Add(this.maskedtxtboxCpf);
             this.Controls.Add(this.dtpDataExpedicao);
             this.Controls.Add(this.dtpDataNascimento);
@@ -177,9 +187,11 @@
             this.Controls.Add(this.lblNomeCliente);
             this.Controls.Add(this.lblEditarCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmEditarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarCliente";
+            this.Load += new System.EventHandler(this.frmEditarCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

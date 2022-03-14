@@ -29,28 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciamentoGeral));
-            this.pcbGerenciarServico = new System.Windows.Forms.PictureBox();
             this.btnGerenciarServicos = new System.Windows.Forms.Button();
-            this.pcbGerenciarCliente = new System.Windows.Forms.PictureBox();
             this.btnGerenciarCliente = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnVendas = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarServico)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarCliente)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pcbGerenciarCliente = new System.Windows.Forms.PictureBox();
+            this.pcbGerenciarServico = new System.Windows.Forms.PictureBox();
+            this.pcbGerenciarPagamentos = new System.Windows.Forms.PictureBox();
+            this.btnInserirPagamento = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarServico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarPagamentos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pcbGerenciarServico
-            // 
-            this.pcbGerenciarServico.Image = ((System.Drawing.Image)(resources.GetObject("pcbGerenciarServico.Image")));
-            this.pcbGerenciarServico.Location = new System.Drawing.Point(416, 120);
-            this.pcbGerenciarServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pcbGerenciarServico.Name = "pcbGerenciarServico";
-            this.pcbGerenciarServico.Size = new System.Drawing.Size(128, 103);
-            this.pcbGerenciarServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbGerenciarServico.TabIndex = 0;
-            this.pcbGerenciarServico.TabStop = false;
             // 
             // btnGerenciarServicos
             // 
@@ -67,17 +59,6 @@
             this.btnGerenciarServicos.UseVisualStyleBackColor = false;
             this.btnGerenciarServicos.Click += new System.EventHandler(this.btnGerenciarServicos_Click);
             // 
-            // pcbGerenciarCliente
-            // 
-            this.pcbGerenciarCliente.Image = global::AutoEscolaTrevo.Properties.Resources.client;
-            this.pcbGerenciarCliente.Location = new System.Drawing.Point(90, 120);
-            this.pcbGerenciarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pcbGerenciarCliente.Name = "pcbGerenciarCliente";
-            this.pcbGerenciarCliente.Size = new System.Drawing.Size(128, 103);
-            this.pcbGerenciarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcbGerenciarCliente.TabIndex = 2;
-            this.pcbGerenciarCliente.TabStop = false;
-            // 
             // btnGerenciarCliente
             // 
             this.btnGerenciarCliente.BackColor = System.Drawing.Color.Black;
@@ -91,7 +72,6 @@
             this.btnGerenciarCliente.TabIndex = 1;
             this.btnGerenciarCliente.Text = "Gerenciar Cliente";
             this.btnGerenciarCliente.UseVisualStyleBackColor = false;
-            this.btnGerenciarCliente.Click += new System.EventHandler(this.btnGerenciarCliente_Click);
             // 
             // btnFechar
             // 
@@ -108,16 +88,6 @@
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(736, 104);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(128, 103);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnVendas
             // 
             this.btnVendas.BackColor = System.Drawing.Color.Black;
@@ -133,15 +103,75 @@
             this.btnVendas.UseVisualStyleBackColor = false;
             this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(736, 104);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(128, 103);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pcbGerenciarCliente
+            // 
+            this.pcbGerenciarCliente.Image = global::AutoEscolaTrevo.Properties.Resources.client;
+            this.pcbGerenciarCliente.Location = new System.Drawing.Point(90, 120);
+            this.pcbGerenciarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pcbGerenciarCliente.Name = "pcbGerenciarCliente";
+            this.pcbGerenciarCliente.Size = new System.Drawing.Size(128, 103);
+            this.pcbGerenciarCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbGerenciarCliente.TabIndex = 2;
+            this.pcbGerenciarCliente.TabStop = false;
+            // 
+            // pcbGerenciarServico
+            // 
+            this.pcbGerenciarServico.Image = ((System.Drawing.Image)(resources.GetObject("pcbGerenciarServico.Image")));
+            this.pcbGerenciarServico.Location = new System.Drawing.Point(416, 120);
+            this.pcbGerenciarServico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pcbGerenciarServico.Name = "pcbGerenciarServico";
+            this.pcbGerenciarServico.Size = new System.Drawing.Size(128, 103);
+            this.pcbGerenciarServico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbGerenciarServico.TabIndex = 0;
+            this.pcbGerenciarServico.TabStop = false;
+            // 
+            // pcbGerenciarPagamentos
+            // 
+            this.pcbGerenciarPagamentos.Image = ((System.Drawing.Image)(resources.GetObject("pcbGerenciarPagamentos.Image")));
+            this.pcbGerenciarPagamentos.Location = new System.Drawing.Point(90, 384);
+            this.pcbGerenciarPagamentos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pcbGerenciarPagamentos.Name = "pcbGerenciarPagamentos";
+            this.pcbGerenciarPagamentos.Size = new System.Drawing.Size(128, 103);
+            this.pcbGerenciarPagamentos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbGerenciarPagamentos.TabIndex = 12;
+            this.pcbGerenciarPagamentos.TabStop = false;
+            // 
+            // btnInserirPagamento
+            // 
+            this.btnInserirPagamento.BackColor = System.Drawing.Color.Black;
+            this.btnInserirPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInserirPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnInserirPagamento.ForeColor = System.Drawing.Color.White;
+            this.btnInserirPagamento.Location = new System.Drawing.Point(40, 512);
+            this.btnInserirPagamento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInserirPagamento.Name = "btnInserirPagamento";
+            this.btnInserirPagamento.Size = new System.Drawing.Size(200, 39);
+            this.btnInserirPagamento.TabIndex = 1;
+            this.btnInserirPagamento.Text = "Inserir Pagamento";
+            this.btnInserirPagamento.UseVisualStyleBackColor = false;
+            this.btnInserirPagamento.Click += new System.EventHandler(this.btnInserirPagamento_Click);
+            // 
             // frmGerenciamentoGeral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.Controls.Add(this.pcbGerenciarPagamentos);
             this.Controls.Add(this.btnVendas);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnFechar);
+            this.Controls.Add(this.btnInserirPagamento);
             this.Controls.Add(this.btnGerenciarCliente);
             this.Controls.Add(this.pcbGerenciarCliente);
             this.Controls.Add(this.btnGerenciarServicos);
@@ -154,9 +184,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gerenciamento Geral";
             this.Load += new System.EventHandler(this.frmGerenciamentoGeral_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarServico)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarServico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarPagamentos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,6 +201,8 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnVendas;
+        private System.Windows.Forms.PictureBox pcbGerenciarPagamentos;
+        private System.Windows.Forms.Button btnInserirPagamento;
     }
 }
 

@@ -13,7 +13,7 @@ namespace AutoEscolaTrevo
 {
     public partial class frmEditarCliente : Form
     {
-        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=mysql;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idCliente = 0;
         public frmEditarCliente()
         {
@@ -39,6 +39,11 @@ namespace AutoEscolaTrevo
             }*/
             this.Close();
             
+        }
+
+        private void frmEditarCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
     }

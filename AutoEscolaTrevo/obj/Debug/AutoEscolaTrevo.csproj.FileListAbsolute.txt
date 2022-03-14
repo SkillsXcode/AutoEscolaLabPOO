@@ -133,3 +133,6 @@ C:\Users\Admin\source\repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscol
 C:\Users\Admin\source\repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmAdicionarVendas.resources
 C:\Users\Admin\source\repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmAutenticacao.resources
 C:\Users\Admin\source\repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmListarVendas.resources
+C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmEditarCliente.resources
+C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmAutenticacao.resources
+C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmGerenciarPagamentos.resources
