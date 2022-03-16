@@ -333,7 +333,7 @@ namespace AutoEscolaTrevo
                 MessageBox.Show("Insira um valor válido na Entrada!");
                 Console.WriteLine("Insira um valor válido na Entrada!");
                 return false;
-            } else if(mskTxtNumeroParcelas.Text == "")
+            } else if(mskTxtNumeroParcelas.Text == "" && cmbxTipoPagamento.SelectedIndex > 1)
             {
                 MessageBox.Show("Insira um valor válido nas Parcelas!");
                 Console.WriteLine("Insira um valor válido nas Parcelas!");
