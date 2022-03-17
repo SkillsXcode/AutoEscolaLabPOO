@@ -35,6 +35,20 @@
             this.btnFrmRegistrarNovasVendas = new System.Windows.Forms.Button();
             this.lblSinalMais = new System.Windows.Forms.Label();
             this.pcbCarrinoListagem = new System.Windows.Forms.PictureBox();
+            this.lblNomeCliente = new System.Windows.Forms.Label();
+            this.lblItensVenda = new System.Windows.Forms.Label();
+            this.lblResultadoNomeCliente = new System.Windows.Forms.Label();
+            this.txtResultadoItens = new System.Windows.Forms.TextBox();
+            this.lblValorVenda = new System.Windows.Forms.Label();
+            this.lblResultadoValorVenda = new System.Windows.Forms.Label();
+            this.lblFormaPagamento = new System.Windows.Forms.Label();
+            this.lblResultadoFormaPagamento = new System.Windows.Forms.Label();
+            this.lblResultadoQuantidadeParcelas = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblResultadoDataVenda = new System.Windows.Forms.Label();
+            this.lblDataVenda = new System.Windows.Forms.Label();
+            this.lblResultadoValorParcela = new System.Windows.Forms.Label();
+            this.lblValorParcela = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewListagemVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrinoListagem)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +72,7 @@
             // 
             this.lblListarVenda.AutoSize = true;
             this.lblListarVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblListarVenda.Location = new System.Drawing.Point(309, 48);
+            this.lblListarVenda.Location = new System.Drawing.Point(312, 16);
             this.lblListarVenda.Name = "lblListarVenda";
             this.lblListarVenda.Size = new System.Drawing.Size(481, 58);
             this.lblListarVenda.TabIndex = 12;
@@ -112,12 +126,190 @@
             this.pcbCarrinoListagem.TabIndex = 11;
             this.pcbCarrinoListagem.TabStop = false;
             // 
+            // lblNomeCliente
+            // 
+            this.lblNomeCliente.AutoSize = true;
+            this.lblNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblNomeCliente.Location = new System.Drawing.Point(512, 104);
+            this.lblNomeCliente.Name = "lblNomeCliente";
+            this.lblNomeCliente.Size = new System.Drawing.Size(66, 20);
+            this.lblNomeCliente.TabIndex = 16;
+            this.lblNomeCliente.Text = "Cliente:";
+            this.lblNomeCliente.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblItensVenda
+            // 
+            this.lblItensVenda.AutoSize = true;
+            this.lblItensVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblItensVenda.Location = new System.Drawing.Point(512, 248);
+            this.lblItensVenda.Name = "lblItensVenda";
+            this.lblItensVenda.Size = new System.Drawing.Size(50, 20);
+            this.lblItensVenda.TabIndex = 16;
+            this.lblItensVenda.Text = "Itens:";
+            this.lblItensVenda.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblResultadoNomeCliente
+            // 
+            this.lblResultadoNomeCliente.AutoSize = true;
+            this.lblResultadoNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblResultadoNomeCliente.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoNomeCliente.Location = new System.Drawing.Point(576, 104);
+            this.lblResultadoNomeCliente.Name = "lblResultadoNomeCliente";
+            this.lblResultadoNomeCliente.Size = new System.Drawing.Size(98, 20);
+            this.lblResultadoNomeCliente.TabIndex = 16;
+            this.lblResultadoNomeCliente.Text = "Não apague";
+            this.lblResultadoNomeCliente.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // txtResultadoItens
+            // 
+            this.txtResultadoItens.Location = new System.Drawing.Point(600, 168);
+            this.txtResultadoItens.Multiline = true;
+            this.txtResultadoItens.Name = "txtResultadoItens";
+            this.txtResultadoItens.ReadOnly = true;
+            this.txtResultadoItens.Size = new System.Drawing.Size(360, 152);
+            this.txtResultadoItens.TabIndex = 17;
+            // 
+            // lblValorVenda
+            // 
+            this.lblValorVenda.AutoSize = true;
+            this.lblValorVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblValorVenda.Location = new System.Drawing.Point(512, 408);
+            this.lblValorVenda.Name = "lblValorVenda";
+            this.lblValorVenda.Size = new System.Drawing.Size(125, 20);
+            this.lblValorVenda.TabIndex = 16;
+            this.lblValorVenda.Text = "Valor da venda:";
+            this.lblValorVenda.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblResultadoValorVenda
+            // 
+            this.lblResultadoValorVenda.AutoSize = true;
+            this.lblResultadoValorVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblResultadoValorVenda.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoValorVenda.Location = new System.Drawing.Point(720, 408);
+            this.lblResultadoValorVenda.Name = "lblResultadoValorVenda";
+            this.lblResultadoValorVenda.Size = new System.Drawing.Size(98, 20);
+            this.lblResultadoValorVenda.TabIndex = 16;
+            this.lblResultadoValorVenda.Text = "Não apague";
+            this.lblResultadoValorVenda.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblFormaPagamento
+            // 
+            this.lblFormaPagamento.AutoSize = true;
+            this.lblFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblFormaPagamento.Location = new System.Drawing.Point(512, 368);
+            this.lblFormaPagamento.Name = "lblFormaPagamento";
+            this.lblFormaPagamento.Size = new System.Drawing.Size(172, 20);
+            this.lblFormaPagamento.TabIndex = 16;
+            this.lblFormaPagamento.Text = "Forma de pagamento:";
+            this.lblFormaPagamento.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblResultadoFormaPagamento
+            // 
+            this.lblResultadoFormaPagamento.AutoSize = true;
+            this.lblResultadoFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblResultadoFormaPagamento.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoFormaPagamento.Location = new System.Drawing.Point(720, 368);
+            this.lblResultadoFormaPagamento.Name = "lblResultadoFormaPagamento";
+            this.lblResultadoFormaPagamento.Size = new System.Drawing.Size(98, 20);
+            this.lblResultadoFormaPagamento.TabIndex = 16;
+            this.lblResultadoFormaPagamento.Text = "Não apague";
+            this.lblResultadoFormaPagamento.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblResultadoQuantidadeParcelas
+            // 
+            this.lblResultadoQuantidadeParcelas.AutoSize = true;
+            this.lblResultadoQuantidadeParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblResultadoQuantidadeParcelas.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoQuantidadeParcelas.Location = new System.Drawing.Point(720, 448);
+            this.lblResultadoQuantidadeParcelas.Name = "lblResultadoQuantidadeParcelas";
+            this.lblResultadoQuantidadeParcelas.Size = new System.Drawing.Size(98, 20);
+            this.lblResultadoQuantidadeParcelas.TabIndex = 16;
+            this.lblResultadoQuantidadeParcelas.Text = "Não apague";
+            this.lblResultadoQuantidadeParcelas.Visible = false;
+            this.lblResultadoQuantidadeParcelas.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(512, 448);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 20);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Quantidade de parcelas:";
+            this.label2.Visible = false;
+            this.label2.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblResultadoDataVenda
+            // 
+            this.lblResultadoDataVenda.AutoSize = true;
+            this.lblResultadoDataVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblResultadoDataVenda.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoDataVenda.Location = new System.Drawing.Point(720, 488);
+            this.lblResultadoDataVenda.Name = "lblResultadoDataVenda";
+            this.lblResultadoDataVenda.Size = new System.Drawing.Size(98, 20);
+            this.lblResultadoDataVenda.TabIndex = 16;
+            this.lblResultadoDataVenda.Text = "Não apague";
+            this.lblResultadoDataVenda.Visible = false;
+            this.lblResultadoDataVenda.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblDataVenda
+            // 
+            this.lblDataVenda.AutoSize = true;
+            this.lblDataVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblDataVenda.Location = new System.Drawing.Point(512, 488);
+            this.lblDataVenda.Name = "lblDataVenda";
+            this.lblDataVenda.Size = new System.Drawing.Size(122, 20);
+            this.lblDataVenda.TabIndex = 16;
+            this.lblDataVenda.Text = "Data da venda:";
+            this.lblDataVenda.Visible = false;
+            this.lblDataVenda.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblResultadoValorParcela
+            // 
+            this.lblResultadoValorParcela.AutoSize = true;
+            this.lblResultadoValorParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblResultadoValorParcela.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoValorParcela.Location = new System.Drawing.Point(720, 528);
+            this.lblResultadoValorParcela.Name = "lblResultadoValorParcela";
+            this.lblResultadoValorParcela.Size = new System.Drawing.Size(98, 20);
+            this.lblResultadoValorParcela.TabIndex = 16;
+            this.lblResultadoValorParcela.Text = "Não apague";
+            this.lblResultadoValorParcela.Visible = false;
+            this.lblResultadoValorParcela.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblValorParcela
+            // 
+            this.lblValorParcela.AutoSize = true;
+            this.lblValorParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblValorParcela.Location = new System.Drawing.Point(512, 528);
+            this.lblValorParcela.Name = "lblValorParcela";
+            this.lblValorParcela.Size = new System.Drawing.Size(136, 20);
+            this.lblValorParcela.TabIndex = 16;
+            this.lblValorParcela.Text = "Valor da parcela:";
+            this.lblValorParcela.Visible = false;
+            this.lblValorParcela.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
             // frmListarVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.Controls.Add(this.txtResultadoItens);
+            this.Controls.Add(this.lblFormaPagamento);
+            this.Controls.Add(this.lblDataVenda);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblValorParcela);
+            this.Controls.Add(this.lblValorVenda);
+            this.Controls.Add(this.lblItensVenda);
+            this.Controls.Add(this.lblResultadoFormaPagamento);
+            this.Controls.Add(this.lblResultadoDataVenda);
+            this.Controls.Add(this.lblResultadoQuantidadeParcelas);
+            this.Controls.Add(this.lblResultadoValorParcela);
+            this.Controls.Add(this.lblResultadoValorVenda);
+            this.Controls.Add(this.lblResultadoNomeCliente);
+            this.Controls.Add(this.lblNomeCliente);
             this.Controls.Add(this.lblSinalMais);
             this.Controls.Add(this.btnFrmRegistrarNovasVendas);
             this.Controls.Add(this.dataViewListagemVendas);
@@ -146,5 +338,19 @@
         private System.Windows.Forms.DataGridView dataViewListagemVendas;
         private System.Windows.Forms.Button btnFrmRegistrarNovasVendas;
         private System.Windows.Forms.Label lblSinalMais;
+        private System.Windows.Forms.Label lblNomeCliente;
+        private System.Windows.Forms.Label lblItensVenda;
+        private System.Windows.Forms.Label lblResultadoNomeCliente;
+        private System.Windows.Forms.TextBox txtResultadoItens;
+        private System.Windows.Forms.Label lblValorVenda;
+        private System.Windows.Forms.Label lblResultadoValorVenda;
+        private System.Windows.Forms.Label lblFormaPagamento;
+        private System.Windows.Forms.Label lblResultadoFormaPagamento;
+        private System.Windows.Forms.Label lblResultadoQuantidadeParcelas;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblResultadoDataVenda;
+        private System.Windows.Forms.Label lblDataVenda;
+        private System.Windows.Forms.Label lblResultadoValorParcela;
+        private System.Windows.Forms.Label lblValorParcela;
     }
 }

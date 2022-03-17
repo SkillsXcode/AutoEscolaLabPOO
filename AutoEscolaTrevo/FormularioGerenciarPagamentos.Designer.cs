@@ -34,6 +34,8 @@
             this.lblSelecaoPagamentos = new System.Windows.Forms.Label();
             this.btnPagarVenda = new System.Windows.Forms.Button();
             this.btnVoltar = new System.Windows.Forms.Button();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarPagamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewListagemVendas)).BeginInit();
             this.SuspendLayout();
@@ -54,11 +56,11 @@
             this.dataViewListagemVendas.AllowUserToAddRows = false;
             this.dataViewListagemVendas.AllowUserToDeleteRows = false;
             this.dataViewListagemVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewListagemVendas.Location = new System.Drawing.Point(16, 128);
+            this.dataViewListagemVendas.Location = new System.Drawing.Point(16, 232);
             this.dataViewListagemVendas.Name = "dataViewListagemVendas";
             this.dataViewListagemVendas.RowHeadersWidth = 51;
             this.dataViewListagemVendas.RowTemplate.Height = 24;
-            this.dataViewListagemVendas.Size = new System.Drawing.Size(776, 576);
+            this.dataViewListagemVendas.Size = new System.Drawing.Size(776, 472);
             this.dataViewListagemVendas.TabIndex = 4;
             // 
             // lblSelecaoPagamentos
@@ -101,12 +103,37 @@
             this.btnVoltar.UseVisualStyleBackColor = false;
             this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
+            // txtBuscarCliente
+            // 
+            this.txtBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.txtBuscarCliente.Location = new System.Drawing.Point(16, 192);
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(568, 34);
+            this.txtBuscarCliente.TabIndex = 15;
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackColor = System.Drawing.Color.Black;
+            this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnBuscarCliente.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(608, 184);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(184, 40);
+            this.btnBuscarCliente.TabIndex = 14;
+            this.btnBuscarCliente.Text = "Buscar Cliente";
+            this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
             // frmGerenciarPagamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.Controls.Add(this.txtBuscarCliente);
+            this.Controls.Add(this.btnBuscarCliente);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnPagarVenda);
             this.Controls.Add(this.lblSelecaoPagamentos);
@@ -133,5 +160,7 @@
         private System.Windows.Forms.Label lblSelecaoPagamentos;
         private System.Windows.Forms.Button btnPagarVenda;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
+        private System.Windows.Forms.Button btnBuscarCliente;
     }
 }

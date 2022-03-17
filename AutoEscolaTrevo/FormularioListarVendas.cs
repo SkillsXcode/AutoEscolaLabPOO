@@ -74,5 +74,10 @@ namespace AutoEscolaTrevo
                 Console.WriteLine(ex.Message);
             }            
         }
+
+        private void lblNomeCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
