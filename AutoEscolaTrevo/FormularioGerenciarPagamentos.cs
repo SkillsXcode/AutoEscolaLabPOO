@@ -40,7 +40,26 @@ namespace AutoEscolaTrevo
                     DataTable dtbVenda = new DataTable();
                     adaptador.Fill(dtbVenda);
                     dataViewListagemVendas.DataSource = dtbVenda;
+
+                    foreach(DataGridViewRow linha in dataViewListagemVendas.Rows)
+                    {
+                        //dataViewServicosAdicionados.Rows.RemoveAt(elemento.Index);
+                        try
+                        {
+                            if(VerificarPagamentoListagem((int)linha.Cells[0].Value))
+                            {
+                                linha.DefaultCellStyle.BackColor = Color.LimeGreen;
+                            }
+                            //Console.WriteLine(linha.Cells[0].Value?.ToString());
+                        }
+                        catch(Exception ex)
+                        {
+                            Console.WriteLine(ex.Message); 
+                        }
+                                                
+                    }
                     dataViewListagemVendas.Columns[0].Visible = false;
+
                 }
             }
             catch (Exception ex)
@@ -93,7 +112,8 @@ namespace AutoEscolaTrevo
                             comandoMySQL.Parameters.AddWithValue("_valorPagoAVista", Convert.ToDouble(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value));
                             comandoMySQL.Parameters.AddWithValue("_valorDesconto", null);
                             comandoMySQL.ExecuteNonQuery();
-                            MessageBox.Show("Pagamento realizado com Sucesso!");                        
+                            MessageBox.Show("Pagamento realizado com Sucesso!");
+                            PreencherListagemVenda();
                         }
                     }
                     catch (Exception ex)
@@ -112,6 +132,35 @@ namespace AutoEscolaTrevo
                     Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[8].Value.ToString());
                     Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[9].Value.ToString());
                 }
+                else
+                {
+                    MessageBox.Show("Já foi pago!");
+                }
+            }
+        }
+
+        private bool VerificarPagamentoListagem(int idVenda) //se foi pago = true, senão = false
+        {
+            string queryChecagemPagamento = "SELECT COUNT(*) FROM pagamento WHERE fk_idVenda = @p";
+
+            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+            {
+                conexaoMySQL.Open();
+                using (MySqlCommand comandoSql = new MySqlCommand(queryChecagemPagamento, conexaoMySQL))
+                {
+                    Console.WriteLine((int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value);
+                    comandoSql.Parameters.AddWithValue("@p", idVenda);
+                    var resultadoBusca = Convert.ToInt32(comandoSql.ExecuteScalar());
+                    if (resultadoBusca > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
             }
         }
 
@@ -128,8 +177,7 @@ namespace AutoEscolaTrevo
                     comandoSql.Parameters.AddWithValue("@p", (int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value);
                     var resultadoBusca = Convert.ToInt32(comandoSql.ExecuteScalar());
                     if (resultadoBusca > 0)
-                    {
-                        MessageBox.Show("Já foi pago!");
+                    {                        
                         return false;
                     }
                     else
