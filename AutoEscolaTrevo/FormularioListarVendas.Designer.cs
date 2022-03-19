@@ -44,11 +44,13 @@
             this.lblFormaPagamento = new System.Windows.Forms.Label();
             this.lblResultadoFormaPagamento = new System.Windows.Forms.Label();
             this.lblResultadoQuantidadeParcelas = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblQuantidadeParcelas = new System.Windows.Forms.Label();
             this.lblResultadoDataVenda = new System.Windows.Forms.Label();
             this.lblDataVenda = new System.Windows.Forms.Label();
             this.lblResultadoValorParcela = new System.Windows.Forms.Label();
             this.lblValorParcela = new System.Windows.Forms.Label();
+            this.lblResultadoDataVencimento = new System.Windows.Forms.Label();
+            this.lblDataVencimento = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewListagemVendas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCarrinoListagem)).BeginInit();
             this.SuspendLayout();
@@ -81,13 +83,22 @@
             // 
             // dataViewListagemVendas
             // 
+            this.dataViewListagemVendas.AllowUserToAddRows = false;
+            this.dataViewListagemVendas.AllowUserToDeleteRows = false;
+            this.dataViewListagemVendas.AllowUserToOrderColumns = true;
+            this.dataViewListagemVendas.AllowUserToResizeColumns = false;
+            this.dataViewListagemVendas.AllowUserToResizeRows = false;
             this.dataViewListagemVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewListagemVendas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataViewListagemVendas.Location = new System.Drawing.Point(16, 248);
+            this.dataViewListagemVendas.MultiSelect = false;
             this.dataViewListagemVendas.Name = "dataViewListagemVendas";
             this.dataViewListagemVendas.RowHeadersWidth = 51;
             this.dataViewListagemVendas.RowTemplate.Height = 24;
             this.dataViewListagemVendas.Size = new System.Drawing.Size(472, 432);
             this.dataViewListagemVendas.TabIndex = 13;
+            this.dataViewListagemVendas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewListagemVendas_CellClick);
+            this.dataViewListagemVendas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewListagemVendas_CellContentClick);
             // 
             // btnFrmRegistrarNovasVendas
             // 
@@ -185,7 +196,7 @@
             this.lblResultadoValorVenda.AutoSize = true;
             this.lblResultadoValorVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblResultadoValorVenda.ForeColor = System.Drawing.Color.Red;
-            this.lblResultadoValorVenda.Location = new System.Drawing.Point(720, 408);
+            this.lblResultadoValorVenda.Location = new System.Drawing.Point(728, 408);
             this.lblResultadoValorVenda.Name = "lblResultadoValorVenda";
             this.lblResultadoValorVenda.Size = new System.Drawing.Size(98, 20);
             this.lblResultadoValorVenda.TabIndex = 16;
@@ -208,7 +219,7 @@
             this.lblResultadoFormaPagamento.AutoSize = true;
             this.lblResultadoFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblResultadoFormaPagamento.ForeColor = System.Drawing.Color.Red;
-            this.lblResultadoFormaPagamento.Location = new System.Drawing.Point(720, 368);
+            this.lblResultadoFormaPagamento.Location = new System.Drawing.Point(728, 368);
             this.lblResultadoFormaPagamento.Name = "lblResultadoFormaPagamento";
             this.lblResultadoFormaPagamento.Size = new System.Drawing.Size(98, 20);
             this.lblResultadoFormaPagamento.TabIndex = 16;
@@ -220,7 +231,7 @@
             this.lblResultadoQuantidadeParcelas.AutoSize = true;
             this.lblResultadoQuantidadeParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblResultadoQuantidadeParcelas.ForeColor = System.Drawing.Color.Red;
-            this.lblResultadoQuantidadeParcelas.Location = new System.Drawing.Point(720, 448);
+            this.lblResultadoQuantidadeParcelas.Location = new System.Drawing.Point(728, 448);
             this.lblResultadoQuantidadeParcelas.Name = "lblResultadoQuantidadeParcelas";
             this.lblResultadoQuantidadeParcelas.Size = new System.Drawing.Size(98, 20);
             this.lblResultadoQuantidadeParcelas.TabIndex = 16;
@@ -228,24 +239,24 @@
             this.lblResultadoQuantidadeParcelas.Visible = false;
             this.lblResultadoQuantidadeParcelas.Click += new System.EventHandler(this.lblNomeCliente_Click);
             // 
-            // label2
+            // lblQuantidadeParcelas
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(512, 448);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 20);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Quantidade de parcelas:";
-            this.label2.Visible = false;
-            this.label2.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            this.lblQuantidadeParcelas.AutoSize = true;
+            this.lblQuantidadeParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblQuantidadeParcelas.Location = new System.Drawing.Point(512, 448);
+            this.lblQuantidadeParcelas.Name = "lblQuantidadeParcelas";
+            this.lblQuantidadeParcelas.Size = new System.Drawing.Size(191, 20);
+            this.lblQuantidadeParcelas.TabIndex = 16;
+            this.lblQuantidadeParcelas.Text = "Quantidade de parcelas:";
+            this.lblQuantidadeParcelas.Visible = false;
+            this.lblQuantidadeParcelas.Click += new System.EventHandler(this.lblNomeCliente_Click);
             // 
             // lblResultadoDataVenda
             // 
             this.lblResultadoDataVenda.AutoSize = true;
             this.lblResultadoDataVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblResultadoDataVenda.ForeColor = System.Drawing.Color.Red;
-            this.lblResultadoDataVenda.Location = new System.Drawing.Point(720, 488);
+            this.lblResultadoDataVenda.Location = new System.Drawing.Point(728, 488);
             this.lblResultadoDataVenda.Name = "lblResultadoDataVenda";
             this.lblResultadoDataVenda.Size = new System.Drawing.Size(98, 20);
             this.lblResultadoDataVenda.TabIndex = 16;
@@ -270,7 +281,7 @@
             this.lblResultadoValorParcela.AutoSize = true;
             this.lblResultadoValorParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblResultadoValorParcela.ForeColor = System.Drawing.Color.Red;
-            this.lblResultadoValorParcela.Location = new System.Drawing.Point(720, 528);
+            this.lblResultadoValorParcela.Location = new System.Drawing.Point(728, 528);
             this.lblResultadoValorParcela.Name = "lblResultadoValorParcela";
             this.lblResultadoValorParcela.Size = new System.Drawing.Size(98, 20);
             this.lblResultadoValorParcela.TabIndex = 16;
@@ -290,6 +301,31 @@
             this.lblValorParcela.Visible = false;
             this.lblValorParcela.Click += new System.EventHandler(this.lblNomeCliente_Click);
             // 
+            // lblResultadoDataVencimento
+            // 
+            this.lblResultadoDataVencimento.AutoSize = true;
+            this.lblResultadoDataVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblResultadoDataVencimento.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoDataVencimento.Location = new System.Drawing.Point(728, 568);
+            this.lblResultadoDataVencimento.Name = "lblResultadoDataVencimento";
+            this.lblResultadoDataVencimento.Size = new System.Drawing.Size(98, 20);
+            this.lblResultadoDataVencimento.TabIndex = 16;
+            this.lblResultadoDataVencimento.Text = "Não apague";
+            this.lblResultadoDataVencimento.Visible = false;
+            this.lblResultadoDataVencimento.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
+            // lblDataVencimento
+            // 
+            this.lblDataVencimento.AutoSize = true;
+            this.lblDataVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblDataVencimento.Location = new System.Drawing.Point(512, 568);
+            this.lblDataVencimento.Name = "lblDataVencimento";
+            this.lblDataVencimento.Size = new System.Drawing.Size(163, 20);
+            this.lblDataVencimento.TabIndex = 16;
+            this.lblDataVencimento.Text = "Data do vencimento:";
+            this.lblDataVencimento.Visible = false;
+            this.lblDataVencimento.Click += new System.EventHandler(this.lblNomeCliente_Click);
+            // 
             // frmListarVendas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,12 +335,14 @@
             this.Controls.Add(this.txtResultadoItens);
             this.Controls.Add(this.lblFormaPagamento);
             this.Controls.Add(this.lblDataVenda);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblQuantidadeParcelas);
+            this.Controls.Add(this.lblDataVencimento);
             this.Controls.Add(this.lblValorParcela);
             this.Controls.Add(this.lblValorVenda);
             this.Controls.Add(this.lblItensVenda);
             this.Controls.Add(this.lblResultadoFormaPagamento);
             this.Controls.Add(this.lblResultadoDataVenda);
+            this.Controls.Add(this.lblResultadoDataVencimento);
             this.Controls.Add(this.lblResultadoQuantidadeParcelas);
             this.Controls.Add(this.lblResultadoValorParcela);
             this.Controls.Add(this.lblResultadoValorVenda);
@@ -347,10 +385,12 @@
         private System.Windows.Forms.Label lblFormaPagamento;
         private System.Windows.Forms.Label lblResultadoFormaPagamento;
         private System.Windows.Forms.Label lblResultadoQuantidadeParcelas;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblQuantidadeParcelas;
         private System.Windows.Forms.Label lblResultadoDataVenda;
         private System.Windows.Forms.Label lblDataVenda;
         private System.Windows.Forms.Label lblResultadoValorParcela;
         private System.Windows.Forms.Label lblValorParcela;
+        private System.Windows.Forms.Label lblResultadoDataVencimento;
+        private System.Windows.Forms.Label lblDataVencimento;
     }
 }

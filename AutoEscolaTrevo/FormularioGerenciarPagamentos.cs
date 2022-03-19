@@ -15,6 +15,7 @@ namespace AutoEscolaTrevo
     {
         private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
         private int idPagamento = 0;
+
         public frmGerenciarPagamentos()
         {
             InitializeComponent();
@@ -181,14 +182,17 @@ namespace AutoEscolaTrevo
                         return false;
                     }
                     else
-                    {                   
-                        
-                        return true;
-                        
+                    {               
+                        return true;                        
                     }
 
                 }
             }            
+        }
+
+        private void dataViewListagemVendas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

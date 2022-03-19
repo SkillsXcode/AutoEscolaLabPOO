@@ -90,6 +90,7 @@ namespace AutoEscolaTrevo
                     adaptador.Fill(dtbServico);
                     dataViewServicos.DataSource = dtbServico;
                     dataViewServicos.Columns[0].Visible = false;
+                    dataViewServicos.RowHeadersVisible = false;
                 }
             }
             catch (Exception ex)
@@ -112,6 +113,7 @@ namespace AutoEscolaTrevo
                     adaptador.Fill(dtbCliente);
                     dataViewCliente.DataSource = dtbCliente;
                     dataViewCliente.Columns[0].Visible = false;
+                    dataViewCliente.RowHeadersVisible = false;
                 }
             }
             catch (Exception ex)
@@ -175,7 +177,7 @@ namespace AutoEscolaTrevo
 
         private void dataViewCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MudarNomeLabelCliente();
+            
         }
 
         private void lblMscNomeCliente_MouseDown(object sender, MouseEventArgs e)
@@ -397,6 +399,14 @@ namespace AutoEscolaTrevo
            
         }
 
+        private void dataViewServicosAdicionados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void dataViewCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MudarNomeLabelCliente();
+        }
     }
 }

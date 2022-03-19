@@ -72,6 +72,7 @@
             this.btnGerenciarCliente.TabIndex = 1;
             this.btnGerenciarCliente.Text = "Gerenciar Cliente";
             this.btnGerenciarCliente.UseVisualStyleBackColor = false;
+            this.btnGerenciarCliente.Click += new System.EventHandler(this.btnGerenciarCliente_Click);
             // 
             // btnFechar
             // 

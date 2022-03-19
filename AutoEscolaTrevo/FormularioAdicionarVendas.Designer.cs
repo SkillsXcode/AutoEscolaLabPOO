@@ -207,6 +207,7 @@
             this.dataViewServicosAdicionados.RowTemplate.Height = 24;
             this.dataViewServicosAdicionados.Size = new System.Drawing.Size(240, 240);
             this.dataViewServicosAdicionados.TabIndex = 25;
+            this.dataViewServicosAdicionados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewServicosAdicionados_CellContentClick);
             // 
             // lblMascValorTotal
             // 
@@ -307,6 +308,7 @@
             this.dataViewCliente.RowTemplate.Height = 24;
             this.dataViewCliente.Size = new System.Drawing.Size(480, 240);
             this.dataViewCliente.TabIndex = 25;
+            this.dataViewCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewCliente_CellClick);
             this.dataViewCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewCliente_CellContentClick);
             // 
             // lblNomeCliente

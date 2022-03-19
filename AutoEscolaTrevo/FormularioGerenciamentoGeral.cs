@@ -69,5 +69,10 @@ namespace AutoEscolaTrevo
             frmPagamentos.Show();
             return frmPagamentos;
         }
+
+        private void btnGerenciarCliente_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioGerenciarClientes();
+        }
     }
 }
