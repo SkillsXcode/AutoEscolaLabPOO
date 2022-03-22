@@ -146,6 +146,7 @@
             this.lblNomeCliente.Size = new System.Drawing.Size(66, 20);
             this.lblNomeCliente.TabIndex = 16;
             this.lblNomeCliente.Text = "Cliente:";
+            this.lblNomeCliente.Visible = false;
             this.lblNomeCliente.Click += new System.EventHandler(this.lblNomeCliente_Click);
             // 
             // lblItensVenda
@@ -169,6 +170,7 @@
             this.lblResultadoNomeCliente.Size = new System.Drawing.Size(98, 20);
             this.lblResultadoNomeCliente.TabIndex = 16;
             this.lblResultadoNomeCliente.Text = "Não apague";
+            this.lblResultadoNomeCliente.Visible = false;
             this.lblResultadoNomeCliente.Click += new System.EventHandler(this.lblNomeCliente_Click);
             // 
             // txtResultadoItens

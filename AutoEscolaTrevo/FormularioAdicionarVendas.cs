@@ -240,6 +240,7 @@ namespace AutoEscolaTrevo
 
         private void btnRegistrarVenda_Click(object sender, EventArgs e)
         {
+            
             if(mskTxtNumeroParcelas.Text == "")
             {
                 Console.WriteLine("REEEEEEEEEEEEEEEEEEE");
@@ -275,7 +276,8 @@ namespace AutoEscolaTrevo
                                 comandoMySQL.Parameters.AddWithValue("_valorParcela", null);
                             }                             
                             comandoMySQL.Parameters.AddWithValue("_valorEntrada", Convert.ToDouble(numUpDownValorEntrada.Text));
-                            comandoMySQL.Parameters.AddWithValue("_dataVencimento", AplicarPadraoAmericano(AdicionarUmMes(DateTime.Today)));
+                            DateTime dataTemporaria = this.dtpDataVenda.Value;
+                            comandoMySQL.Parameters.AddWithValue("_dataVencimento", AplicarPadraoAmericano(AdicionarUmMes(dataTemporaria)));
                             comandoMySQL.Parameters.AddWithValue("_numeroParcelas", Convert.ToInt32(mskTxtNumeroParcelas.Text));
                         }
                         else

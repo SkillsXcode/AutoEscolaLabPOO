@@ -111,6 +111,7 @@
             this.txtBuscarCliente.Name = "txtBuscarCliente";
             this.txtBuscarCliente.Size = new System.Drawing.Size(568, 34);
             this.txtBuscarCliente.TabIndex = 15;
+            this.txtBuscarCliente.Visible = false;
             // 
             // btnBuscarCliente
             // 
@@ -125,6 +126,7 @@
             this.btnBuscarCliente.TabIndex = 14;
             this.btnBuscarCliente.Text = "Buscar Cliente";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Visible = false;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // frmGerenciarPagamentos
