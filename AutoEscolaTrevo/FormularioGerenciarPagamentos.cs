@@ -23,14 +23,11 @@ namespace AutoEscolaTrevo
 
         private void frmGerenciarPagamentos_Load(object sender, EventArgs e)
         {
-            PreencherListagemVenda();
-            /*criar função para colorir os pagos, através de consulta no banco e 
-             * travar a inserção de pagamentos neste método ^^             
-             */ 
+            PreencherListagemVenda();           
         }
 
         public void PreencherListagemVenda()
-        {
+        {           
             try
             {
                 using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
@@ -51,6 +48,10 @@ namespace AutoEscolaTrevo
                             {
                                 linha.DefaultCellStyle.BackColor = Color.LimeGreen;
                             }
+                            else
+                            {
+                                linha.DefaultCellStyle.BackColor = Color.Red;                               
+                            }
                             //Console.WriteLine(linha.Cells[0].Value?.ToString());
                         }
                         catch(Exception ex)
@@ -60,6 +61,7 @@ namespace AutoEscolaTrevo
                                                 
                     }
                     dataViewListagemVendas.Columns[0].Visible = false;
+                    dataViewListagemVendas.RowHeadersVisible = false;
 
                 }
             }
@@ -122,7 +124,7 @@ namespace AutoEscolaTrevo
                         MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Console.WriteLine(ex.Message);
                     }
-                    Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value.ToString());
+                    /*Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value.ToString());
                     Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[1].Value.ToString());
                     Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[2].Value.ToString());
                     Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[3].Value.ToString());
@@ -131,7 +133,7 @@ namespace AutoEscolaTrevo
                     Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value.ToString());
                     Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[7].Value.ToString());
                     Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[8].Value.ToString());
-                    Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[9].Value.ToString());
+                    Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[9].Value.ToString());*/
                 }
                 else
                 {
@@ -148,8 +150,7 @@ namespace AutoEscolaTrevo
             {
                 conexaoMySQL.Open();
                 using (MySqlCommand comandoSql = new MySqlCommand(queryChecagemPagamento, conexaoMySQL))
-                {
-                    Console.WriteLine((int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value);
+                {                    
                     comandoSql.Parameters.AddWithValue("@p", idVenda);
                     var resultadoBusca = Convert.ToInt32(comandoSql.ExecuteScalar());
                     if (resultadoBusca > 0)

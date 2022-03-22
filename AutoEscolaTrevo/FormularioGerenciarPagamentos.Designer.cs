@@ -55,6 +55,8 @@
             // 
             this.dataViewListagemVendas.AllowUserToAddRows = false;
             this.dataViewListagemVendas.AllowUserToDeleteRows = false;
+            this.dataViewListagemVendas.AllowUserToResizeColumns = false;
+            this.dataViewListagemVendas.AllowUserToResizeRows = false;
             this.dataViewListagemVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewListagemVendas.Location = new System.Drawing.Point(16, 232);
             this.dataViewListagemVendas.Name = "dataViewListagemVendas";
