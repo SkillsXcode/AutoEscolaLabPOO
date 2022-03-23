@@ -38,10 +38,13 @@
             this.pcbGerenciarServico = new System.Windows.Forms.PictureBox();
             this.pcbGerenciarPagamentos = new System.Windows.Forms.PictureBox();
             this.btnInserirPagamento = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnGerarRelatorioGeral = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarPagamentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnGerenciarServicos
@@ -162,6 +165,32 @@
             this.btnInserirPagamento.UseVisualStyleBackColor = false;
             this.btnInserirPagamento.Click += new System.EventHandler(this.btnInserirPagamento_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(728, 368);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(160, 136);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // btnGerarRelatorioGeral
+            // 
+            this.btnGerarRelatorioGeral.BackColor = System.Drawing.Color.Black;
+            this.btnGerarRelatorioGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGerarRelatorioGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnGerarRelatorioGeral.ForeColor = System.Drawing.Color.White;
+            this.btnGerarRelatorioGeral.Location = new System.Drawing.Point(704, 520);
+            this.btnGerarRelatorioGeral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGerarRelatorioGeral.Name = "btnGerarRelatorioGeral";
+            this.btnGerarRelatorioGeral.Size = new System.Drawing.Size(200, 39);
+            this.btnGerarRelatorioGeral.TabIndex = 1;
+            this.btnGerarRelatorioGeral.Text = "Gerar Relatório";
+            this.btnGerarRelatorioGeral.UseVisualStyleBackColor = false;
+            this.btnGerarRelatorioGeral.Click += new System.EventHandler(this.btnGerenciarServicos_Click);
+            // 
             // frmGerenciamentoGeral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -175,7 +204,9 @@
             this.Controls.Add(this.btnInserirPagamento);
             this.Controls.Add(this.btnGerenciarCliente);
             this.Controls.Add(this.pcbGerenciarCliente);
+            this.Controls.Add(this.btnGerarRelatorioGeral);
             this.Controls.Add(this.btnGerenciarServicos);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pcbGerenciarServico);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -189,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarServico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarPagamentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -204,6 +236,8 @@
         private System.Windows.Forms.Button btnVendas;
         private System.Windows.Forms.PictureBox pcbGerenciarPagamentos;
         private System.Windows.Forms.Button btnInserirPagamento;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnGerarRelatorioGeral;
     }
 }
 

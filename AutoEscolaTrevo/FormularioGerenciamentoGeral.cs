@@ -19,7 +19,7 @@ namespace AutoEscolaTrevo
 
         private void btnGerenciarServicos_Click(object sender, EventArgs e)
         {
-            ExibirNovoFormularioGerenciarServicos();
+            
         }
 
         private void frmGerenciamentoGeral_Load(object sender, EventArgs e)

@@ -64,6 +64,7 @@
             this.dataViewListagemVendas.RowTemplate.Height = 24;
             this.dataViewListagemVendas.Size = new System.Drawing.Size(776, 472);
             this.dataViewListagemVendas.TabIndex = 4;
+            this.dataViewListagemVendas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewListagemVendas_CellClick);
             this.dataViewListagemVendas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewListagemVendas_CellContentClick);
             // 
             // lblSelecaoPagamentos
