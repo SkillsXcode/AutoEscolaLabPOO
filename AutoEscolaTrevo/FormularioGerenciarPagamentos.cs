@@ -50,9 +50,16 @@ namespace AutoEscolaTrevo
                             }
                             else
                             {
-                                linha.DefaultCellStyle.BackColor = Color.Red;                               
+                                DateTime dataVencimento = DateTime.Parse(linha.Cells[8].Value?.ToString());
+                                DateTime dataAtual = DateTime.Now;
+
+                                if(dataVencimento < dataAtual)
+                                {
+                                    linha.DefaultCellStyle.BackColor = Color.Red;
+                                }
+                                                               
                             }
-                            //Console.WriteLine(linha.Cells[0].Value?.ToString());
+                            Console.WriteLine(linha.Cells[8].Value?.ToString());
                         }
                         catch(Exception ex)
                         {
