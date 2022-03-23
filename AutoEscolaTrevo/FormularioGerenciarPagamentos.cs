@@ -40,8 +40,7 @@ namespace AutoEscolaTrevo
                     dataViewListagemVendas.DataSource = dtbVenda;
 
                     foreach(DataGridViewRow linha in dataViewListagemVendas.Rows)
-                    {
-                        //dataViewServicosAdicionados.Rows.RemoveAt(elemento.Index);
+                    {                        
                         try
                         {
                             if(VerificarPagamentoListagem((int)linha.Cells[0].Value))
@@ -58,8 +57,7 @@ namespace AutoEscolaTrevo
                                     linha.DefaultCellStyle.BackColor = Color.Red;
                                 }
                                                                
-                            }
-                            Console.WriteLine(linha.Cells[8].Value?.ToString());
+                            }                            
                         }
                         catch(Exception ex)
                         {
@@ -186,7 +184,7 @@ namespace AutoEscolaTrevo
                 conexaoMySQL.Open();
                 using (MySqlCommand comandoSql = new MySqlCommand(queryChecagemPagamento, conexaoMySQL))
                 {
-                    Console.WriteLine((int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value);
+                    //Console.WriteLine((int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value);
                     comandoSql.Parameters.AddWithValue("@p", (int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value);
                     var resultadoBusca = Convert.ToInt32(comandoSql.ExecuteScalar());
                     if (resultadoBusca > 0)

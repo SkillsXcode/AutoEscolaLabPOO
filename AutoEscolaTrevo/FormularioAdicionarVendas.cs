@@ -279,6 +279,7 @@ namespace AutoEscolaTrevo
                             DateTime dataTemporaria = this.dtpDataVenda.Value;
                             comandoMySQL.Parameters.AddWithValue("_dataVencimento", AplicarPadraoAmericano(AdicionarUmMes(dataTemporaria)));
                             comandoMySQL.Parameters.AddWithValue("_numeroParcelas", Convert.ToInt32(mskTxtNumeroParcelas.Text));
+                            comandoMySQL.Parameters.AddWithValue("_parcelasAPagar", Convert.ToInt32(mskTxtNumeroParcelas.Text));
                         }
                         else
                         {
@@ -286,6 +287,7 @@ namespace AutoEscolaTrevo
                             comandoMySQL.Parameters.AddWithValue("_valorEntrada", null);
                             comandoMySQL.Parameters.AddWithValue("_dataVencimento", null);
                             comandoMySQL.Parameters.AddWithValue("_numeroParcelas", null);
+                            comandoMySQL.Parameters.AddWithValue("_parcelasAPagar", null);
                         }                        
                         comandoMySQL.ExecuteNonQuery();
                         MessageBox.Show("Venda Cadastrada com Sucesso!");
