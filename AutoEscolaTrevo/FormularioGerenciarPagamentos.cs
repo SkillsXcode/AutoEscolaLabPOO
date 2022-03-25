@@ -105,7 +105,11 @@ namespace AutoEscolaTrevo
                 {
                     if (dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[2].Value.ToString().Contains("Carnê"))
                     {
-                        MessageBox.Show("Em manutenção");
+                        Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value.ToString());
+                        /*
+                         => Gravar em venda, o abate de uma parcela
+                         => Gravar em pagamento, o preço da parcela
+                         */
                     }
                     else
                     {                   
