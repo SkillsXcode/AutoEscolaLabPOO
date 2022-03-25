@@ -265,7 +265,7 @@ namespace AutoEscolaTrevo
                         comandoMySQL.Parameters.AddWithValue("_dataVenda", AplicarPadraoAmericano(dtpDataVenda.Value).Trim());
                         comandoMySQL.Parameters.AddWithValue("_valorVenda", contGloValTot);
                         //campos referentes às parcelas, cuidado ao mexer aqui
-                        if (cmbxTipoPagamento.SelectedIndex > 1)
+                        if (cmbxTipoPagamento.SelectedIndex > 2)
                         {                            
                             if(mskTxtNumeroParcelas.Text != "")
                             {
@@ -367,17 +367,13 @@ namespace AutoEscolaTrevo
         private void cmbxTipoPagamento_SelectedIndexChanged(object sender, EventArgs e)
         {            
             if (cmbxTipoPagamento.SelectedIndex > 1)
-            {
-                lblValorEntrada.Visible = true;
-                numUpDownValorEntrada.Visible = true;
+            {              
                 lblNumeroParcelas.Visible = true;
                 mskTxtNumeroParcelas.Visible = true;
                 //lblResultadoValorParcela.Text = CalcularParcela(Convert.ToInt32(mskTxtNumeroParcelas.Text)).ToString();
             } 
             else
-            {
-                lblValorEntrada.Visible = false;
-                numUpDownValorEntrada.Visible = false;
+            {                
                 lblNumeroParcelas.Visible = false;
                 mskTxtNumeroParcelas.Visible = false;
             }

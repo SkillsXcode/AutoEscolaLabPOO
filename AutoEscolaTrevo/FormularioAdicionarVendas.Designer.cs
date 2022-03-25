@@ -343,7 +343,6 @@
             this.lblValorEntrada.Size = new System.Drawing.Size(164, 25);
             this.lblValorEntrada.TabIndex = 20;
             this.lblValorEntrada.Text = "Valor da Entrada:";
-            this.lblValorEntrada.Visible = false;
             // 
             // lblNumeroParcelas
             // 
@@ -404,7 +403,6 @@
             this.numUpDownValorEntrada.Name = "numUpDownValorEntrada";
             this.numUpDownValorEntrada.Size = new System.Drawing.Size(152, 22);
             this.numUpDownValorEntrada.TabIndex = 32;
-            this.numUpDownValorEntrada.Visible = false;
             this.numUpDownValorEntrada.ValueChanged += new System.EventHandler(this.numUpDownValorEntrada_ValueChanged);
             // 
             // frmAdicionarVendas
