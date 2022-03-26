@@ -105,47 +105,66 @@ namespace AutoEscolaTrevo
                 {
                     if (dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[2].Value.ToString().Contains("Carnê"))
                     {
-                        using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
-                        {
-                            conexaoMySQL.Open();
-                            MySqlCommand comandoMySQL = new MySqlCommand("AdicionarEditarPagamento", conexaoMySQL);
-                            comandoMySQL.CommandType = CommandType.StoredProcedure;
-                            comandoMySQL.Parameters.AddWithValue("_id", idPagamento);
-                            comandoMySQL.Parameters.AddWithValue("_dataPagamento", AplicarPadraoAmericano(DateTime.Today));
-                            comandoMySQL.Parameters.AddWithValue("_fk_idVenda", (int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value);
-                            comandoMySQL.Parameters.AddWithValue("_sts", true);
-                            comandoMySQL.Parameters.AddWithValue("_valorPagoCarne", Convert.ToDouble(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value));
-                            comandoMySQL.Parameters.AddWithValue("_multaAtraso", null);
-                            comandoMySQL.Parameters.AddWithValue("_valorPagoAVista", null);
-                            comandoMySQL.Parameters.AddWithValue("_valorDesconto", null);
-                            if (Convert.ToInt32(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[10].Value) > 0) Console.WriteLine("RREEEEEEEEEEEE");
 
-                                comandoMySQL.ExecuteNonQuery();                            
-                            PreencherListagemVenda();
-                        }
+                        var idTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value;
+                        var itensServicoTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[1].Value;
+                        var formaPagamentoTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[2].Value;
+                        var fk_idClienteTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[3].Value;
+                        var dataVendaTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[4].Value;
+                        var valorVendaTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[5].Value;
+                        var valorParcelaTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value;
+                        var valorEntradaTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[7].Value;
+                        var dataVencimentoTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[8].Value;
+                        var numeroParcelasTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[9].Value;
+                        var parcelasAPagarTemp = dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[10].Value;
 
-                        /*if (Convert.ToInt32(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[10].Value) > 0)
+
+                        
+
+                        //persistência temporária
+                        //Console.WriteLine("REEE: " + dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[9].Value.ToString());
+                        if(Convert.ToInt32(parcelasAPagarTemp) > 0) 
                         {
+                            using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                            {
+                                conexaoMySQL.Open();
+                                MySqlCommand comandoMySQL = new MySqlCommand("AdicionarEditarPagamento", conexaoMySQL);
+                                comandoMySQL.CommandType = CommandType.StoredProcedure;
+                                comandoMySQL.Parameters.AddWithValue("_id", idPagamento);
+                                comandoMySQL.Parameters.AddWithValue("_dataPagamento", AplicarPadraoAmericano(DateTime.Today));
+                                comandoMySQL.Parameters.AddWithValue("_fk_idVenda", (int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value);
+                                comandoMySQL.Parameters.AddWithValue("_sts", true);
+                                if (dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value != DBNull.Value) comandoMySQL.Parameters.AddWithValue("_valorPagoCarne", Convert.ToDouble(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value));
+                                comandoMySQL.Parameters.AddWithValue("_multaAtraso", null);
+                                comandoMySQL.Parameters.AddWithValue("_valorPagoAVista", null);
+                                comandoMySQL.Parameters.AddWithValue("_valorDesconto", null);
+                                comandoMySQL.ExecuteNonQuery();
+                                PreencherListagemVenda();
+                            }
                             using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
                             {
                                 conexaoMySQL.Open();
                                 MySqlCommand comandoMySQL = new MySqlCommand("AdcionarEditarVenda", conexaoMySQL);
                                 comandoMySQL.CommandType = CommandType.StoredProcedure;
-                                comandoMySQL.Parameters.AddWithValue("_id", (int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value);
-                                comandoMySQL.Parameters.AddWithValue("_itensServico", dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[1].Value.ToString());
-                                comandoMySQL.Parameters.AddWithValue("_formaPagamento", dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[2].Value.ToString()); //alterar quando for outras formas de pagamento
-                                comandoMySQL.Parameters.AddWithValue("_fk_idCliente", (int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[3].Value);
-                                comandoMySQL.Parameters.AddWithValue("_dataVenda", Convert.ToDateTime(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[4].Value.ToString()));
-                                comandoMySQL.Parameters.AddWithValue("_valorVenda", Convert.ToDouble(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[5].Value));
-                                comandoMySQL.Parameters.AddWithValue("_valorParcela", Convert.ToDouble(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value));
-                                comandoMySQL.Parameters.AddWithValue("_valorEntrada", Convert.ToDouble(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[7].Value));
-                                comandoMySQL.Parameters.AddWithValue("_dataVencimento", Convert.ToDateTime(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[8].Value.ToString()));
-                                comandoMySQL.Parameters.AddWithValue("_numeroParcelas", (int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[9].Value);
-                                comandoMySQL.Parameters.AddWithValue("_parcelasAPagar", ((int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[10].Value) - 1); comandoMySQL.ExecuteNonQuery();
+                                comandoMySQL.Parameters.AddWithValue("_id", Convert.ToInt32(idTemp));
+                                comandoMySQL.Parameters.AddWithValue("_itensServico", itensServicoTemp.ToString());
+                                comandoMySQL.Parameters.AddWithValue("_formaPagamento", formaPagamentoTemp.ToString()); //alterar quando for outras formas de pagamento
+                                comandoMySQL.Parameters.AddWithValue("_fk_idCliente", Convert.ToInt32(fk_idClienteTemp));                                
+                                comandoMySQL.Parameters.AddWithValue("_dataVenda", Convert.ToDateTime(dataVendaTemp.ToString()));
+                                comandoMySQL.Parameters.AddWithValue("_valorVenda", Convert.ToDouble(valorVendaTemp));
+                                comandoMySQL.Parameters.AddWithValue("_valorParcela", Convert.ToDouble(valorParcelaTemp));
+                                comandoMySQL.Parameters.AddWithValue("_valorEntrada", Convert.ToDouble(valorEntradaTemp));
+                                comandoMySQL.Parameters.AddWithValue("_dataVencimento", Convert.ToDateTime(dataVencimentoTemp.ToString()));
+                                comandoMySQL.Parameters.AddWithValue("_numeroParcelas", Convert.ToInt32(numeroParcelasTemp));
+                                comandoMySQL.Parameters.AddWithValue("_parcelasAPagar", (Convert.ToInt32(parcelasAPagarTemp) - 1));                                
+                                comandoMySQL.ExecuteNonQuery();
                                 MessageBox.Show("Pagamento realizado com Sucesso!");
-                                PreencherListagemVenda();
                             }
-                        }*/
+                        }
+                        else
+                        {
+                            MessageBox.Show("Todas as parcelas foram saldadas!");
+                        }
 
 
                         Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value.ToString());
@@ -160,9 +179,19 @@ namespace AutoEscolaTrevo
                         Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[9].Value.ToString());
                         Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[10].Value.ToString());
 
+                        Console.WriteLine("TEMP: " + idTemp);
+                        Console.WriteLine("TEMP: " + itensServicoTemp);
+                        Console.WriteLine("TEMP: " + formaPagamentoTemp);
+                        Console.WriteLine("TEMP: " + fk_idClienteTemp);
+                        Console.WriteLine("TEMP: " + dataVendaTemp);
+                        Console.WriteLine("TEMP: " + valorVendaTemp);
+                        Console.WriteLine("TEMP: " + valorParcelaTemp);
+                        Console.WriteLine("TEMP: " + valorEntradaTemp);
+                        Console.WriteLine("TEMP: " + dataVencimentoTemp);
+                        Console.WriteLine("TEMP: " + numeroParcelasTemp);
+                        Console.WriteLine("TEMP: " + parcelasAPagarTemp);
 
-
-
+                        PreencherListagemVenda();
                         //Console.WriteLine(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value.ToString());
 
                         /*using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
@@ -174,16 +203,17 @@ namespace AutoEscolaTrevo
                             comandoMySQL.Parameters.AddWithValue("_dataPagamento", AplicarPadraoAmericano(DateTime.Today));
                             comandoMySQL.Parameters.AddWithValue("_fk_idVenda", (int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[0].Value);
                             comandoMySQL.Parameters.AddWithValue("_sts", true);
-                            comandoMySQL.Parameters.AddWithValue("_valorPagoCarne", Convert.ToDouble(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value));
+                            if(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value != DBNull.Value) comandoMySQL.Parameters.AddWithValue("_valorPagoCarne", Convert.ToDouble(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[6].Value));
                             comandoMySQL.Parameters.AddWithValue("_multaAtraso", null);
                             comandoMySQL.Parameters.AddWithValue("_valorPagoAVista", null);
                             comandoMySQL.Parameters.AddWithValue("_valorDesconto", null);
-                            comandoMySQL.ExecuteNonQuery();
-                            MessageBox.Show("Pagamento realizado com Sucesso!");
+                            comandoMySQL.ExecuteNonQuery();                            
                             PreencherListagemVenda();
                         }*/
-                        //Console.WriteLine("REEE: " + dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[10].Value);
-                        /*if(Convert.ToInt32(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[10]) > 0) 
+
+                        //persistência temporária
+                        //Console.WriteLine("REEE: " + dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[9].Value.ToString());
+                        /*if(Convert.ToInt32(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[13].Value) > 0) 
                         {
                             using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
                             {
@@ -200,7 +230,8 @@ namespace AutoEscolaTrevo
                                 comandoMySQL.Parameters.AddWithValue("_valorEntrada", Convert.ToDouble(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[7].Value));
                                 comandoMySQL.Parameters.AddWithValue("_dataVencimento", Convert.ToDateTime(dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[8].Value.ToString()));
                                 comandoMySQL.Parameters.AddWithValue("_numeroParcelas", (int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[9].Value);
-                                comandoMySQL.Parameters.AddWithValue("_parcelasAPagar", ((int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[10].Value) - 1);                                comandoMySQL.ExecuteNonQuery();
+                                comandoMySQL.Parameters.AddWithValue("_parcelasAPagar", ((int)dataViewListagemVendas.Rows[dataViewListagemVendas.CurrentRow.Index].Cells[13].Value) - 1);                                
+                                comandoMySQL.ExecuteNonQuery();
                                 MessageBox.Show("Pagamento realizado com Sucesso!");
                             }
                         }*/
