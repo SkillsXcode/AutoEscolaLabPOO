@@ -246,7 +246,7 @@ namespace AutoEscolaTrevo
                 Console.WriteLine("REEEEEEEEEEEEEEEEEEE");
             }
             Console.WriteLine(mskTxtNumeroParcelas.Text);
-            if(VerificarTodosCampos())
+            if(VerificarTodosCampos() && (Convert.ToDouble(numUpDownValorEntrada.Text) < contGloValTot))
             {
                 PreencherCampoServicosAdicionadosBanco();
 
@@ -305,6 +305,10 @@ namespace AutoEscolaTrevo
                     MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Console.WriteLine(ex.Message);
                 }               
+            }
+            else
+            {
+                MessageBox.Show("Insira um valor de entrada menor que o total.");
             }
         }
 
