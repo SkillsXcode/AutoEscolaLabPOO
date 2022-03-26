@@ -157,6 +157,7 @@ namespace AutoEscolaTrevo
                 MudarVisibilidadeLabels(true);
                 MudarNomeLabelFormaPagamento();
                 MudarNomesParcela();
+                MudarNomeTxtValorVenda();
 
 
             } else
