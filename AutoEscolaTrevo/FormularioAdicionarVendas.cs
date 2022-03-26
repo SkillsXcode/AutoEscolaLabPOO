@@ -260,10 +260,10 @@ namespace AutoEscolaTrevo
                         comandoMySQL.CommandType = CommandType.StoredProcedure;
                         comandoMySQL.Parameters.AddWithValue("_id", idVenda);
                         comandoMySQL.Parameters.AddWithValue("_itensServico", PreencherCampoServicosAdicionadosBanco());
-                        comandoMySQL.Parameters.AddWithValue("_formaPagamento", cmbxTipoPagamento.Text); //alterar quando for outras formas de pagamento
+                        comandoMySQL.Parameters.AddWithValue("_formaPagamento", cmbxTipoPagamento.Text); 
                         comandoMySQL.Parameters.AddWithValue("_fk_idCliente", (int)dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
                         comandoMySQL.Parameters.AddWithValue("_dataVenda", AplicarPadraoAmericano(dtpDataVenda.Value).Trim());
-                        comandoMySQL.Parameters.AddWithValue("_valorVenda", contGloValTot);
+                        comandoMySQL.Parameters.AddWithValue("_valorVenda", contGloValTot - Convert.ToDouble(numUpDownValorEntrada.Text)); //valor total menos a entrada
                         //campos referentes às parcelas, cuidado ao mexer aqui
                         if (cmbxTipoPagamento.SelectedIndex > 2)
                         {                            
