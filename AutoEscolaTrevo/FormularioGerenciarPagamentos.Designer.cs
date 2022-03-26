@@ -58,11 +58,13 @@
             this.dataViewListagemVendas.AllowUserToResizeColumns = false;
             this.dataViewListagemVendas.AllowUserToResizeRows = false;
             this.dataViewListagemVendas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewListagemVendas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataViewListagemVendas.Location = new System.Drawing.Point(16, 232);
             this.dataViewListagemVendas.Name = "dataViewListagemVendas";
+            this.dataViewListagemVendas.ReadOnly = true;
             this.dataViewListagemVendas.RowHeadersWidth = 51;
             this.dataViewListagemVendas.RowTemplate.Height = 24;
-            this.dataViewListagemVendas.Size = new System.Drawing.Size(776, 472);
+            this.dataViewListagemVendas.Size = new System.Drawing.Size(976, 392);
             this.dataViewListagemVendas.TabIndex = 4;
             this.dataViewListagemVendas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewListagemVendas_CellClick);
             this.dataViewListagemVendas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewListagemVendas_CellContentClick);

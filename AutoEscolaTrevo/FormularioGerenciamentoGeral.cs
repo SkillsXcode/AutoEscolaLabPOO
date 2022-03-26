@@ -19,7 +19,7 @@ namespace AutoEscolaTrevo
 
         private void btnGerenciarServicos_Click(object sender, EventArgs e)
         {
-            
+            ExibirNovoFormularioGerenciarServicos();
         }
 
         private void frmGerenciamentoGeral_Load(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace AutoEscolaTrevo
 
         private void btnFechar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            
         }
 
         private void btnVendas_Click(object sender, EventArgs e)
@@ -70,9 +70,21 @@ namespace AutoEscolaTrevo
             return frmPagamentos;
         }
 
+        private FormularioCriarRelatorio ExibirNovoFormularioRelatorio()
+        {
+            FormularioCriarRelatorio frmRelatorio = new FormularioCriarRelatorio();
+            frmRelatorio.Show();
+            return frmRelatorio;
+        }
+
         private void btnGerenciarCliente_Click(object sender, EventArgs e)
         {
             ExibirNovoFormularioGerenciarClientes();
+        }
+
+        private void btnGerarRelatorio_Click(object sender, EventArgs e)
+        {
+            ExibirNovoFormularioRelatorio();
         }
     }
 }

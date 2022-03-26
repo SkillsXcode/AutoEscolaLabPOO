@@ -119,7 +119,7 @@
             // 
             this.lblSinalMais.AutoSize = true;
             this.lblSinalMais.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblSinalMais.ForeColor = System.Drawing.Color.Red;
+            this.lblSinalMais.ForeColor = System.Drawing.Color.Purple;
             this.lblSinalMais.Location = new System.Drawing.Point(720, 624);
             this.lblSinalMais.Name = "lblSinalMais";
             this.lblSinalMais.Size = new System.Drawing.Size(54, 58);
@@ -197,7 +197,7 @@
             // 
             this.lblResultadoValorVenda.AutoSize = true;
             this.lblResultadoValorVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblResultadoValorVenda.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoValorVenda.ForeColor = System.Drawing.Color.Purple;
             this.lblResultadoValorVenda.Location = new System.Drawing.Point(728, 408);
             this.lblResultadoValorVenda.Name = "lblResultadoValorVenda";
             this.lblResultadoValorVenda.Size = new System.Drawing.Size(98, 20);
@@ -220,7 +220,7 @@
             // 
             this.lblResultadoFormaPagamento.AutoSize = true;
             this.lblResultadoFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblResultadoFormaPagamento.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoFormaPagamento.ForeColor = System.Drawing.Color.Purple;
             this.lblResultadoFormaPagamento.Location = new System.Drawing.Point(728, 368);
             this.lblResultadoFormaPagamento.Name = "lblResultadoFormaPagamento";
             this.lblResultadoFormaPagamento.Size = new System.Drawing.Size(98, 20);
@@ -232,7 +232,7 @@
             // 
             this.lblResultadoQuantidadeParcelas.AutoSize = true;
             this.lblResultadoQuantidadeParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblResultadoQuantidadeParcelas.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoQuantidadeParcelas.ForeColor = System.Drawing.Color.Purple;
             this.lblResultadoQuantidadeParcelas.Location = new System.Drawing.Point(728, 448);
             this.lblResultadoQuantidadeParcelas.Name = "lblResultadoQuantidadeParcelas";
             this.lblResultadoQuantidadeParcelas.Size = new System.Drawing.Size(98, 20);
@@ -257,7 +257,7 @@
             // 
             this.lblResultadoDataVenda.AutoSize = true;
             this.lblResultadoDataVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblResultadoDataVenda.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoDataVenda.ForeColor = System.Drawing.Color.Purple;
             this.lblResultadoDataVenda.Location = new System.Drawing.Point(728, 488);
             this.lblResultadoDataVenda.Name = "lblResultadoDataVenda";
             this.lblResultadoDataVenda.Size = new System.Drawing.Size(98, 20);
@@ -282,7 +282,7 @@
             // 
             this.lblResultadoValorParcela.AutoSize = true;
             this.lblResultadoValorParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblResultadoValorParcela.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoValorParcela.ForeColor = System.Drawing.Color.Purple;
             this.lblResultadoValorParcela.Location = new System.Drawing.Point(728, 528);
             this.lblResultadoValorParcela.Name = "lblResultadoValorParcela";
             this.lblResultadoValorParcela.Size = new System.Drawing.Size(98, 20);
@@ -307,7 +307,7 @@
             // 
             this.lblResultadoDataVencimento.AutoSize = true;
             this.lblResultadoDataVencimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.lblResultadoDataVencimento.ForeColor = System.Drawing.Color.Red;
+            this.lblResultadoDataVencimento.ForeColor = System.Drawing.Color.Purple;
             this.lblResultadoDataVencimento.Location = new System.Drawing.Point(728, 568);
             this.lblResultadoDataVencimento.Name = "lblResultadoDataVencimento";
             this.lblResultadoDataVencimento.Size = new System.Drawing.Size(98, 20);

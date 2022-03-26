@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGerenciamentoGeral));
             this.btnGerenciarServicos = new System.Windows.Forms.Button();
             this.btnGerenciarCliente = new System.Windows.Forms.Button();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pcbGerenciarCliente = new System.Windows.Forms.PictureBox();
@@ -39,7 +38,7 @@
             this.pcbGerenciarPagamentos = new System.Windows.Forms.PictureBox();
             this.btnInserirPagamento = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnGerarRelatorioGeral = new System.Windows.Forms.Button();
+            this.btnGerarRelatorio = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarServico)).BeginInit();
@@ -76,21 +75,6 @@
             this.btnGerenciarCliente.Text = "Gerenciar Cliente";
             this.btnGerenciarCliente.UseVisualStyleBackColor = false;
             this.btnGerenciarCliente.Click += new System.EventHandler(this.btnGerenciarCliente_Click);
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.BackColor = System.Drawing.Color.Black;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnFechar.ForeColor = System.Drawing.Color.White;
-            this.btnFechar.Location = new System.Drawing.Point(869, 11);
-            this.btnFechar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(123, 39);
-            this.btnFechar.TabIndex = 9;
-            this.btnFechar.Text = "Fechar";
-            this.btnFechar.UseVisualStyleBackColor = false;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnVendas
             // 
@@ -168,7 +152,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(728, 368);
+            this.pictureBox2.Location = new System.Drawing.Point(728, 352);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(160, 136);
@@ -176,20 +160,19 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // btnGerarRelatorioGeral
+            // btnGerarRelatorio
             // 
-            this.btnGerarRelatorioGeral.BackColor = System.Drawing.Color.Black;
-            this.btnGerarRelatorioGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGerarRelatorioGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.btnGerarRelatorioGeral.ForeColor = System.Drawing.Color.White;
-            this.btnGerarRelatorioGeral.Location = new System.Drawing.Point(704, 520);
-            this.btnGerarRelatorioGeral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGerarRelatorioGeral.Name = "btnGerarRelatorioGeral";
-            this.btnGerarRelatorioGeral.Size = new System.Drawing.Size(200, 39);
-            this.btnGerarRelatorioGeral.TabIndex = 1;
-            this.btnGerarRelatorioGeral.Text = "Gerar Relatório";
-            this.btnGerarRelatorioGeral.UseVisualStyleBackColor = false;
-            this.btnGerarRelatorioGeral.Click += new System.EventHandler(this.btnGerenciarServicos_Click);
+            this.btnGerarRelatorio.BackColor = System.Drawing.Color.Black;
+            this.btnGerarRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGerarRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnGerarRelatorio.ForeColor = System.Drawing.Color.White;
+            this.btnGerarRelatorio.Location = new System.Drawing.Point(712, 504);
+            this.btnGerarRelatorio.Name = "btnGerarRelatorio";
+            this.btnGerarRelatorio.Size = new System.Drawing.Size(200, 39);
+            this.btnGerarRelatorio.TabIndex = 13;
+            this.btnGerarRelatorio.Text = "Gerar Relatório";
+            this.btnGerarRelatorio.UseVisualStyleBackColor = false;
+            this.btnGerarRelatorio.Click += new System.EventHandler(this.btnGerarRelatorio_Click);
             // 
             // frmGerenciamentoGeral
             // 
@@ -197,14 +180,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.Controls.Add(this.btnGerarRelatorio);
             this.Controls.Add(this.pcbGerenciarPagamentos);
             this.Controls.Add(this.btnVendas);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnInserirPagamento);
             this.Controls.Add(this.btnGerenciarCliente);
             this.Controls.Add(this.pcbGerenciarCliente);
-            this.Controls.Add(this.btnGerarRelatorioGeral);
             this.Controls.Add(this.btnGerenciarServicos);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pcbGerenciarServico);
@@ -231,13 +213,12 @@
         private System.Windows.Forms.Button btnGerenciarServicos;
         private System.Windows.Forms.PictureBox pcbGerenciarCliente;
         private System.Windows.Forms.Button btnGerenciarCliente;
-        private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnVendas;
         private System.Windows.Forms.PictureBox pcbGerenciarPagamentos;
         private System.Windows.Forms.Button btnInserirPagamento;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnGerarRelatorioGeral;
+        private System.Windows.Forms.Button btnGerarRelatorio;
     }
 }
 

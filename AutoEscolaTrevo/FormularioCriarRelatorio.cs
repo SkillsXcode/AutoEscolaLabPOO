@@ -21,5 +21,25 @@ namespace AutoEscolaTrevo
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblResultadoNomeCliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblNomeCliente_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
