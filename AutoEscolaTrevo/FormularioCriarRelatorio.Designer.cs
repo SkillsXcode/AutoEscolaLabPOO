@@ -37,18 +37,19 @@
             this.lblResultadoNomeCliente = new System.Windows.Forms.Label();
             this.lblQuantidadeVendas = new System.Windows.Forms.Label();
             this.lblResultadoQuantidadeVendas = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblResultadoPendencias = new System.Windows.Forms.Label();
             this.lblPendencias = new System.Windows.Forms.Label();
+            this.dataViewCliente = new System.Windows.Forms.DataGridView();
+            this.btnVoltar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRelatorios
             // 
             this.lblRelatorios.AutoSize = true;
             this.lblRelatorios.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.lblRelatorios.Location = new System.Drawing.Point(309, 34);
+            this.lblRelatorios.Location = new System.Drawing.Point(389, 24);
             this.lblRelatorios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRelatorios.Name = "lblRelatorios";
             this.lblRelatorios.Size = new System.Drawing.Size(226, 58);
@@ -68,20 +69,20 @@
             // 
             // txtBoxRelatorio
             // 
-            this.txtBoxRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.txtBoxRelatorio.Location = new System.Drawing.Point(40, 224);
+            this.txtBoxRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.txtBoxRelatorio.Location = new System.Drawing.Point(40, 208);
             this.txtBoxRelatorio.Margin = new System.Windows.Forms.Padding(4);
             this.txtBoxRelatorio.Name = "txtBoxRelatorio";
-            this.txtBoxRelatorio.Size = new System.Drawing.Size(736, 45);
+            this.txtBoxRelatorio.Size = new System.Drawing.Size(736, 36);
             this.txtBoxRelatorio.TabIndex = 2;
             // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.BackColor = System.Drawing.Color.Black;
             this.btnBuscarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.btnBuscarCliente.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(784, 232);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(784, 207);
             this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(200, 39);
@@ -93,7 +94,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(792, 672);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
@@ -107,7 +108,7 @@
             // 
             this.lblNomeCliente.AutoSize = true;
             this.lblNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblNomeCliente.Location = new System.Drawing.Point(40, 648);
+            this.lblNomeCliente.Location = new System.Drawing.Point(40, 680);
             this.lblNomeCliente.Name = "lblNomeCliente";
             this.lblNomeCliente.Size = new System.Drawing.Size(67, 24);
             this.lblNomeCliente.TabIndex = 8;
@@ -118,7 +119,7 @@
             // 
             this.lblResultadoNomeCliente.AutoSize = true;
             this.lblResultadoNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblResultadoNomeCliente.Location = new System.Drawing.Point(112, 648);
+            this.lblResultadoNomeCliente.Location = new System.Drawing.Point(112, 680);
             this.lblResultadoNomeCliente.Name = "lblResultadoNomeCliente";
             this.lblResultadoNomeCliente.Size = new System.Drawing.Size(19, 24);
             this.lblResultadoNomeCliente.TabIndex = 9;
@@ -130,7 +131,7 @@
             // 
             this.lblQuantidadeVendas.AutoSize = true;
             this.lblQuantidadeVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblQuantidadeVendas.Location = new System.Drawing.Point(40, 584);
+            this.lblQuantidadeVendas.Location = new System.Drawing.Point(40, 616);
             this.lblQuantidadeVendas.Name = "lblQuantidadeVendas";
             this.lblQuantidadeVendas.Size = new System.Drawing.Size(143, 24);
             this.lblQuantidadeVendas.TabIndex = 8;
@@ -141,7 +142,7 @@
             // 
             this.lblResultadoQuantidadeVendas.AutoSize = true;
             this.lblResultadoQuantidadeVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblResultadoQuantidadeVendas.Location = new System.Drawing.Point(184, 584);
+            this.lblResultadoQuantidadeVendas.Location = new System.Drawing.Point(184, 616);
             this.lblResultadoQuantidadeVendas.Name = "lblResultadoQuantidadeVendas";
             this.lblResultadoQuantidadeVendas.Size = new System.Drawing.Size(20, 24);
             this.lblResultadoQuantidadeVendas.TabIndex = 9;
@@ -149,21 +150,11 @@
             this.lblResultadoQuantidadeVendas.Visible = false;
             this.lblResultadoQuantidadeVendas.Click += new System.EventHandler(this.label4_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(40, 288);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(936, 280);
-            this.dataGridView1.TabIndex = 10;
-            // 
             // lblResultadoPendencias
             // 
             this.lblResultadoPendencias.AutoSize = true;
             this.lblResultadoPendencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblResultadoPendencias.Location = new System.Drawing.Point(440, 584);
+            this.lblResultadoPendencias.Location = new System.Drawing.Point(440, 616);
             this.lblResultadoPendencias.Name = "lblResultadoPendencias";
             this.lblResultadoPendencias.Size = new System.Drawing.Size(76, 24);
             this.lblResultadoPendencias.TabIndex = 12;
@@ -174,11 +165,42 @@
             // 
             this.lblPendencias.AutoSize = true;
             this.lblPendencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblPendencias.Location = new System.Drawing.Point(320, 584);
+            this.lblPendencias.Location = new System.Drawing.Point(320, 616);
             this.lblPendencias.Name = "lblPendencias";
             this.lblPendencias.Size = new System.Drawing.Size(120, 24);
             this.lblPendencias.TabIndex = 11;
             this.lblPendencias.Text = "Pendências: ";
+            // 
+            // dataViewCliente
+            // 
+            this.dataViewCliente.AllowUserToAddRows = false;
+            this.dataViewCliente.AllowUserToResizeColumns = false;
+            this.dataViewCliente.AllowUserToResizeRows = false;
+            this.dataViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewCliente.Location = new System.Drawing.Point(40, 256);
+            this.dataViewCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataViewCliente.MultiSelect = false;
+            this.dataViewCliente.Name = "dataViewCliente";
+            this.dataViewCliente.ReadOnly = true;
+            this.dataViewCliente.RowHeadersWidth = 51;
+            this.dataViewCliente.Size = new System.Drawing.Size(952, 328);
+            this.dataViewCliente.TabIndex = 13;
+            this.dataViewCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataViewCliente_CellClick);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.Black;
+            this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnVoltar.ForeColor = System.Drawing.Color.White;
+            this.btnVoltar.Location = new System.Drawing.Point(864, 16);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(120, 40);
+            this.btnVoltar.TabIndex = 15;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // FormularioCriarRelatorio
             // 
@@ -187,9 +209,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1005, 721);
             this.ControlBox = false;
+            this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.dataViewCliente);
             this.Controls.Add(this.lblResultadoPendencias);
             this.Controls.Add(this.lblPendencias);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblResultadoQuantidadeVendas);
             this.Controls.Add(this.lblQuantidadeVendas);
             this.Controls.Add(this.lblResultadoNomeCliente);
@@ -206,7 +229,7 @@
             this.Text = "FormularioCriarRelatorio";
             this.Load += new System.EventHandler(this.FormularioCriarRelatorio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewCliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,8 +246,9 @@
         private System.Windows.Forms.Label lblResultadoNomeCliente;
         private System.Windows.Forms.Label lblQuantidadeVendas;
         private System.Windows.Forms.Label lblResultadoQuantidadeVendas;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblResultadoPendencias;
         private System.Windows.Forms.Label lblPendencias;
+        private System.Windows.Forms.DataGridView dataViewCliente;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

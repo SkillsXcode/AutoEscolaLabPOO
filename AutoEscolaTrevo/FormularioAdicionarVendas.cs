@@ -135,6 +135,7 @@ namespace AutoEscolaTrevo
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[4].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[4].Value.ToString();
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[5].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[5].Value.ToString();               
                 contLinServAdc++;
+                dataViewServicosAdicionados.RowHeadersVisible = false;
                 ManipularLabelValorTotal((double)dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value);
                 MudarLabelTotalParcela();
             }                      
@@ -162,6 +163,7 @@ namespace AutoEscolaTrevo
             foreach (DataGridViewColumn coluna in dataViewServicos.Columns)
             {
                 dataViewServicosAdicionados.Columns.Add(coluna.Clone() as DataGridViewColumn);
+                dataViewServicosAdicionados.RowHeadersVisible = false;
             }
         }
 

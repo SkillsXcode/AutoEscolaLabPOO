@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace AutoEscolaTrevo
 {
     public partial class FormularioCriarRelatorio : Form
     {
+        private string conexao = @"Server=localhost;Database=autoescolatrevo;Uid=root;Pwd=admin;"; /* ajustar estes parâmetros para conseguir conectar :D*/
+        private int idCliente = 0;
+
         public FormularioCriarRelatorio()
         {
             InitializeComponent();
@@ -19,6 +23,30 @@ namespace AutoEscolaTrevo
 
         private void FormularioCriarRelatorio_Load(object sender, EventArgs e)
         {
+            PreencherListagemCliente();
+        }
+
+        private void PreencherListagemCliente()
+        {
+            try
+            {
+                using (MySqlConnection conexaoMySQL = new MySqlConnection(conexao))
+                {
+                    conexaoMySQL.Open();
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter("VisualizarTodosClientes", conexaoMySQL);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    DataTable dtbCliente = new DataTable();
+                    adaptador.Fill(dtbCliente);
+                    dataViewCliente.DataSource = dtbCliente;
+                    dataViewCliente.Columns[0].Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+            }
+
 
         }
 
@@ -40,6 +68,16 @@ namespace AutoEscolaTrevo
         private void lblNomeCliente_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataViewCliente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value.ToString());
+        }
+
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

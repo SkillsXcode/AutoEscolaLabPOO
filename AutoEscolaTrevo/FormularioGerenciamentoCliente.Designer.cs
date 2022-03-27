@@ -80,6 +80,7 @@
             // dataViewCliente
             // 
             this.dataViewCliente.AllowUserToAddRows = false;
+            this.dataViewCliente.AllowUserToDeleteRows = false;
             this.dataViewCliente.AllowUserToResizeColumns = false;
             this.dataViewCliente.AllowUserToResizeRows = false;
             this.dataViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -87,6 +88,7 @@
             this.dataViewCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataViewCliente.MultiSelect = false;
             this.dataViewCliente.Name = "dataViewCliente";
+            this.dataViewCliente.ReadOnly = true;
             this.dataViewCliente.RowHeadersWidth = 51;
             this.dataViewCliente.Size = new System.Drawing.Size(720, 327);
             this.dataViewCliente.TabIndex = 3;
@@ -129,6 +131,7 @@
             this.btnEditarCliente.TabIndex = 6;
             this.btnEditarCliente.Text = "Editar";
             this.btnEditarCliente.UseVisualStyleBackColor = false;
+            this.btnEditarCliente.Visible = false;
             this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
             // btnExcluirCliente

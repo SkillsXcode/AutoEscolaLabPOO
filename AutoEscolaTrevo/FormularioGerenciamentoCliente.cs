@@ -72,6 +72,7 @@ namespace AutoEscolaTrevo
                     adaptador.Fill(dtbCliente);
                     dataViewCliente.DataSource = dtbCliente;
                     dataViewCliente.Columns[0].Visible = false;
+                    dataViewCliente.RowHeadersVisible = false;
                 }
             }
             catch (Exception ex)
@@ -118,15 +119,8 @@ namespace AutoEscolaTrevo
 
         private void btnVoltarGerenciarCliente_Click(object sender, EventArgs e)
         {
-            ExibirNovoFormularioGerenciamentoGeral();
-        }
-
-        private frmGerenciamentoGeral ExibirNovoFormularioGerenciamentoGeral()
-        {
-            frmGerenciamentoGeral frmGerenciamentogeral = new frmGerenciamentoGeral();
-            frmGerenciamentogeral.Show();
-            return frmGerenciamentogeral;
-        }
+            this.Close();
+        }                
 
         private void btnBuscarCliente_Click_1(object sender, EventArgs e)
         {

@@ -74,7 +74,7 @@ namespace AutoEscolaTrevo
                         comandoMySQL.ExecuteNonQuery();
                         MessageBox.Show("Cliente Cadastrado com Sucesso!");
                         LimparTodosCampos();
-                        ExibirNovoFormularioGerenciarClientes();
+                        this.Close();
                     }
                 }
                 catch (Exception ex)

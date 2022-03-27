@@ -105,6 +105,7 @@ namespace AutoEscolaTrevo
                     adaptador.Fill(dtbServico);
                     dataViewServicos.DataSource = dtbServico;
                     dataViewServicos.Columns[0].Visible = false;
+                    dataViewServicos.RowHeadersVisible = false;
 
                 }
             }
