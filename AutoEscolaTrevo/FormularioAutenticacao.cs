@@ -47,6 +47,8 @@ namespace AutoEscolaTrevo
                 MessageBox.Show("Erro no banco: " + ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex.Message);
             }
+
+            this.Visible = false;
         }
 
         private frmGerenciamentoGeral ExibirNovoFormularioGerenciamentoGeral()
@@ -59,6 +61,15 @@ namespace AutoEscolaTrevo
         private void frmAutenticacao_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSairFormularioGeral_Click(object sender, EventArgs e)
+        {
+            var confirmacao = MessageBox.Show("Você realmente deseja sair do sistema?", "Atenção!", MessageBoxButtons.YesNo);
+            if (confirmacao == DialogResult.Yes)
+            {
+                System.Windows.Forms.Application.Exit();
+            }
         }
     }
 }

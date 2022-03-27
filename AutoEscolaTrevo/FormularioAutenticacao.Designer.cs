@@ -33,6 +33,7 @@
             this.lblSenhaAutenticacao = new System.Windows.Forms.Label();
             this.txtSenhaAutenticacao = new System.Windows.Forms.TextBox();
             this.btnEntrarAutenticacao = new System.Windows.Forms.Button();
+            this.btnSairFormularioGeral = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,12 +84,27 @@
             this.btnEntrarAutenticacao.UseVisualStyleBackColor = false;
             this.btnEntrarAutenticacao.Click += new System.EventHandler(this.btnEntrarAutenticacao_Click);
             // 
+            // btnSairFormularioGeral
+            // 
+            this.btnSairFormularioGeral.BackColor = System.Drawing.Color.Black;
+            this.btnSairFormularioGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSairFormularioGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnSairFormularioGeral.ForeColor = System.Drawing.Color.White;
+            this.btnSairFormularioGeral.Location = new System.Drawing.Point(864, 8);
+            this.btnSairFormularioGeral.Name = "btnSairFormularioGeral";
+            this.btnSairFormularioGeral.Size = new System.Drawing.Size(123, 39);
+            this.btnSairFormularioGeral.TabIndex = 17;
+            this.btnSairFormularioGeral.Text = "Sair";
+            this.btnSairFormularioGeral.UseVisualStyleBackColor = false;
+            this.btnSairFormularioGeral.Click += new System.EventHandler(this.btnSairFormularioGeral_Click);
+            // 
             // frmAutenticacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.Controls.Add(this.btnSairFormularioGeral);
             this.Controls.Add(this.btnEntrarAutenticacao);
             this.Controls.Add(this.txtSenhaAutenticacao);
             this.Controls.Add(this.lblSenhaAutenticacao);
@@ -110,5 +126,6 @@
         private System.Windows.Forms.Label lblSenhaAutenticacao;
         private System.Windows.Forms.TextBox txtSenhaAutenticacao;
         private System.Windows.Forms.Button btnEntrarAutenticacao;
+        private System.Windows.Forms.Button btnSairFormularioGeral;
     }
 }

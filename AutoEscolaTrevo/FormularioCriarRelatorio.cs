@@ -39,6 +39,8 @@ namespace AutoEscolaTrevo
                     adaptador.Fill(dtbCliente);
                     dataViewCliente.DataSource = dtbCliente;
                     dataViewCliente.Columns[0].Visible = false;
+                    dataViewCliente.Columns[6].Visible = false;
+                    dataViewCliente.RowHeadersVisible = false;
                 }
             }
             catch (Exception ex)
@@ -73,6 +75,19 @@ namespace AutoEscolaTrevo
         private void dataViewCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Console.WriteLine(dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value.ToString());
+
+            ContarVendas();
+            TemPendencias();
+        }
+
+        private int ContarVendas()
+        {
+            return -1; //alterar
+        }
+
+        private bool TemPendencias()
+        {
+            return true; //alterar
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)

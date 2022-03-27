@@ -39,6 +39,7 @@
             this.btnInserirPagamento = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnGerarRelatorio = new System.Windows.Forms.Button();
+            this.btnSairFormularioGeral = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbGerenciarServico)).BeginInit();
@@ -174,12 +175,27 @@
             this.btnGerarRelatorio.UseVisualStyleBackColor = false;
             this.btnGerarRelatorio.Click += new System.EventHandler(this.btnGerarRelatorio_Click);
             // 
+            // btnSairFormularioGeral
+            // 
+            this.btnSairFormularioGeral.BackColor = System.Drawing.Color.Black;
+            this.btnSairFormularioGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSairFormularioGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnSairFormularioGeral.ForeColor = System.Drawing.Color.White;
+            this.btnSairFormularioGeral.Location = new System.Drawing.Point(402, 664);
+            this.btnSairFormularioGeral.Name = "btnSairFormularioGeral";
+            this.btnSairFormularioGeral.Size = new System.Drawing.Size(200, 39);
+            this.btnSairFormularioGeral.TabIndex = 14;
+            this.btnSairFormularioGeral.Text = "Sair";
+            this.btnSairFormularioGeral.UseVisualStyleBackColor = false;
+            this.btnSairFormularioGeral.Click += new System.EventHandler(this.btnSairFormularioGeral_Click);
+            // 
             // frmGerenciamentoGeral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1005, 721);
+            this.Controls.Add(this.btnSairFormularioGeral);
             this.Controls.Add(this.btnGerarRelatorio);
             this.Controls.Add(this.pcbGerenciarPagamentos);
             this.Controls.Add(this.btnVendas);
@@ -219,6 +235,7 @@
         private System.Windows.Forms.Button btnInserirPagamento;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnGerarRelatorio;
+        private System.Windows.Forms.Button btnSairFormularioGeral;
     }
 }
 

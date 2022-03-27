@@ -65,10 +65,10 @@ namespace AutoEscolaTrevo
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             var confirmacao = MessageBox.Show("Tem certeza que deseja SAIR da área de Registrar Vendas?", "Tem certeza?", MessageBoxButtons.YesNo);
-            if(confirmacao == DialogResult.Yes)
+            if (confirmacao == DialogResult.Yes)
             {
                 this.Close();
-            }
+            }         
             
         }
 

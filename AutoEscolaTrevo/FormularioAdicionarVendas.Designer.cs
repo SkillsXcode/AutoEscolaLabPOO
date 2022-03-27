@@ -200,11 +200,13 @@
             // dataViewServicosAdicionados
             // 
             this.dataViewServicosAdicionados.AllowUserToAddRows = false;
+            this.dataViewServicosAdicionados.AllowUserToDeleteRows = false;
             this.dataViewServicosAdicionados.AllowUserToResizeColumns = false;
             this.dataViewServicosAdicionados.AllowUserToResizeRows = false;
             this.dataViewServicosAdicionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewServicosAdicionados.Location = new System.Drawing.Point(288, 208);
             this.dataViewServicosAdicionados.Name = "dataViewServicosAdicionados";
+            this.dataViewServicosAdicionados.ReadOnly = true;
             this.dataViewServicosAdicionados.RowHeadersWidth = 51;
             this.dataViewServicosAdicionados.RowTemplate.Height = 24;
             this.dataViewServicosAdicionados.Size = new System.Drawing.Size(240, 240);
@@ -300,12 +302,15 @@
             // 
             // dataViewCliente
             // 
+            this.dataViewCliente.AllowUserToAddRows = false;
+            this.dataViewCliente.AllowUserToDeleteRows = false;
             this.dataViewCliente.AllowUserToResizeColumns = false;
             this.dataViewCliente.AllowUserToResizeRows = false;
             this.dataViewCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewCliente.Location = new System.Drawing.Point(560, 208);
             this.dataViewCliente.MultiSelect = false;
             this.dataViewCliente.Name = "dataViewCliente";
+            this.dataViewCliente.ReadOnly = true;
             this.dataViewCliente.RowHeadersWidth = 51;
             this.dataViewCliente.RowTemplate.Height = 24;
             this.dataViewCliente.Size = new System.Drawing.Size(480, 240);

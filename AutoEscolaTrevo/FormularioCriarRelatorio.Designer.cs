@@ -32,7 +32,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtBoxRelatorio = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblNomeCliente = new System.Windows.Forms.Label();
             this.lblResultadoNomeCliente = new System.Windows.Forms.Label();
             this.lblQuantidadeVendas = new System.Windows.Forms.Label();
@@ -89,20 +88,6 @@
             this.btnBuscarCliente.TabIndex = 3;
             this.btnBuscarCliente.Text = "Buscar Cliente";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(792, 672);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 39);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Gerar Relatório";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // lblNomeCliente
             // 
@@ -217,7 +202,6 @@
             this.Controls.Add(this.lblQuantidadeVendas);
             this.Controls.Add(this.lblResultadoNomeCliente);
             this.Controls.Add(this.lblNomeCliente);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnBuscarCliente);
             this.Controls.Add(this.txtBoxRelatorio);
             this.Controls.Add(this.pictureBox1);
@@ -241,7 +225,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtBoxRelatorio;
         private System.Windows.Forms.Button btnBuscarCliente;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.Label lblResultadoNomeCliente;
         private System.Windows.Forms.Label lblQuantidadeVendas;

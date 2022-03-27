@@ -86,5 +86,14 @@ namespace AutoEscolaTrevo
         {
             ExibirNovoFormularioRelatorio();
         }
+
+        private void btnSairFormularioGeral_Click(object sender, EventArgs e)
+        {
+            var confirmacao = MessageBox.Show("Você realmente deseja sair do sistema?", "Atenção!", MessageBoxButtons.YesNo);
+            if (confirmacao == DialogResult.Yes)
+            {
+                System.Windows.Forms.Application.Exit();
+            }                
+        }
     }
 }
