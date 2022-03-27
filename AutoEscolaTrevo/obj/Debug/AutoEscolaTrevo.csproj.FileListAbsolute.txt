@@ -47,7 +47,6 @@ C:\Users\Admin\Source\Repos\AutoEscolaLabPOO\AutoEscolaTrevo\obj\Debug\AutoEscol
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmCadastrarCliente.resources
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.FormularioCriarRelatorio.resources
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmGerenciamentoCliente.resources
-C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.FormularioInserirPagamento.resources
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\obj\Debug\AutoEscolaTrevo.frmPagamentoPendente.resources
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\bin\Debug\BouncyCastle.Crypto.dll
 C:\Users\gabri\source\repos\AutoEscolaTrevo\AutoEscolaTrevo\bin\Debug\Google.Protobuf.dll

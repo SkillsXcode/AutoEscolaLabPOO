@@ -95,6 +95,12 @@ namespace AutoEscolaTrevo
             return dataAmericana;
         }
 
+        private DateTime AdicionarUmMes(DateTime data)
+        {
+            data = data.AddMonths(1);
+            return data;
+        }
+
         private void btnPagarVenda_Click(object sender, EventArgs e)
         {
             var confirmacao = MessageBox.Show("Você realmente realizar o pagamento?", "Cuidado!", MessageBoxButtons.YesNo);
@@ -154,7 +160,15 @@ namespace AutoEscolaTrevo
                                 comandoMySQL.Parameters.AddWithValue("_valorVenda", Convert.ToDouble(valorVendaTemp));
                                 comandoMySQL.Parameters.AddWithValue("_valorParcela", Convert.ToDouble(valorParcelaTemp));
                                 comandoMySQL.Parameters.AddWithValue("_valorEntrada", Convert.ToDouble(valorEntradaTemp));
-                                comandoMySQL.Parameters.AddWithValue("_dataVencimento", Convert.ToDateTime(dataVencimentoTemp.ToString()));
+                                if(Convert.ToInt32(parcelasAPagarTemp) == 1)
+                                {
+                                    comandoMySQL.Parameters.AddWithValue("_dataVencimento", null);
+                                }
+                                else
+                                {
+                                    comandoMySQL.Parameters.AddWithValue("_dataVencimento", AdicionarUmMes(Convert.ToDateTime(dataVencimentoTemp.ToString())));
+                                }
+                                
                                 comandoMySQL.Parameters.AddWithValue("_numeroParcelas", Convert.ToInt32(numeroParcelasTemp));
                                 comandoMySQL.Parameters.AddWithValue("_parcelasAPagar", (Convert.ToInt32(parcelasAPagarTemp) - 1));                                
                                 comandoMySQL.ExecuteNonQuery();

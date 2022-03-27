@@ -185,9 +185,11 @@
             this.dataViewServicos.AllowUserToResizeColumns = false;
             this.dataViewServicos.AllowUserToResizeRows = false;
             this.dataViewServicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewServicos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataViewServicos.Location = new System.Drawing.Point(16, 208);
             this.dataViewServicos.MultiSelect = false;
             this.dataViewServicos.Name = "dataViewServicos";
+            this.dataViewServicos.ReadOnly = true;
             this.dataViewServicos.RowHeadersWidth = 51;
             this.dataViewServicos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataViewServicos.RowTemplate.Height = 24;
