@@ -30,7 +30,7 @@
         {
             this.lblRelatorios = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtBoxRelatorio = new System.Windows.Forms.TextBox();
+            this.txtBuscarClienteRelatorio = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.lblNomeCliente = new System.Windows.Forms.Label();
             this.lblResultadoNomeCliente = new System.Windows.Forms.Label();
@@ -66,14 +66,14 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // txtBoxRelatorio
+            // txtBuscarClienteRelatorio
             // 
-            this.txtBoxRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.txtBoxRelatorio.Location = new System.Drawing.Point(40, 208);
-            this.txtBoxRelatorio.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBoxRelatorio.Name = "txtBoxRelatorio";
-            this.txtBoxRelatorio.Size = new System.Drawing.Size(736, 36);
-            this.txtBoxRelatorio.TabIndex = 2;
+            this.txtBuscarClienteRelatorio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.txtBuscarClienteRelatorio.Location = new System.Drawing.Point(40, 208);
+            this.txtBuscarClienteRelatorio.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscarClienteRelatorio.Name = "txtBuscarClienteRelatorio";
+            this.txtBuscarClienteRelatorio.Size = new System.Drawing.Size(736, 36);
+            this.txtBuscarClienteRelatorio.TabIndex = 2;
             // 
             // btnBuscarCliente
             // 
@@ -88,14 +88,15 @@
             this.btnBuscarCliente.TabIndex = 3;
             this.btnBuscarCliente.Text = "Buscar Cliente";
             this.btnBuscarCliente.UseVisualStyleBackColor = false;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // lblNomeCliente
             // 
             this.lblNomeCliente.AutoSize = true;
-            this.lblNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblNomeCliente.Location = new System.Drawing.Point(40, 680);
             this.lblNomeCliente.Name = "lblNomeCliente";
-            this.lblNomeCliente.Size = new System.Drawing.Size(67, 24);
+            this.lblNomeCliente.Size = new System.Drawing.Size(88, 29);
             this.lblNomeCliente.TabIndex = 8;
             this.lblNomeCliente.Text = "Nome:";
             this.lblNomeCliente.Click += new System.EventHandler(this.lblNomeCliente_Click);
@@ -103,10 +104,11 @@
             // lblResultadoNomeCliente
             // 
             this.lblResultadoNomeCliente.AutoSize = true;
-            this.lblResultadoNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblResultadoNomeCliente.Location = new System.Drawing.Point(112, 680);
+            this.lblResultadoNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblResultadoNomeCliente.ForeColor = System.Drawing.Color.Purple;
+            this.lblResultadoNomeCliente.Location = new System.Drawing.Point(128, 680);
             this.lblResultadoNomeCliente.Name = "lblResultadoNomeCliente";
-            this.lblResultadoNomeCliente.Size = new System.Drawing.Size(19, 24);
+            this.lblResultadoNomeCliente.Size = new System.Drawing.Size(26, 29);
             this.lblResultadoNomeCliente.TabIndex = 9;
             this.lblResultadoNomeCliente.Text = "y";
             this.lblResultadoNomeCliente.Visible = false;
@@ -115,10 +117,10 @@
             // lblQuantidadeVendas
             // 
             this.lblQuantidadeVendas.AutoSize = true;
-            this.lblQuantidadeVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblQuantidadeVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.lblQuantidadeVendas.Location = new System.Drawing.Point(40, 616);
             this.lblQuantidadeVendas.Name = "lblQuantidadeVendas";
-            this.lblQuantidadeVendas.Size = new System.Drawing.Size(143, 24);
+            this.lblQuantidadeVendas.Size = new System.Drawing.Size(191, 29);
             this.lblQuantidadeVendas.TabIndex = 8;
             this.lblQuantidadeVendas.Text = "Qtd. de vendas:";
             this.lblQuantidadeVendas.Click += new System.EventHandler(this.label3_Click);
@@ -126,10 +128,11 @@
             // lblResultadoQuantidadeVendas
             // 
             this.lblResultadoQuantidadeVendas.AutoSize = true;
-            this.lblResultadoQuantidadeVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblResultadoQuantidadeVendas.Location = new System.Drawing.Point(184, 616);
+            this.lblResultadoQuantidadeVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblResultadoQuantidadeVendas.ForeColor = System.Drawing.Color.Purple;
+            this.lblResultadoQuantidadeVendas.Location = new System.Drawing.Point(224, 616);
             this.lblResultadoQuantidadeVendas.Name = "lblResultadoQuantidadeVendas";
-            this.lblResultadoQuantidadeVendas.Size = new System.Drawing.Size(20, 24);
+            this.lblResultadoQuantidadeVendas.Size = new System.Drawing.Size(25, 29);
             this.lblResultadoQuantidadeVendas.TabIndex = 9;
             this.lblResultadoQuantidadeVendas.Text = "x";
             this.lblResultadoQuantidadeVendas.Visible = false;
@@ -138,10 +141,10 @@
             // lblResultadoPendencias
             // 
             this.lblResultadoPendencias.AutoSize = true;
-            this.lblResultadoPendencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblResultadoPendencias.Location = new System.Drawing.Point(440, 616);
+            this.lblResultadoPendencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblResultadoPendencias.Location = new System.Drawing.Point(488, 616);
             this.lblResultadoPendencias.Name = "lblResultadoPendencias";
-            this.lblResultadoPendencias.Size = new System.Drawing.Size(76, 24);
+            this.lblResultadoPendencias.Size = new System.Drawing.Size(103, 29);
             this.lblResultadoPendencias.TabIndex = 12;
             this.lblResultadoPendencias.Text = "sim/não";
             this.lblResultadoPendencias.Visible = false;
@@ -149,10 +152,10 @@
             // lblPendencias
             // 
             this.lblPendencias.AutoSize = true;
-            this.lblPendencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.lblPendencias.Location = new System.Drawing.Point(320, 616);
+            this.lblPendencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lblPendencias.Location = new System.Drawing.Point(336, 616);
             this.lblPendencias.Name = "lblPendencias";
-            this.lblPendencias.Size = new System.Drawing.Size(120, 24);
+            this.lblPendencias.Size = new System.Drawing.Size(160, 29);
             this.lblPendencias.TabIndex = 11;
             this.lblPendencias.Text = "Pendências: ";
             // 
@@ -203,7 +206,7 @@
             this.Controls.Add(this.lblResultadoNomeCliente);
             this.Controls.Add(this.lblNomeCliente);
             this.Controls.Add(this.btnBuscarCliente);
-            this.Controls.Add(this.txtBoxRelatorio);
+            this.Controls.Add(this.txtBuscarClienteRelatorio);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblRelatorios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -223,15 +226,15 @@
 
         private System.Windows.Forms.Label lblRelatorios;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtBoxRelatorio;
+        private System.Windows.Forms.TextBox txtBuscarClienteRelatorio;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.Label lblResultadoNomeCliente;
         private System.Windows.Forms.Label lblQuantidadeVendas;
-        private System.Windows.Forms.Label lblResultadoQuantidadeVendas;
         private System.Windows.Forms.Label lblResultadoPendencias;
         private System.Windows.Forms.Label lblPendencias;
         private System.Windows.Forms.DataGridView dataViewCliente;
         private System.Windows.Forms.Button btnVoltar;
+        private System.Windows.Forms.Label lblResultadoQuantidadeVendas;
     }
 }

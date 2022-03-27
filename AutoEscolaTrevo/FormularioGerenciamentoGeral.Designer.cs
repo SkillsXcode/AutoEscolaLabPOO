@@ -73,7 +73,7 @@
             this.btnGerenciarCliente.Name = "btnGerenciarCliente";
             this.btnGerenciarCliente.Size = new System.Drawing.Size(200, 39);
             this.btnGerenciarCliente.TabIndex = 1;
-            this.btnGerenciarCliente.Text = "Gerenciar Cliente";
+            this.btnGerenciarCliente.Text = "Gerenciar Clientes";
             this.btnGerenciarCliente.UseVisualStyleBackColor = false;
             this.btnGerenciarCliente.Click += new System.EventHandler(this.btnGerenciarCliente_Click);
             // 

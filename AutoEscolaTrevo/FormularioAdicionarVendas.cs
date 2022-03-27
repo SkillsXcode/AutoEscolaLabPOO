@@ -133,9 +133,8 @@ namespace AutoEscolaTrevo
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[2].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value.ToString();
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[3].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[3].Value.ToString();
                 dataViewServicosAdicionados.Rows[contLinServAdc].Cells[4].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[4].Value.ToString();
-                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[5].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[5].Value.ToString();               
-                contLinServAdc++;
-                dataViewServicosAdicionados.RowHeadersVisible = false;
+                dataViewServicosAdicionados.Rows[contLinServAdc].Cells[5].Value = dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[5].Value.ToString();
+                contLinServAdc++;                
                 ManipularLabelValorTotal((double)dataViewServicos.Rows[dataViewServicos.CurrentRow.Index].Cells[2].Value);
                 MudarLabelTotalParcela();
             }                      
@@ -162,8 +161,7 @@ namespace AutoEscolaTrevo
         {
             foreach (DataGridViewColumn coluna in dataViewServicos.Columns)
             {
-                dataViewServicosAdicionados.Columns.Add(coluna.Clone() as DataGridViewColumn);
-                dataViewServicosAdicionados.RowHeadersVisible = false;
+                dataViewServicosAdicionados.Columns.Add(coluna.Clone() as DataGridViewColumn);                
             }
         }
 
