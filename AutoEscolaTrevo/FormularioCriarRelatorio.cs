@@ -77,9 +77,10 @@ namespace AutoEscolaTrevo
             Console.WriteLine("Total de vendas: ");
 
             ContarVendasAlterarLabel((int)dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value);
+            Console.WriteLine("TP: " + TemPendencias((int)dataViewCliente.Rows[dataViewCliente.CurrentRow.Index].Cells[0].Value));
             AlterarLabelNomeCliente();
-            /*ContarVendas();
-            TemPendencias();*/
+            /*ContarVendas();*/
+            
         }
 
         private void ContarVendasAlterarLabel(int idCliente)
@@ -109,9 +110,34 @@ namespace AutoEscolaTrevo
             lblResultadoNomeCliente.Visible = true;
         }
 
-        private bool TemPendencias()
+        private string TemPendencias(int idCliente)
         {
-            return true; //alterar
+            try
+            {
+                string query = "SELECT dataVencimento AS dataV FROM venda WHERE fk_idCliente = @idCliente; ";
+
+                using (var conexaoMySql = new MySqlConnection(conexao))
+                using (MySqlCommand comando = new MySqlCommand(query, conexaoMySql))
+                using (MySqlDataAdapter adaptador = new MySqlDataAdapter(comando))
+                {
+                    comando.Parameters.AddWithValue("@idCliente", idCliente);
+
+                    DataTable tabelaTemp = new DataTable();
+                    adaptador.Fill(tabelaTemp);
+                    //lblResultadoQuantidadeVendas.Text = tabelaTemp.Rows[0]["dataV"].ToString();
+                    //lblResultadoQuantidadeVendas.Visible = true;
+                    Console.WriteLine("==>" + tabelaTemp.Rows[0]["dataV"]);
+                    //lblResultadoNomeCliente.Text = tabelaTemp.Rows[0].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro:" + ex);
+            }
+            
+            
+
+            return "Não"; //alterar
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
